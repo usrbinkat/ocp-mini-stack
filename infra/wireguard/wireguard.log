@@ -1,0 +1,7 @@
+wg genkey | tee privatekey | wg pubkey > publickey
+wg genpsk > preshared
+
+https://github.com/pirate/wireguard-docs
+https://openwrt.org/docs/guide-user/network/tunneling_interface_protocols#protocol_wireguard_wireguard_vpn
+https://openwrt.org/docs/guide-user/network/tunneling_interface_protocols#static_addressing_of_wireguard_tunnel
+https://wiki.archlinux.org/index.php/WireGuard

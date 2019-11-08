@@ -1,0 +1,88 @@
+mkdir ~/bak
+cat /etc/httpd/conf.d/default.conf
+
+yum install -y docker-distribution skopeo podman
+
+wget -O /usr/local/sbin/jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64
+chmod +x /usr/local/sbin/jq
+
+cp /etc/docker-distribution/registry/config.yml ~/bak/
+ls ~
+sed -i 's/^.*rootdirectory.*$/        rootdirectory: \/srv\/repohost\/registry/' /etc/docker-distribution/registry/config.yml
+cat << EOF >> /etc/docker-distribution/registry/config.yml
+log:
+  accesslog:
+    disabled: false
+  level: info
+  formatter: text
+  fields:
+    service: registry
+    environment: staging
+EOF
+
+clear
+mkdir -p /srv/repohost/registry
+systemctl enable docker-distribution
+systemctl start docker-distribution
+systemctl status docker-distribution
+podman login registry.redhat.io
+clear
+exit
+cd
+clear
+vim os3d-2b.2.sh 
+source os3d-2b.2.sh 
+clear
+exit
+ls
+clear
+vim os3d-2b.1.sh
+mv os3d-2b.1.sh os3d-2a.5.sh
+source os3d-2a.5.sh 
+vim os3d-2b.1.sh
+source os3d-2b.1.sh 
+exit
+ls
+mv original-ks.cfg anaconda-ks.cfg bak/
+clear
+vim os3d-2a.3.sh 
+source os3d-2a.3.sh 
+clear
+vim os3d-2a.4.sh 
+source os3d-2a.4.sh 
+vim os3d-2c.1.sh
+source os3d-2c.1.sh
+exit
+clear
+vim os3d-2a.2.sh 
+source os3d-2a.2.sh 
+exit
+clear
+cd
+mv /home/ec2-user/os3d-2a.sh .
+clear
+source os3d-2a.sh 
+clear
+exit
+cd
+clear
+history | grep cat
+cat /etc/httpd/conf.d/default.conf 
+hostnamectl
+systemctl status httpd
+hostnamectl
+cat /etc/httpd/conf.d/default.conf 
+ip a
+clear
+cat /etc/httpd/conf.d/default.conf 
+clear
+ls /var/www/html/
+vim /etc/httpd/conf/magic 
+vim /etc/httpd/conf/httpd.conf 
+cat /etc/httpd/conf.d/default.conf 
+vim /etc/httpd/conf.d/default.conf 
+vim /etc/docker-distribution/registry/config.yml 
+ls /srv/repohost/registry/docker/registry/v2/
+find / -name openshift3 | grep ose
+find / -name openshift | grep ose
+find / -name openshift 

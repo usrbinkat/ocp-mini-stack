@@ -1,0 +1,12 @@
+# Launch Point
+https://cloud.redhat.com/openshift/install/metal/user-provisioned
+https://docs.openshift.com/container-platform/4.2/installing/installing_bare_metal/installing-bare-metal.html
+https://access.redhat.com/documentation/en-us/openshift_container_platform/4.2/html-single/installing/index#installing-on-bare-metal
+
+# OCP Installer & Operations CLI Tools
+https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-client-linux-4.2.0.tar.gz
+https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-install-linux-4.2.0.tar.gz
+
+# CoreOS Images
+https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.2/4.2.0/
+https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.2/latest/

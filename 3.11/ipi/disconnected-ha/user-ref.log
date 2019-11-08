@@ -1,0 +1,183 @@
+# Hosts
+isolated1.$GUID.internal        << Proxied RPM Repository 
+
+# troubleshoot
+oc whoami --show-console 
+oc get pods
+oc rsh $POD
+master-restart --help
+master-logs --help
+
+# Uninstall
+ansible-playbook ~/path/to/uninstall.yaml
+ansible nodes -m shell -a "rm -rf /etc/origin"
+ansible nfs -m shell -a 'rm -rf /srv/nfs/*'
+
+# Tools
+crictl
+podman (replaces docker)
+skopeo
+oc completion bash >/etc/bash_completion.d/openshift
+
+# Resources
+
+# User/Group/RBAC
+oc get groups
+oc adm groups new $GROUP
+oc adm groups add-users $GROUP $USER
+oc delete group $GROUP
+
+# RBAC
+oc get clusterrole -o yaml
+oc describe role -n NAMESPACE
+oc describe clusterrolebinding cluster-admin cluster-admins
+# openshift.io/description << metadata format
+
+# IDM Integration
+curl http://idm.corp.braincraft.io/ipa/config/ca.crt -o ipa-ca.crt
+oc --user=admin create configmap -n openshift-config opentlc-ipa-tls-ca --from-file=ca.crt=ipa-ca.crt configmap/opentlc-ipa-tls-ca created
+oc --user=admin create secret generic -n openshift-config opentlc-ipa-bind-password --from-literal=bindPassword='r3dh4t1!' secret/opentlc-ipa-bind-password created
+# >> See EX01
+oc --user=admin replace -f oauth-config.yaml oauth.config.openshift.io/cluster replaced
+oc get pods -n openshift-authentication
+oc logs -n openshift-authentication oauth-openshift-8fcd5c679-f82qx
+oc logs -n openshift-authentication-operator deployment/authentication-operator
+
+##################################################################################################################
+# REFRENCE
+# EX01 IDM Integration (USERS)
+cat <<EOF >ldap-auth-config.yaml
+apiVersion: config.openshift.io/v1
+kind: OAuth
+metadata:
+  name: cluster
+spec:
+  identityProviders:
+  - name: Local Password
+    mappingMethod: claim
+    type: HTPasswd
+    htpasswd:
+      fileData:
+        name: htpasswd
+  - name: OPENTLC LDAP
+    challenge: true
+    login: true
+    mappingMethod: claim
+    type: LDAP
+    ldap:
+      attributes:
+        email: ["mail"]
+        id: ["dn"]
+        name: ["cn"]
+        preferredUsername: ["uid"]
+      bindDN: "uid=admin,cn=users,cn=accounts,dc=shared,dc=example,dc=opentlc,dc=com"
+      bindPassword:
+        name: opentlc-ipa-bind-password
+      insecure: false
+      ca:
+        name: opentlc-ipa-tls-ca
+      url: "ldaps://adsfasdfasdfasdfasdfasdfasdfasdfasd/n=users,cn=accounts,dc=shared,dc=example,dc=opentlc,dc=com?uid?sub?(memberOf=cn=ocp-users,cn=groups,cn=accounts,dc=shared,dc=example,dc=opentlc,dc=com)" 
+EOF
+# EX01 END
+
+
+# EX02 IDM Integration (GROUPS)
+kind: LDAPSyncConfig
+apiVersion: v1
+url: "ldap://ipa.shareadsfasdfasdfasdfasdfasdf9"
+bindDN: "uid=admin,cn=users,cn=accounts,dc=shared,dc=example,dc=opentlc,dc=com"
+bindPassword:
+  file: /etc/secrets/bind_password
+ca: /etc/config/ldap-ca.crt
+insecure: false
+rfc2307:
+  groupsQuery:
+    baseDN: "cn=groups,cn=accounts,dc=shared,dc=example,dc=opentlc,dc=com"
+    scope: sub
+    derefAliases: never
+    filter: (!(objectClass=mepManagedEntry))
+    pageSize: 0
+    timeout: 0
+  groupUIDAttribute: dn
+  groupNameAttributes: [ cn ]
+  groupMembershipAttributes: [ member ]
+  usersQuery:
+    baseDN: "cn=users,cn=accounts,dc=shared,dc=example,dc=opentlc,dc=com"
+    scope: sub
+    derefAliases: never
+  userUIDAttribute: dn
+  userNameAttributes: [ uid ]
+# EX02 END
+
+# EX03 Resources
+oc describe pod my-example-1-ntdfw
+Name:               my-example-1-ntdfw
+Namespace:          my-project
+Start Time:         Tue, 14 May 2019 14:02:54 -0700
+Labels:             app=my-example
+Status:             Running
+IP:                 10.129.2.15
+Controlled By:      ReplicationController/my-example-1
+Containers:
+  my-example:
+    Container ID:
+    Image:          nginx
+    Ports:          8080/TCP, 8443/TCP
+    State:          Running
+    Ready:          True
+    Restart Count:  0
+    Limits:
+      cpu:     300m 
+      memory:  200Mi 
+    Requests:
+      cpu:        200m 
+      memory:     100Mi 
+EOF
+# EX03 END
+
+# EX04 Resources (LIMITS)
+apiVersion: "v1"
+kind: "LimitRange"
+metadata:
+  name: "core-resource-limits" 
+spec:
+  limits:
+    - type: "Pod"
+      max:
+        cpu: "2" 
+        memory: "2Gi" 
+      min:
+        cpu: "200m" 
+        memory: "6Mi" 
+    - type: "Container"
+      max:
+        cpu: "2" 
+        memory: "1Gi" 
+      min:
+        cpu: "100m" 
+        memory: "4Mi" 
+      default:
+        cpu: "300m" 
+        memory: "200Mi" 
+      defaultRequest:
+        cpu: "200m" 
+        memory: "100Mi" 
+      maxLimitRequestRatio:
+        cpu: "10" 
+EOF
+# EX04 END
+
+# EX05 Resources (PROJECTS)
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: compute-resources
+spec:
+  hard: 
+    pods: "4"
+    requests.cpu: "1"
+    requests.memory: 1Gi
+    limits.cpu: "2"
+    limits.memory: 2Gi
+EOF
+# EX05 END

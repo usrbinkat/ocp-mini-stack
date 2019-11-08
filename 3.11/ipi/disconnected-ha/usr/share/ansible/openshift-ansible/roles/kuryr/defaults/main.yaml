@@ -1,0 +1,103 @@
+---
+# Kuryr username
+kuryr_openstack_username: kuryr
+
+# Kuryr domain name or id containing user
+kuryr_openstack_user_domain_name: default
+
+# Kuryr domain name or id containing project
+kuryr_openstack_project_domain_name: default
+
+# Kuryr OpenShift namespace
+kuryr_namespace: openshift-infra
+
+# Default pod-in-VM link interface
+kuryr_cni_link_interface: eth0
+
+# Default controller and CNI images
+openshift_openstack_kuryr_controller_image: kuryr/controller:latest
+openshift_openstack_kuryr_cni_image: kuryr/cni:latest
+
+# Enable kuryr ports pool by default
+kuryr_openstack_pool_driver: nested
+
+# Enable kuryr healthchecks probes by default
+enable_kuryr_controller_probes: True
+enable_kuryr_cni_probes: True
+
+# Kuryr health check (probes) server ports
+kuryr_controller_healthcheck_port: 8082
+kuryr_cni_healthcheck_port: 8090
+
+# Path to the cni binaries
+cni_bin_dir: /opt/cni/bin
+
+# Kuryr ClusterRole definition
+kuryr_clusterrole:
+  name: kuryrctl
+  state: present
+  rules:
+    # Basic read rules for kuryr's functionalities
+    - apiGroups:
+        - ""
+      verbs:
+        - get
+        - list
+        - watch
+      resources:
+        - endpoints
+        - ingress
+        - nodes
+        - namespaces
+        - pods
+        - services
+    # OpenShift routes support
+    - apiGroups: ["oapi"]
+      resources:
+        - routes
+      verbs: ["*"]
+    # Basic write rules for kuryr's functionalities
+    - apiGroups:
+        - ""
+      verbs:
+        - update
+        - patch
+      resources:
+        - endpoints
+        - ingress
+        - pods
+        - namespaces
+        - services
+        - services/status
+    # CRD's for healthchecks
+    - apiGroups:
+        - apiextensions.k8s.io/v1beta1
+      verbs:
+        - "*"
+      resources:
+        - customresourcedefinitions
+    # Custom Kuryr Resources
+    - apiGroups:
+        - openstack.org
+      attributeRestrictions: null
+      verbs:
+        - "*"
+      resources:
+        - kuryrnets
+        - kuryrnetpolicies
+    # Network policy support
+    - apiGroups: ["networking.k8s.io"]
+      resources:
+        - networkpolicies
+      verbs:
+        - get
+        - list
+        - watch
+        - patch
+        - update
+    # Multi-vif support
+    - apiGroups: ["k8s.cni.cncf.io"]
+      resources:
+        - network-attachment-definitions
+      verbs:
+        - get

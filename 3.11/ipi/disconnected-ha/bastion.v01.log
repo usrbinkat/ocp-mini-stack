@@ -1,0 +1,284 @@
+cd
+ls
+ssh isolated1
+ssh isolated1.ac31.internal
+sftp isolated1.ac31.internal:/isolated1.v01.tar.xz .
+sftp isolated1.ac31.internal:~/isolated1.v01.tar.xz .
+sftp isolated1.ac31.internal:isolated1.v01.tar.xz .
+ls
+clear
+ls
+ls /home/kmorgan-redhat.com/
+ls
+file hosts 
+ln -f /etc/ansible/hosts hosts
+ls
+file hosts 
+vim hosts 
+find / -name openshift-ansible
+ls openshift-ansible/
+file openshift-ansible/
+clear
+ls
+ls bak/
+ls
+mv bak/hosts hosts.orig.bak
+ls
+ls images/
+ls -lah images/
+rm images/ -rf
+ls
+clear
+ls
+cat user.log 
+mv user.log user-ref.log
+cat jq 
+rm jq 
+ls
+mv .bash_history bastion.v01.log
+ls
+tar -Jcvf bastion-build.v01.tar.xz *
+rm bak/ -rf
+tar -Jcvf bastion-build.v01.tar.xz *
+rm bastion-build.v01.tar.xz 
+tar -Jcvf bastion-build.v01.tar.xz *
+clear
+ls
+mv bastion-build.v01.tar.xz /home/kmorgan-redhat.com/
+sudo chown kmorgan-redhat.com:kmorgan-redhat.com /home/kmorgan-redhat.com/bastion-build.v01.tar.xz 
+exit
+cd
+cd /var/log/
+ls
+cd
+clear
+ssh internal1
+exit
+cd
+clear
+cd
+clear
+ssh isolated1
+ping isolated1
+ssh isolated1.ac31.internal
+clear
+vim hosts
+cat foo.c | sed '/^\s*$/d' | wc -l
+cat hosts | sed '/^\s*$/d' | wc -l
+cat hosts | sed '/^\s*$/d'
+cat hosts | sed '/^\s*#/d;/^\s*$/d' 
+clear
+cat hosts | sed '/^\s*#/d;/^\s*$/d'  | wc -l
+vim hosts
+cat /var/preserve/hosts 
+cat /var/preserve/hosts | more
+cat /var/preserve/hosts >hosts.example.opentlc
+clear
+vim hosts
+clear
+clear
+exit
+cd
+clear
+vim hosts
+ls -lah
+ls -lah /usr/share/ansible/openshift-ansible/
+cp /usr/share/ansible/openshift-ansible/ansible.cfg .
+ls
+vim hosts
+ls openshift-ansible/playbooks/
+ansible-playbook ./openshift-ansible/playbooks/prerequisites.yml 
+ansible-playbook ./openshift-ansible/playbooks/deploy_cluster.yml 
+vim ansible-fail.log
+exit
+vim wait_for_control_plane_pods_to_appear 
+clear
+ansible all -m ping
+vim hosts
+clear
+ssh master1.ac31.internal
+exit
+cd
+clear
+ssh master1.$GUID.internal
+cd
+clear
+ssh isolated1
+ssh isolated1.${GUID}.internal
+history | grep nfs
+cat /etc/exports
+cat /etc/exports.d/
+vim hosts
+ssh support1.${GUID}.internal
+clear
+ssh isolated1.$GUID.internal
+cd
+clear
+ls
+history | grep ansible
+ansible-playbook ./openshift-ansible/playbooks/deploy_cluster.yml 
+tmux
+cd
+clear
+oc get events --all-namespaces
+ssh master1.ac31.internal
+cd
+clear
+ls
+tmux list-sessions
+tmux attach -t 0
+ansible-playbook ./openshift-ansible/playbooks/deploy_cluster.yml
+ansible-playbook ./openshift-ansible/playbooks/prerequisites.yml 
+vim hosts
+ansible-playbook ./openshift-ansible/playbooks/prerequisites.yml 
+ansible-playbook ./openshift-ansible/playbooks/deploy_cluster.yml 
+clear
+ls
+diff hosts hosts.example.opentlc 
+ansible-playbook ./openshift-ansible/playbooks/deploy_cluster.yml 
+vim wait_for_control_plane_pods_to_appear 
+clear
+ls
+cat wait_for_control_plane_pods_to_appear 
+clear
+ls
+vim hosts
+find ./openshift-ansible/playbooks/ -name "*config*"
+clear; find ./openshift-ansible/playbooks/ -name "*config.yml
+clear; find ./openshift-ansible/playbooks/ -name "*config.yml"
+clear; find ./openshift-ansible/playbooks/ -name "config.yml"
+clear; find ./openshift-ansible/playbooks/ -name "config.yml" | grep config.yml
+ssh master1.ac31.internal
+sftp master1.ac31.internal:.kube.bak .
+ssh master1.ac31.internal
+sftp master1.ac31.internal:.kube.bak .
+sftp master1.ac31.internal:.kube.bak . -r
+sftp master1.ac31.internal
+ssh master1.ac31.internal
+scp master1.ac31.internal:kube-admin.tar.xz .
+tar xvf kube-admin.tar.xz 
+ls -lah
+mv .kube.bak/ .kube
+oc status
+oc get events --all-namespaces -w
+clear
+vim hosts
+clear
+vim wait_for_control_plane_pods_to_appear
+clear
+oc status
+ssh master1.ac31.internal
+cd
+tmux attach -t 0
+vim hosts
+ansible-playbook playbooks/adhoc/uninstall.yml
+ansible-playbook ./openshift-ansible/playbooks/adhoc/uninstall.yml
+ansible nodes -m shell -a "rm -rf /etc/origin"
+ansible nfs -m shell -a 'rm -rf /srv/nfs/*'
+clear
+ansible-playbook ./openshift-ansible/playbooks/prerequisites.yml 
+ansible-playbook ./openshift-ansible/playbooks/deploy_cluster.yml 
+ansible-playbook ./openshift-ansible/playbooks/openshift-service-catalog/config.yml
+grep template hosts 
+grep template hosts.example.opentlc 
+grep yedit hosts 
+vim hosts
+ansible-playbook ./openshift-ansible/playbooks/openshift-service-catalog/config.yml
+ansible-playbook ./openshift-ansible/playbooks/deploy_cluster.yml 
+ping apps.ac31.example.opentlc.com
+clear
+ping loadbalancer.ac31.internal
+clear
+ls
+cd
+ls
+vim user-ref.log 
+cd
+clear
+vim user-ref.log 
+clear
+echo $GUID
+oc status
+clear
+clear
+oc status
+clear
+rm .kube/config 
+cd .kube/
+ls
+ssh master1.ac31.internal
+scp master1.ac31.internal:config .
+cd
+clear
+oc status
+oc whoami --show-console
+oc get pods
+oc get pods
+clear
+oc get pods
+ls -lah openshift-ansible
+mv build-success-openshift-311.tar.xz /home/kmorgan-redhat.com/
+exit
+cd
+clear
+ls
+cat wait_for_control_plane_pods_to_appear 
+clear
+ls
+history
+ansible-playbook ./openshift-ansible/playbooks/deploy_cluster.yml 
+mv hosts.manual.fail
+mv hosts hosts.manual.fail
+clear
+cp /var/preserve/hosts .
+ansible-playbook ./openshift-ansible/playbooks/adhoc/uninstall.yml
+ansible nodes -m shell -a "rm -rf /etc/origin"
+ansible nfs -m shell -a 'rm -rf /srv/nfs/*'
+ls
+vim hosts
+clear
+ls
+ansible-playbook ./openshift-ansible/playbooks/prerequisites.yml 
+ansible-playbook ./openshift-ansible/playbooks/deploy_cluster.yml 
+clear
+oc status
+clear
+ls
+cat .bash_history >>bastion.v01.log 
+tar -Jcvf build-success-openshift-311.tar.xz ./* /usr/share/ansible/
+ls
+exit
+cd
+ls
+vim /var/preserve/hosts 
+vim user-ref.log 
+clear
+rm .user-ref.log.swp 
+clear
+ls
+vim user-ref.log 
+clear
+curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+unzip awscli-bundle.zip
+./awscli-bundle/install -i /usr/local/aws -b /bin/aws
+aws --version
+rm -rf /root/awscli-bundle /root/awscli-bundle.zip
+OCP_VERSION=4.1.8
+wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/${OCP_VERSION}/openshift-install-linux-${OCP_VERSION}.tar.gz
+tar zxvf openshift-install-linux-${OCP_VERSION}.tar.gz -C /usr/bin
+rm -f openshift-install-linux-${OCP_VERSION}.tar.gz /usr/bin/README.md
+chmod +x /usr/bin/openshift-install
+wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/${OCP_VERSION}/openshift-client-linux-${OCP_VERSION}.tar.gz
+tar zxvf openshift-client-linux-${OCP_VERSION}.tar.gz -C /usr/bin
+rm -f openshift-client-linux-${OCP_VERSION}.tar.gz /usr/bin/README.md
+chmod +x /usr/bin/oc
+ls -l /usr/bin/{oc,openshift-install}
+oc completion bash >/etc/bash_completion.d/openshift
+clear
+cat user-ref.log | grep oc
+s exit
+exit
+cd
+ls
+vim user-ref.log 
+exit
