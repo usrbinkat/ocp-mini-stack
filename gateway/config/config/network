@@ -1,0 +1,45 @@
+
+config interface 'loopback'
+	option ifname 'lo'
+	option proto 'static'
+	option ipaddr '127.0.0.1'
+	option netmask '255.0.0.0'
+
+config globals 'globals'
+
+config interface 'wan'
+	option ifname 'eth0'
+	option proto 'dhcp'
+	option delegate '0'
+	option peerdns '0'
+	option dns '8.8.8.8 10.10.91.1'
+
+config interface 'lan'
+	option type 'bridge'
+	option proto 'static'
+	option ipaddr '10.10.20.1'
+	option netmask '255.255.255.0'
+	option ip6assign '60'
+	option ifname 'eth1 wg01'
+
+config interface 'wg01'
+	option proto 'wireguard'
+	option private_key 'UBveK0NF8A+tS4rpF+0XFxb4b1oQQCB54TxfQRm8XWs='
+	list addresses '10.10.100.2/24'
+
+config wireguard_wg01
+	option route_allowed_ips '1'
+	option persistent_keepalive '25'
+	option endpoint_port '51820'
+	option public_key 'cxZGijR32N2cMszCUwLe/Z1vfh1HDLuXgcxqej3yul0='
+	list allowed_ips '10.10.100.2'
+	list allowed_ips '10.10.91.0/24'
+	option endpoint_host '167.71.155.65'
+
+config interface 'OpenShift'
+	option proto 'static'
+	option ifname 'eth2'
+	option ipaddr '172.30.0.1'
+	option netmask '255.255.0.0'
+	option delegate '0'
+
