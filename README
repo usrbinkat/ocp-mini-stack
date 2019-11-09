@@ -1,0 +1,66 @@
+[I] ❯ 155 ❯❯  pre-alpha-00 ❯❯ ✔ ⚡ ❯ neofetch; lxc list; virsh list --all; virsh net-list --all; ovs-vsctl show;             ❮ – ● ❮❮ root@ibane:~/o/h/fedora30 ❮
+          /:-------------:\          root@ibane.kmorgan.remote.csb 
+       :-------------------::        ----------------------------- 
+     :-----------/shhOHbmp---:\      OS: Fedora release 30 (Thirty) x86_64 
+   /-----------omMMMNNNMMD  ---:     Host: 20L8S2N800 ThinkPad T480s 
+  :-----------sMMMMNMNMP.    ---:    Kernel: 5.3.8-200.fc30.x86_64 
+ :-----------:MMMdP-------    ---\   Uptime: 1 hour, 33 mins 
+,------------:MMMd--------    ---:   Packages: 2276 (rpm), 11 (flatpak) 
+:------------:MMMd-------    .---:   Shell: fish 3.0.2 
+:----    oNMMMMMMMMMNho     .----:   Terminal: /dev/pts/1 
+:--     .+shhhMMMmhhy++   .------/   CPU: Intel i7-8650U (8) @ 4.200GHz 
+:-    -------:MMMd--------------:    GPU: Intel UHD Graphics 620 
+:-   --------/MMMd-------------;     Memory: 557MiB / 15956MiB 
+:-    ------/hMMMy------------:
+:-- :dMNdhhdNMMNo------------;                               
+:---:sdNMMMMNds:------------:                                
+:------:://:-------------::
+:---------------------://
+
++----------+---------+------+------+------------+-----------+
+|   NAME   |  STATE  | IPV4 | IPV6 |    TYPE    | SNAPSHOTS |
++----------+---------+------+------+------------+-----------+
+| cloudctl | STOPPED |      |      | PERSISTENT | 0         |
++----------+---------+------+------+------------+-----------+
+| dnsmasq  | STOPPED |      |      | PERSISTENT | 0         |
++----------+---------+------+------+------------+-----------+
+| gateway  | STOPPED |      |      | PERSISTENT | 0         |
++----------+---------+------+------+------------+-----------+
+| haproxy  | STOPPED |      |      | PERSISTENT | 0         |
++----------+---------+------+------+------------+-----------+
+| httpd    | STOPPED |      |      | PERSISTENT | 0         |
++----------+---------+------+------+------------+-----------+
+| tftp     | STOPPED |      |      | PERSISTENT | 0         |
++----------+---------+------+------+------------+-----------+
+| wifiap   | STOPPED |      |      | PERSISTENT | 0         |
++----------+---------+------+------+------------+-----------+
+ Id   Name                           State
+-----------------------------------------------
+ -    bootstrap.ocp4.braincraft.io   shut off
+ -    master01.ocp4.braincraft.io    shut off
+ -    master02.ocp4.braincraft.io    shut off
+ -    master03.ocp4.braincraft.io    shut off
+ -    worker01.ocp4.braincraft.io    shut off
+ -    worker02.ocp4.braincraft.io    shut off
+ -    worker03.ocp4.braincraft.io    shut off
+
+ Name        State    Autostart   Persistent
+----------------------------------------------
+ default     active   yes         yes
+ openshift   active   yes         yes
+
+8ab2ff4e-7dd9-4d32-aa94-7b0ec714df14
+    Bridge openshift
+        Port openshift
+            Interface openshift
+                type: internal
+    Bridge internal
+        Port "eth0"
+            Interface "eth0"
+        Port internal
+            Interface internal
+                type: internal
+        Port "mgmt1"
+            Interface "mgmt1"
+                type: internal
+    ovs_version: "2.10.1"
