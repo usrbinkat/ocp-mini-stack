@@ -1,0 +1,12 @@
+DEVICE=hostapd
+STP=no
+TYPE=Bridge
+IPV6INIT=no
+NAME=hostapd
+BOOTPROTO=dhcp
+ONBOOT=yes
+HOSTNAME=hostapd
+NM_CONTROLLED=no
+MTU=1500
+DHCP_HOSTNAME=`hostname`
+#MACADDR=d4:6a:6a:d5:4e:f1

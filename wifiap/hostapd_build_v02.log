@@ -1,0 +1,254 @@
+ip a
+nmtui
+clear
+dnf install bridge-utils hostapd iw
+yum install bridge-utils hostapd iw
+mkdir ap-build
+vim ap-build/hostapd.conf
+yum install vim -y
+vim ap-build/hostapd.conf
+ls /etc/hostapd/hostapd
+clear
+ls
+find / -name hostapd.service
+find / -name "hostapd*"
+man hostapd
+hostapd
+yum install hostapd
+yum update
+yum -y install epel-release
+yum install hostapd iw bridge-utils
+vim /etc/hostapd/hostapd.conf 
+clear
+hostapd
+hostapd -d
+hostapd -d /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf 
+vim /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf 
+vim /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf 
+find / -name hostapd.service
+vim /usr/lib/systemd/system/hostapd.service 
+ln /etc/hostapd/hostapd.conf .
+ls
+rm @
+cp /etc/hostapd/hostapd.conf ./ap-build/hostapd.conf -f
+clear
+vim /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf 
+ip a
+hostapd -d /etc/hostapd/hostapd.conf 
+ip a
+ip a
+ip a
+ip a
+ip a
+ip a
+watch -c ip a
+clear
+iw list
+iw list | grep AP
+ip a
+ip a
+cp /etc/sysconfig/network-scripts/ifcfg-eth0 /etc/sysconfig/network-scripts/ifcfg-hostapd
+vim /etc/sysconfig/network-scripts/ifcfg-hostapd 
+vim /etc/sysconfig/network-scripts/ifcfg-hostapd 
+vim /etc/sysconfig/network-scripts/ifcfg-eth0 
+vim /etc/sysconfig/network-scripts/ifcfg-hostapd 
+systemctl enable hostapd
+systemctl restart network
+reboot
+vim /etc/sysconfig/network-scripts/ifcfg-hostapd 
+vim /etc/sysconfig/network-scripts/ifcfg-eth0 
+ip a
+brctl show
+vim /etc/sysconfig/network-scripts/ifcfg-hostapd 
+systemctl restart network
+systemctl restart network
+ip a
+reboot
+ip a
+ip a
+ip a
+ip a
+ip a
+ip a
+ip a
+systemctl status hostapd
+ip a
+journalctl -fxe
+journalctl -fxe
+ifup hostapd
+vim /etc/sysconfig/network-scripts/ifcfg-hostapd 
+systemctl restart network
+ip a
+journalctl -fxe
+exit
+clear
+ip a
+ip a
+clear; watch -c ip a
+exit
+ls
+vim /etc/hostapd/hostapd.conf 
+reboot
+ls
+rm wlp3s0-hostapd.conf 
+cp /etc/hostapd/hostapd.conf ./test.conf
+vim test.conf 
+systemctl stop httpd
+systemctl stop hostapd
+clear
+history 
+hostapd -d /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf
+hostapd -d /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf
+hostapd -d /etc/hostapd/hostapd.conf
+hostapd -d /etc/hostapd/hostapd.conf
+hostapd -d /etc/hostapd/hostapd.conf
+hostapd -d /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+vim /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf
+ls
+ls ap-build/
+vim ap-build/hostapd.conf 
+vim /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+hostapd -d /etc/hostapd/hostapd.conf
+ip a
+ip link set wlp3s0 up
+ip a
+hostapd -d /etc/hostapd/hostapd.conf
+ps -ax | grep host
+pkill -KILL hostapd
+ps -ax | grep host
+pkill -KILL hostapd
+ps -ax | grep host
+dhclient --help
+systemctl list-unit-files | grep -iE 
+systemctl list-unit-files | grep -iE "dhc|hosta"
+systemctl stop hostapd
+systemctl status hostapd
+systemctl start hostapd
+systemctl status hostapd
+systemctl status hostapd
+systemctl status hostapd
+systemctl status hostapd
+systemctl status hostapd
+systemctl status hostapd
+systemctl status hostapd
+systemctl status hostapd
+systemctl status hostapd
+systemctl status hostapd
+systemctl status hostapd
+systemctl status hostapd
+systemctl status hostapd
+watch -c systemctl status hostapd
+vim /etc/hostapd/hostapd.conf 
+systemctl start hostapd
+watch -c systemctl status hostapd
+vim /etc/hostapd/hostapd.conf 
+iw list | more
+vim /etc/hostapd/hostapd.conf 
+hostapd -v -d /etc/hostapd/hostapd.conf
+hostapd -d /etc/hostapd/hostapd.conf
+hostapd --help
+hostapd -dd /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+hostapd -dd /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+hostapd -dd /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+hostapd -dd /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+hostapd -dd /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+hostapd -dd /etc/hostapd/hostapd.conf
+vim /etc/hostapd/hostapd.conf 
+cp -f /etc/hostapd/hostapd.conf ap-build/hostapd.conf 
+clear
+clear
+iw list | tee iwlist
+vim iwlist 
+vim iwlist 
+vim /etc/hostapd/hostapd.conf 
+vim iwlist 
+hostapd -dd /etc/hostapd/hostapd.conf
+vim iwlist 
+vim /etc/hostapd/hostapd.conf 
+vim wlp3s0-hostapd.conf
+hostapd -dd /root/wlp3s0-hostapd.conf 
+vim wlp3s0-hostapd.conf
+clear
+hostapd -v
+vim /etc/hostapd/hostapd.conf 
+hostapd -dd /root/wlp3s0-hostapd.conf 
+vim /etc/hostapd/hostapd.conf 
+hostapd -dd /root/wlp3s0-hostapd.conf 
+vim /etc/hostapd/hostapd.conf 
+hostapd -dd /root/wlp3s0-hostapd.conf 
+cat /etc/redhat-release 
+vim /etc/hostapd/hostapd.conf 
+clear
+hostapd -dd /etc/hostapd/hostapd.conf 
+hostapd -dd /etc/hostapd/hostapd.conf 
+vim /etc/hostapd/hostapd.conf 
+hostapd -dd /etc/hostapd/hostapd.conf 
+hostapd -dd /etc/hostapd/hostapd.conf 
+hostapd -dd /etc/hostapd/hostapd.conf 
+hostapd -dd /etc/hostapd/hostapd.conf 
+hostapd -dd /etc/hostapd/hostapd.conf 
+hostapd -dd /etc/hostapd/hostapd.conf 
+systemctl start hostapd
+systemctl status hostapd
+systemctl status hostapd
+systemctl status hostapd
+systemctl status hostapd
+systemctl status hostapd
+systemctl status hostapd
+systemctl status hostapd
+ls
+ll
+systemctl status hostapd
+clear
+hostapd -dd /root/test.conf 
+vim test.conf; hostapd -dd /root/test.conf 
+vim test.conf; hostapd -dd /root/test.conf 
+iw reg get
+clear
+iw reg get
+vim test.conf; hostapd -dd /root/test.conf 
+vim test.conf; hostapd -dd /root/test.conf 
+exit
+vim test.conf; hostapd -dd /root/test.conf 
+vim test.conf; hostapd -dd /root/test.conf 
+lspci -k
+exit
+cat /etc/redhat-release 
+hostapd -v
+vim test.conf; hostapd -dd /root/test.conf 
+exit

@@ -1,0 +1,8 @@
+DEVICE=eth0
+BOOTPROTO=none
+ONBOOT=yes
+HOSTNAME=hostapd
+NM_CONTROLLED=no
+MTU=1500
+BRIDGE=hostapd
+NAME="eth0"
