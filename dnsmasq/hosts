@@ -1,0 +1,6 @@
+127.0.1.1	dnsmasq.ocp4.braincraft.io dnsmasq
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+#######################
+172.30.0.3 cloudctl.ocp4.braincraft.io cloudctl
+172.30.0.8 tftp.ocp4.braincraft.io tftp
