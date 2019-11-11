@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir -p ./ignition 2>/dev/null
 source $(pwd)/src/stage-pull-secrets.sh
 cat <<EOF >$(pwd)/ignition/install-config.yaml
 apiVersion: v1
