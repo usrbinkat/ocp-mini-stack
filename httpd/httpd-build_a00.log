@@ -1,0 +1,7 @@
+ln eth1.network /etc/systemd/network/
+dnf install httpd
+rm /var/www/html/*
+ln -s /var/www/html/ ~
+systemctl start httpd
+systemctl enable httpd
+systemctl status httpd

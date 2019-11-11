@@ -25,12 +25,12 @@ vm_RAM=8196        # in Megabytes
 root_DISK=120      # in Gigabytes
 bstrap_COUNT=01    # Set Bootstrap Build
 master_COUNT=03    # Set VM spawn count
-worker_COUNT=03    # Set VM spawn count
+worker_COUNT=02    # Set VM spawn count
 storage_POOL="/var/lib/libvirt/images"
 
 #################################################################################
 run_boot_all () {
-  for guest_TARGET in $(virsh list --all | grep ${name_BASE}); do
+  for guest_TARGET in $(virsh list --all | grep ${name_BASE} | awk '{print $2}'); do
 	  virsh start ${guest_TARGET}
   done
 }
@@ -66,18 +66,18 @@ config_runner () {
   # load alphaHex pxe boot config files
   for i in $(ls /tmp/ocp4pxe/); do 
     lxc file push /tmp/ocp4pxe/$i \
-	    gateway/tmp/tftpboot/pxelinux.cfg/
+	    tftp/tftpboot/pxelinux.cfg/
   done
 
   echo_log 0 "Loading \{hwaddr/ipaddr/hostname\} tables"
   # Load etc/ethers mac/ip/hostname tables
   lxc file push /tmp/ethers \
-	    gateway/etc/ethers
+	    dnsmasq/etc/ethers
 
-  echo_log 0 "Restarting dnsmasq on \'gateway\' container"
+  echo_log 0 "Restarting dnsmasq service on \'dnsmasq\' container"
   # Reload dnsmasq
-  lxc exec gateway -- \
-	  /bin/ash -c '/etc/init.d/dnsmasq restart 2>/dev/null'
+  lxc exec dnsmasq -- \
+	  /bin/bash -c 'systemctl restart dnsmasq 2>/dev/null'
 
 }
 

@@ -1,8 +1,9 @@
 127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 #######################
+10.1.1.2 ibane.braincraft.io ibane
+#######################
 172.30.0.1 gateway.ocp4.braincraft.io gateway
-172.30.0.2 ibane.ocp4.braincraft.io ibane
 172.30.0.3 cloudctl.ocp4.braincraft.io cloudctl
 172.30.0.4 haproxy.ocp4.braincraft.io haproxy 
 172.30.0.7 dnsmasq.ocp4.braincraft.io dnsmasq
