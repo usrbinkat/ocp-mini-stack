@@ -803,3 +803,8 @@ clear
 ssh rhev01
 clear
 exit
+  656  dnf install wget -y && wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.1.6/openshift-client-linux-4.1.6.tar.gz
+  657  wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.1.6/openshift-install-linux-4.1.6.tar.gz
+  658  history -n 4
+  659  history 4
+  660  history 5 | tee -a ocp-mini-stack/cloudctl/cloudctl-ocp4-mini-stack-build_a00.log 
