@@ -116,8 +116,8 @@ default coreos
 prompt 0
 label coreos
   menu default
-  kernel  http://cloudctl.braincraft.io/boot/rhcos-4.2.0-x86_64-installer-kernel ip=dhcp rd.neednet=1 initrd=http://cloudctl.braincraft.io/boot/rhcos-4.2.0-x86_64-installer-initramfs.img console=tty0 console=ttyS0 coreos.inst=yes coreos.inst.install_dev=vda coreos.inst.image_url=http://cloudctl.braincraft.io/boot/rhcos-4.2.0-x86_64-metal-bios.raw.gz coreos.inst.ignition_url=http://cloudctl.braincraft.io/ignition/bootstrap.ign
-  append coreos.first_boot=1 coreos.config.url=https://cloudctl.braincraft.io/master.ign
+  kernel  http://httpd.ocp4.braincraft.io/boot/rhcos-4.2.0-x86_64-installer-kernel ip=dhcp rd.neednet=1 initrd=http://httpd.ocp4.braincraft.io/boot/rhcos-4.2.0-x86_64-installer-initramfs.img console=tty0 console=ttyS0 coreos.inst=yes coreos.inst.install_dev=vda coreos.inst.image_url=http://httpd.ocp4.braincraft.io/boot/rhcos-4.2.0-x86_64-metal-bios.raw.gz coreos.inst.ignition_url=http://httpd.ocp4.braincraft.io/ignition/bootstrap.ign
+  append coreos.first_boot=1 coreos.config.url=https://httpd.ocp4.braincraft.io/master.ign
 EOF
 }
 
@@ -190,7 +190,7 @@ echo_log 0 "Initializing Nodes: ${node_ROLE}"
       spawn_prep
 
       # Log to /etc/ethers
-      eth0_IP=$(echo 172.30.0.$(echo ${count} | sed 's/0/4/g'))
+      eth0_IP=$(echo 172.30.1.$(echo ${count} | sed 's/0/4/g'))
       echo "${eth0_HWADDR} ${name_FULL}" | sed 's/\\//g' | tee -a /tmp/ethers
       echo "${eth0_HWADDR} ${eth0_IP}"   | sed 's/\\//g' | tee -a /tmp/ethers
 
