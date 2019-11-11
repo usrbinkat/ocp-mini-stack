@@ -2,7 +2,7 @@
 Name=eth1
 
 [Network]
-Address=172.30.0.11/16
+Address=172.30.0.8/16
 Gateway=172.30.0.1
 DNS=172.30.0.7
 DNS=172.30.0.1
