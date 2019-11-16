@@ -2,7 +2,7 @@
 ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
 chmod 600 /root/.ssh/authorized_keys
 curl -L https://github.com/usrbinkat.keys | tee -a ~/.ssh/authorized_keys
-dnf update -y && dnf install openssh-server ansible python -y
+dnf update -y && dnf install vim openssh-server ansible python -y
 systemctl unmask systemd-logind
 systemctl enable --now sshd
 
