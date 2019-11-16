@@ -1,0 +1,5 @@
+host *
+  Port 22
+  User root
+  IdentityFile ~/.ssh/id_rsa_kmorgan
+  StrictHostKeyChecking no
