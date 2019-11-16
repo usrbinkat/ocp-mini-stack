@@ -1,0 +1,15 @@
+ovs-vsctl   add-br internal --   add-port internal mgmt1 --   set interface mgmt1 type=internal --   set interface mgmt1 mac="02\:00\:09\:ba\:e9\:1b"
+systemctl restart systemd-networkd.service && netplan apply --debug
+ovs-clear
+
+source /tmp/internal-mgmt1-setup
+
+cat <<EOF >/tmp/internal-mgmt1-setup
+ovs-vsctl \
+  add-br internal -- \
+  add-port internal mgmt1 -- \
+  set interface mgmt1 type=internal -- \
+  set interface mgmt1 mac="$(echo "$HOSTNAME internal mgmt1" | md5sum | sed 's/^\(..\)\(..\)\(..\)\(..\)\(..\).*$/02\\:\1\\:\2\\:\3\\:\4\\:\5/')"
+systemctl restart systemd-networkd.service && netplan apply --debug
+ovs-clear
+EOF
