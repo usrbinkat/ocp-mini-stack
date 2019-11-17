@@ -84,11 +84,26 @@ echo_log 0 "Creating Libvirt VM ${name_FULL}"
 }
 
 #################################################################################
-stage_pxe_cfg () {
+stage_pxe_cfg_default () {
+echo_log 0 "Generating default pxelinux.cfg boot file..."
+
+cat <<EOF >/root/inventory/ocp/default
+default coreos
+prompt 0
+label coreos
+  menu default
+  kernel  http://httpd.ocp4.ministack.dev/boot/rhcos-4.2.0-x86_64-installer-kernel ip=dhcp rd.neednet=1 initrd=http://httpd.ocp4.ministack.dev/boot/rhcos-4.2.0-x86_64-installer-initramfs.img console=tty0 console=ttyS0 coreos.inst=yes coreos.inst.install_dev=vda coreos.inst.image_url=http://httpd.ocp4.ministack.dev/boot/rhcos-4.2.0-x86_64-metal-bios.raw.gz coreos.inst.ignition_url=http://httpd.ocp4.ministack.dev/ignition/bootstrap.ign
+  append coreos.first_boot=1 coreos.config.url=https://httpd.ocp4.ministack.dev/worker.ign
+EOF
+}
+
+#################################################################################
+stage_pxe_cfg_master () {
 eth0_HEXIP=$(gethostip -x ${eth0_IP})
+pxe_MASTERF=${eth0_HEXIP/%??/}
 echo_log 0 "Generating pxelinux.cfg master boot file for host: ${eth0_IP} ${eth0_HEXIP}"
 
-cat <<EOF >/root/inventory/ocp/${eth0_HEXIP}
+cat <<EOF >/root/inventory/ocp/${pxe_MASTERF}
 default coreos
 prompt 0
 label coreos
