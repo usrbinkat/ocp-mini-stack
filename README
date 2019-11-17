@@ -50,15 +50,14 @@
 | wifiap              | RUNNING | 10.1.1.233 (eth0)   |      | PERSISTENT | 0         |
 +---------------------+---------+---------------------+------+------------+-----------+
 
- Id   Name                           State
------------------------------------------------
- -    bootstrap.ocp4.braincraft.io   shut off
- -    master01.ocp4.braincraft.io    shut off
- -    master02.ocp4.braincraft.io    shut off
- -    master03.ocp4.braincraft.io    shut off
- -    worker01.ocp4.braincraft.io    shut off
- -    worker02.ocp4.braincraft.io    shut off
- -    worker03.ocp4.braincraft.io    shut off
+ Id   Name                             State     
+-------------------------------------------------
+ -    bootstrap02.ocp4.ministack.dev   shut off  
+ -    master0.ocp4.ministack.dev       shut off  
+ -    master1.ocp4.ministack.dev       shut off  
+ -    master2.ocp4.ministack.dev       shut off  
+ -    worker01.ocp4.ministack.dev      shut off  
+ -    worker02.ocp4.ministack.dev      shut off
 
  Name        State    Autostart   Persistent
 ----------------------------------------------
