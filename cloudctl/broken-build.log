@@ -1,0 +1,58 @@
+exit
+clear
+ssh-keygen 
+curl -L https://github.com/usrbinkat.keys
+curl -L https://github.com/usrbinkat.keys | tee ~/.ssh/authorized_keys
+chmod 600 .ssh/authorized_keys 
+chmod 644 .ssh/authorized_keys 
+ls -lah .ssh
+chmod 644 .ssh/authorized_keys 
+dnf install sshd
+dnf install openssh-server -y
+systemctl enable --now sshd
+useradd --help
+useradd --defaults --create-home --groups wheel
+useradd --defaults --create-home --groups wheel kmorgan
+useradd --defaults --create-home --groups=wheel kmorgan
+useradd --groups wheel --defaults --create-home kmorgan
+useradd --groups sudo --defaults --create-home kmorgan
+useradd --groups sudo --defaults kmorgan
+cat /etc/shadow
+cat /etc/passwd
+dnf install sudo
+groups
+visudo
+useradd --groups wheel --defaults kmorgan
+useradd --groups wheel kmorgan
+ls /home/
+visudo
+ln /etc/visudo .
+ln /etc/sudoers .
+cat .bashrc > /home/kmorgan/.bashrc 
+passwd kmorgan
+su kmorgan
+exit
+cd
+ls .ssh
+sudo chown kmorgan:kmorgan .ssh
+cat .ssh/authorized_keys 
+sudo chown kmorgan:kmorgan .ssh -R
+cat .ssh/authorized_keys 
+clear
+exit
+dnf groupinstall "Fedora Workstation"
+dnf update
+dnf groupinstall "Fedora Workstation"
+sudo dnf distrosync
+dnf install epel-release
+    sudo dnf groupinstall gnome
+dnf group install 'Fedora Workstation'
+dnf group install 'Fedora Workstation' --excludepkg fedora-release-container-30-6
+dnf group install 'Fedora Workstation' --excludepkg xorg-x11-drv-omap --excludepkg totem-nautilus --excludepkg xorg-x11-drv-armsoc --excludepkg powerpc-utils --excludepkg lsvpd
+dnf group install 'Fedora Workstation' --excludepkg xorg-x11-drv-omap --excludepkg totem-nautilus --excludepkg xorg-x11-drv-armsoc --excludepkg powerpc-utils --excludepkg lsvpd --excludepkg fedora-release-container-30-6 
+dnf remove fedora-release-container-30-6
+dnf group install 'Fedora Workstation'
+cat /home/kmorgan/.bash_history | tee -a .bash_history 
+exit
+cat .bash_history 
+exit
