@@ -60,30 +60,6 @@ req_boot () {
 }
 
 #################################################################################
-# Load DHCP/DNS/PXE Config Files
-config_runner () {
-
-  echo_log 0 "Loading pxelinux bootstrap & master role cores boot menus"
-  # load alphaHex pxe boot config files
-  for i in $(ls /tmp/ocp4pxe/); do 
-    lxc file push /tmp/ocp4pxe/$i \
-	    tftp/tftpboot/pxelinux.cfg/
-  done
-
-  echo_log 0 "Loading \{hwaddr/ipaddr/hostname\} tables"
-  # Load etc/ethers mac/ip/hostname tables
-  lxc file push /tmp/ethers \
-	    dnsmasq/etc/ethers
-  lxc exec dnsmasq -- sh -c 'chmod 644 /etc/ethers'
-
-  echo_log 0 "Restarting dnsmasq service on \'dnsmasq\' container"
-  # Reload dnsmasq
-  lxc exec dnsmasq -- \
-	  /bin/bash -c 'systemctl restart dnsmasq 2>/dev/null'
-
-}
-
-#################################################################################
 spawn_build () {
 echo_log 0 "Creating Libvirt VM ${name_FULL}"
 
@@ -113,7 +89,7 @@ stage_pxe_cfg () {
 eth0_HEXIP=$(gethostip -x ${eth0_IP})
 echo_log 0 "Generating pxelinux.cfg master boot file for host: ${eth0_IP} ${eth0_HEXIP}"
 
-cat <<EOF >/tmp/ocp4pxe/${eth0_HEXIP}
+cat <<EOF >/root/inventory/ocp/${eth0_HEXIP}
 default coreos
 prompt 0
 label coreos
@@ -150,8 +126,8 @@ echo_log 0 "Initializing Nodes: ${node_ROLE}"
 
       # Log to /etc/ethers & write pxelinux menu seed files
       eth0_IP='172.30.0.30'
-      echo "${eth0_HWADDR} ${name_FULL}" | sed 's/\\//g' | tee -a /tmp/ethers
-      echo "${eth0_HWADDR} ${eth0_IP}"   | sed 's/\\//g' | tee -a /tmp/ethers
+      echo "${eth0_HWADDR} ${name_FULL}" | sed 's/\\//g' | tee -a /root/inventory/ethers
+      echo "${eth0_HWADDR} ${eth0_IP}"   | sed 's/\\//g' | tee -a /root/inventory/ethers
       stage_pxe_cfg 
 
 
@@ -171,8 +147,8 @@ echo_log 0 "Initializing Nodes: ${node_ROLE}"
 
       # Log to /etc/ethers & write pxelinux menu seed files
       eth0_IP=$(echo 172.30.0.$(echo ${count} | sed 's/0/3/g'))
-      echo "${eth0_HWADDR} ${name_FULL}" | sed 's/\\//g' | tee -a /tmp/ethers
-      echo "${eth0_HWADDR} ${eth0_IP}"   | sed 's/\\//g' | tee -a /tmp/ethers
+      echo "${eth0_HWADDR} ${name_FULL}" | sed 's/\\//g' | tee -a /root/inventory/ethers
+      echo "${eth0_HWADDR} ${eth0_IP}"   | sed 's/\\//g' | tee -a /root/inventory/ethers
       stage_pxe_cfg 
 
       # Init node
@@ -193,8 +169,8 @@ echo_log 0 "Initializing Nodes: ${node_ROLE}"
 
       # Log to /etc/ethers
       eth0_IP=$(echo 172.30.1.$(echo ${count} | sed 's/0/4/g'))
-      echo "${eth0_HWADDR} ${name_FULL}" | sed 's/\\//g' | tee -a /tmp/ethers
-      echo "${eth0_HWADDR} ${eth0_IP}"   | sed 's/\\//g' | tee -a /tmp/ethers
+      echo "${eth0_HWADDR} ${name_FULL}" | sed 's/\\//g' | tee -a /root/inventory/ethers
+      echo "${eth0_HWADDR} ${eth0_IP}"   | sed 's/\\//g' | tee -a /root/inventory/ethers
 
       # Init node
       spawn_build
@@ -218,10 +194,10 @@ run_clean () {
     ovs-vsctl del-port $i;
   done
   
-  rm    -rf /tmp/ocp4pxe 2>/dev/null
-  mkdir -p  /tmp/ocp4pxe
+  rm    -rf /root/inventory/ocp 2>/dev/null
+  mkdir -p  /root/inventory/ocp
   
-  echo '' > /tmp/ethers
+  echo '' > /root/inventory/ethers
 }
 
 #################################################################################
