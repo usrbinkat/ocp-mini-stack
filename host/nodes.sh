@@ -19,12 +19,12 @@ echo_log () {
 
 #################################################################################
 # Virtual Machine Variables
-name_BASE="ocp4.braincraft.io"
-vm_CPU=2           # CPU Count
-vm_RAM=4096        # in Megabytes
+name_BASE="ocp4.ministack.dev"
+vm_CPU=4           # CPU Count
+vm_RAM=8192        # in Megabytes
 root_DISK=120      # in Gigabytes
 bstrap_COUNT=01    # Set Bootstrap Build
-master_COUNT=03    # Set VM spawn count
+master_COUNT=2     # Set VM spawn count
 worker_COUNT=02    # Set VM spawn count
 storage_POOL="/var/lib/libvirt/images"
 
@@ -118,8 +118,8 @@ default coreos
 prompt 0
 label coreos
   menu default
-  kernel  http://httpd.ocp4.braincraft.io/boot/rhcos-4.2.0-x86_64-installer-kernel ip=dhcp rd.neednet=1 initrd=http://httpd.ocp4.braincraft.io/boot/rhcos-4.2.0-x86_64-installer-initramfs.img console=tty0 console=ttyS0 coreos.inst=yes coreos.inst.install_dev=vda coreos.inst.image_url=http://httpd.ocp4.braincraft.io/boot/rhcos-4.2.0-x86_64-metal-bios.raw.gz coreos.inst.ignition_url=http://httpd.ocp4.braincraft.io/ignition/bootstrap.ign
-  append coreos.first_boot=1 coreos.config.url=https://httpd.ocp4.braincraft.io/master.ign
+  kernel  http://httpd.ocp4.ministack.dev/boot/rhcos-4.2.0-x86_64-installer-kernel ip=dhcp rd.neednet=1 initrd=http://httpd.ocp4.ministack.dev/boot/rhcos-4.2.0-x86_64-installer-initramfs.img console=tty0 console=ttyS0 coreos.inst=yes coreos.inst.install_dev=vda coreos.inst.image_url=http://httpd.ocp4.ministack.dev/boot/rhcos-4.2.0-x86_64-metal-bios.raw.gz coreos.inst.ignition_url=http://httpd.ocp4.ministack.dev/ignition/bootstrap.ign
+  append coreos.first_boot=1 coreos.config.url=https://httpd.ocp4.ministack.dev/master.ign
 EOF
 }
 
@@ -160,7 +160,7 @@ echo_log 0 "Initializing Nodes: ${node_ROLE}"
 
   # Build Masters
   elif [[ ${node_ROLE} == "master" ]]; then
-    for count in $(seq -w 01 ${master_COUNT}); do
+    for count in $(seq -w 0 ${master_COUNT}); do
 
       # Set VM Name & Declare Build
       name_FULL="${node_ROLE}${count}.${name_BASE}"
