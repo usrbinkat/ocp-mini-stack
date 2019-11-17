@@ -142,7 +142,7 @@ echo_log 0 "Initializing Nodes: ${node_ROLE}"
       eth0_IP='172.30.0.30'
       echo "${eth0_HWADDR} ${name_FULL}" | sed 's/\\//g' | tee -a /root/inventory/ethers
       echo "${eth0_HWADDR} ${eth0_IP}"   | sed 's/\\//g' | tee -a /root/inventory/ethers
-      stage_pxe_cfg 
+      stage_pxe_cfg_master
 
 
       # Init node
@@ -163,7 +163,6 @@ echo_log 0 "Initializing Nodes: ${node_ROLE}"
       eth0_IP=$(echo 172.30.0.$(echo ${count} | sed 's/0/3/g'))
       echo "${eth0_HWADDR} ${name_FULL}" | sed 's/\\//g' | tee -a /root/inventory/ethers
       echo "${eth0_HWADDR} ${eth0_IP}"   | sed 's/\\//g' | tee -a /root/inventory/ethers
-      stage_pxe_cfg 
 
       # Init node
       spawn_build
@@ -243,6 +242,7 @@ safety_BOOL=$(virsh list --all | grep ${name_BASE} 2>&1 1>/dev/null; echo $?)
 run_core () {
 safety_check
 run_clean
+stage_pxe_cfg_default
 run_spawn bootstrap
 run_spawn master
 run_spawn worker
