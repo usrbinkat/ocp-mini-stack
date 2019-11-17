@@ -1,0 +1,7 @@
+Host *
+  Port 22
+  User root
+  StrictHostKeyChecking no 
+
+Host github.com
+  IdentityFile ~/.ssh/id_rsa_kmorgan

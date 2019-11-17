@@ -1,0 +1,158 @@
+exit
+ls .ssh/
+cat .ssh/authorized_keys 
+curl -L https://github.com/usrbinkat.keys | tee -a .ssh/authorized_keys 
+exit
+sudo su
+exit
+clear
+sudo chown kmorgan:kmorgan .bashrc
+exit
+clear
+vim .bashrc
+ls .ssh
+ls
+ls .ssh/
+exit
+ls .ssh/
+clear
+ssh-keygen exit
+exit
+dnf install libvirt-client squashfuse snapd -y
+sudo dnf install libvirt-client squashfuse snapd -y
+ip a
+reboot
+sudo reboot
+exit
+ip a
+clear
+exit
+snap find lxd
+dnf search lxd
+snap install lxd
+sudo snap install lxd
+reboot
+sudo reboot
+snap list
+clear
+sudo su
+exit
+virsh list --all
+exit
+lxc remote add carrier carrier.ministack.dev
+lxc remote set-default carrier
+clear
+lxc list
+clear
+ls .ssh
+ssh-keygen -b 4086 -t rsa -f /home/oracle/.ssh/id_rsa -q -P "" 
+ssh-keygen -b 4086 -t rsa -f ~/.ssh/id_rsa -q -P "" 
+ssh carrier
+ssh root@carrier
+vim .ssh/config
+ssh root@carrier
+chmod 600 .ssh/config 
+ln .ssh ssh -s
+ls
+clear
+rm -rf thinclient_drives/
+clear
+ssh carrier
+vim .ssh/config 
+ssh carrier
+virsh qemu+ssh://root@10.10.20.2/system list --all
+virsh ssh+qemu://root@10.10.20.2/system list --all
+virsh -c qemu+ssh://root@10.10.20.2/system list --all
+vim .bashrc
+\clear
+virsh list --all
+alias
+bash
+exit
+clear
+virsh list --all
+lxc list
+lxc delete --force t01
+clear
+ls
+rm ssh
+ln .ssh/config ./ssh-config
+ls
+ln .bashrc ./bashrc
+ls
+clear
+ls .ssh
+sudo chown kmorgan:kmorgan . -R
+ll .ssh/
+git clone git@github.com:usrbinkat/ocp-mini-stack.git
+dnf install git -y
+sudo dnf install git -y
+clear
+git clone git@github.com:usrbinkat/ocp-mini-stack.git
+vim .ssh/config 
+git clone git@github.com:usrbinkat/ocp-mini-stack.git
+clear
+ls
+cd ocp-mini-stack/
+clear
+ls
+clear
+exit
+clear
+watch -c virsh list --all
+virsh list --all
+clear
+ls
+clear
+cd ocp-mini-stack/
+git config --global user.name usrbinkat
+git config --global user.email usrbinkat@braincraft.io
+clear
+git pull
+clear
+git checkout pre-alpha-00
+clear
+ls
+mv host 01_host
+mv gateway 02_gateway
+mv dnsmasq 03_dnsmasq
+mv cloudctl 04_cloudctl
+clear; ll
+mv opt/ aux/
+clear; ll
+ls ansible/
+clear; ll
+mv httpd 03_httpd
+mv 03_dnsmasq 04_dnsmasq
+clear; ll
+mv haproxy 04_haproxy
+clear; ll
+mv 04_cloudctl/ cloudctl
+mv 04_dnsmasq/ dnsmasq
+clear; ll
+mv dnsmasq 05_dnsmasq
+clear; ll
+mv tftp 06_tftp
+clear; ll
+mkdir queue
+mv squid/ simpleca/ ipa/ ansible/ queue/
+clear; ls
+clear; ll
+mv nfs 07_nfs
+clear ;ll
+mv cloudctl 08_cloudctl
+clear; ll
+mv 09_hostapd
+mv hostapd/ 09_hostapd
+clear; ls
+clear; ll
+mv queue/ zqueue
+clear; ll
+mv aux/ zaux
+clear; ll
+git stage -A; git commit -m 'ongoing pre-alpha poc work'; git push origin pre-alpha-00
+clear
+mkdir zweb
+touch zweb/.gitignore
+git stage -A; git commit -m 'ongoing pre-alpha poc work'; git push origin pre-alpha-00
+exit
