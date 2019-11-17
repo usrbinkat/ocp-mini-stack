@@ -209,7 +209,7 @@ safety_BOOL=$(virsh list --all | grep ${name_BASE} 2>&1 1>/dev/null; echo $?)
   echo_log 2 "Detected previous build for local cloud: ${name_BASE}"
   echo_log 2 "Continuing will destroy the preexisting cluster..."
     while true; do
-      read -rp "Are you sure you want to continue?" yn
+      read -rp "Are you sure you want to continue? (yes/no): " yn
         case $yn in
           [Yy]* ) echo_log 2 "Continuing with purge and cleanup" ; 
                   run_clean
