@@ -50,7 +50,6 @@ req_boot () {
                   break
                   ;;
           [Nn]* ) echo_log 2 "Exiting without cluster up due to user input"
-		  exit 0
                   ;;
               * ) echo "$SEP_2 Please answer yes or no." ;;
         esac
