@@ -231,7 +231,6 @@ run_clean
 run_spawn bootstrap
 run_spawn master
 run_spawn worker
-config_runner
 req_boot
 }
 
