@@ -1,0 +1,31 @@
+#!/bin/bash -x
+dir_START=$(pwd)
+dir_IGN=${dir_START}/ignition
+mkdir -p ${dir_IGN} 2>/dev/null ; cd ${dir_IGN}
+source ~/.ccio/ocp-mini-stack/secrets
+cat <<EOF >${dir_IGN}/install-config.yaml
+apiVersion: v1
+baseDomain: braincraft.io
+compute:
+- hyperthreading: Enabled   
+  name: worker
+  replicas: 0 
+controlPlane:
+  hyperthreading: Enabled   
+  name: master 
+  replicas: 3 
+metadata:
+  name: ocp4 
+networking:
+  clusterNetwork:
+  - cidr: 10.128.0.0/14 
+    hostPrefix: 23 
+  networkType: OpenShiftSDN
+  serviceNetwork: 
+  - 172.30.0.0/16
+platform:
+  none: {} 
+pullSecret: ${secret_PULLSECRET}
+sshKey: ${secret_SSHPUBKEY}
+EOF
+cd ${dir_START}
