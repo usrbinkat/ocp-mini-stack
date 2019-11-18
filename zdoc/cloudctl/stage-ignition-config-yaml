@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 dir_START=$(pwd)
 dir_IGN=${dir_START}/ignition
 mkdir -p ${dir_IGN} 2>/dev/null ; cd ${dir_IGN}

@@ -1,0 +1,13 @@
+
+02:6c:c7:0b:ad:12 bootstrap02.ocp4.ministack.dev
+02:6c:c7:0b:ad:12 172.30.0.30
+02:3a:72:44:40:32 master0.ocp4.ministack.dev
+02:3a:72:44:40:32 172.30.0.3
+02:91:bd:c6:45:60 master1.ocp4.ministack.dev
+02:91:bd:c6:45:60 172.30.0.1
+02:25:ff:79:9c:01 master2.ocp4.ministack.dev
+02:25:ff:79:9c:01 172.30.0.2
+02:e5:75:b5:f4:67 worker01.ocp4.ministack.dev
+02:e5:75:b5:f4:67 172.30.1.41
+02:40:c1:4c:74:31 worker02.ocp4.ministack.dev
+02:40:c1:4c:74:31 172.30.1.42

@@ -1,7 +1,6 @@
 #!/bin/bash
 guest_check () {
-lxc list
 echo
-virsh -c qemu+ssh://root@10.1.1.2/system list --all
+virsh -c qemu+ssh://root@10.10.20.2/system list --all
 }
 guest_check
