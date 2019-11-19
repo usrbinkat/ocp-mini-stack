@@ -106,7 +106,7 @@ ls
 clear
 cd ocp-mini-stack/
 git config --global user.name usrbinkat
-git config --global user.email usrbinkat@braincraft.io
+git config --global user.email usrbinkat@ministack.dev
 clear
 git pull
 clear

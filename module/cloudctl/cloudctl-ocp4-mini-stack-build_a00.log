@@ -561,7 +561,7 @@ ssh 10.10.20.3
 ssh 10.10.20.2
 ssh root@10.10.20.2
 ssh root@rhev01
-ssh root@rhev01.braincraft.io
+ssh root@rhev01.ministack.dev
 vim .ssh/config
 clear
 lxc list
@@ -595,8 +595,8 @@ lxc ls
 lxc exec tftp ash
 clear
 exit
-ping master01.ocp4.braincraft.io
-ping bootstrap.ocp4.braincraft.io
+ping master01.ocp4.ministack.dev
+ping bootstrap.ocp4.ministack.dev
 exit
 clear
 lxc list
@@ -747,16 +747,16 @@ ls
 clear
 ls
 clear
-virsh console master01.ocp4.braincraft.io
-virsh stop master01.ocp4.braincraft.io
-virsh destroy master01.ocp4.braincraft.io
-virsh start master01.ocp4.braincraft.io
-virsh console master01.ocp4.braincraft.io
+virsh console master01.ocp4.ministack.dev
+virsh stop master01.ocp4.ministack.dev
+virsh destroy master01.ocp4.ministack.dev
+virsh start master01.ocp4.ministack.dev
+virsh console master01.ocp4.ministack.dev
 clear
 ls
 clear
-virsh console master01.ocp4.braincraft.io
-virsh destroy master01.ocp4.braincraft.io; virsh start master01.ocp4.braincraft.io; virsh console master01.ocp4.braincraft.io
+virsh console master01.ocp4.ministack.dev
+virsh destroy master01.ocp4.ministack.dev; virsh start master01.ocp4.ministack.dev; virsh console master01.ocp4.ministack.dev
 ssh rhev01
 clear
 ssh bootstrap

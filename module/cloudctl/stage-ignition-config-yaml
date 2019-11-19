@@ -1,11 +1,11 @@
 #!/bin/bash
 dir_START=$(pwd)
-dir_IGN=${dir_START}/ignition
+dir_IGN=${dir_START}/ocp4
 mkdir -p ${dir_IGN} 2>/dev/null ; cd ${dir_IGN}
 source ~/.ccio/ocp-mini-stack/secrets
 cat <<EOF >${dir_IGN}/install-config.yaml
 apiVersion: v1
-baseDomain: braincraft.io
+baseDomain: ministack.dev
 compute:
 - hyperthreading: Enabled   
   name: worker

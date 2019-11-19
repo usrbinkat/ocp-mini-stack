@@ -132,7 +132,7 @@ echo_log 0 "Initializing Nodes: ${node_ROLE}"
   if [[ ${node_ROLE} == "bootstrap" ]]; then
 
       # Set VM Name & Declare Build
-      name_FULL="${node_ROLE}${count}.${name_BASE}"
+      name_FULL="${node_ROLE}.${name_BASE}"
       echo_log 0 "Initializing .. ${name_FULL}"
 
       # Generate node variables
