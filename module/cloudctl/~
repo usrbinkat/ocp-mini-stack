@@ -1,8 +1,9 @@
 #!/bin/bash
-dir_START=$(pwd)
-dir_IGN=${dir_START}/ocp4
-mkdir -p ${dir_IGN} 2>/dev/null ; cd ${dir_IGN}
-source ~/.ccio/ocp-mini-stack/secrets
+dir_OCP4_PROFILE=${HOME}/.ccio/ocp4-mini-stack/
+rm -rf ${dir_OCP4_PROFILE} 2>/dev/null
+mkdir -p ${dir_OCP4_PROFILE} 2>/dev/null
+
+write_install_config () {
 cat <<EOF >${dir_IGN}/install-config.yaml
 apiVersion: v1
 baseDomain: ministack.dev
@@ -29,3 +30,4 @@ pullSecret: ${secret_PULLSECRET}
 sshKey: ${secret_SSHPUBKEY}
 EOF
 cd ${dir_START}
+}

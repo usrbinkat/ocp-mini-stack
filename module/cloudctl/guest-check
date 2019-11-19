@@ -1,6 +1,0 @@
-#!/bin/bash
-guest_check () {
-echo
-virsh -c qemu+ssh://root@10.10.20.2/system list --all
-}
-guest_check

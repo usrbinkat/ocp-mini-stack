@@ -1,0 +1,3 @@
+I thought I was doing something wrong but now I'm actually kind of concerned about the hostname -- forward and reverse dns works, hostname is correct on first boot, reverts to localhost.localdomain on next boot and the only manifest is the etcd pod.
+etcd does discovery and sets up properly, once the third master is online the bootstrap shuts down leaving the API offline.
+any ideas what I'm missing here?
