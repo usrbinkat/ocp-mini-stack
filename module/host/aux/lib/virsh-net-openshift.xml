@@ -1,0 +1,7 @@
+<network>
+  <name>openshift</name>
+  <forward mode='bridge'/>
+  <bridge name='openshift'/>
+  <virtualport type='openvswitch'/>
+</network>
+

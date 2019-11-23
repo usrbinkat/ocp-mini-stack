@@ -1,0 +1,77 @@
+    1  exit
+    2  clear
+    3  exit
+    4  dnf install vim haproxy -y
+    5  ln -f haproxy.cfg /etc/haproxy/haproxy.cfg 
+    6  systemctl enable --now haproxy
+    7  systemctl status haproxy
+    8  exit
+    9  vim haproxy.cfg 
+   10  vim /etc/haproxy/haproxy.cfg 
+   11  clear
+   12  cd /var/log/
+   13  ls
+   14  journalctl -fxe
+   15  ls
+   16  cd
+   17  ls
+   18  vim haproxy.cfg 
+   19  clear
+   20  exit
+   21  ls
+   22  vim /etc/haproxy/haproxy.cfg 
+   23  systemctl retart haproxy
+   24  systemctl restart haproxy
+   25  clear
+   26  exit
+   27  vim haproxy.cfg 
+   28  pkill -KILL vim
+   29  rm .haproxy.cfg.swp 
+   30  vim haproxy.cfg 
+   31  systemctl retart haproxy
+   32  systemctl restart haproxy
+   33  systemctl status haproxy
+   34  clear
+   35  exit
+   36  lnav
+   37  dnf install lnav
+   38  clear
+   39  vim haproxy.cfg 
+   40  clear
+   41  exit
+   42  vim haproxy.cfg 
+   43  systemctl restart haproxy
+   44  exit
+   45  vim haproxy.cfg 
+   46  dnsmasq
+   47  exit
+   48  clear
+   49  vim haproxy.cfg 
+   50  exit
+   51  vim haproxy.cfg 
+   52  exit
+   53  vim haproxy.cfg 
+   54  exit
+   55  vim haproxy.cfg 
+   56  exit
+   57  vim haproxy.cfg 
+   58  history | grep rc
+   59  systemctl restart haproxy
+   60  systemctl status haproxy
+   61  clear
+   62  ip a
+   63  vim haproxy.cfg 
+   64  ckear
+   65  exit
+   66  grep '127' *
+   67  exit
+   68  vim haproxy.cfg 
+   69  systemctl restart haproxy
+   70  systemctl status haproxy
+   71  vim haproxy.cfg 
+   72  systemctl restart haproxy
+   73  systemctl status haproxy
+   74  exit
+   75  clear
+   76  ls
+   77  history >>build.log

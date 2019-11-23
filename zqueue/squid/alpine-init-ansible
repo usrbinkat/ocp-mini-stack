@@ -1,0 +1,20 @@
+#!/bin/sh
+mkdir ~/.ssh
+
+# Write root ssh keys
+ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+
+# Correct permissions on authorized_keys
+touch /root/.ssh/authorized_keys
+chmod 600 /root/.ssh/authorized_keys
+
+# Append user keys
+curl -L https://github.com/usrbinkat.keys | tee -a ~/.ssh/authorized_keys
+
+# Add Packages
+apk update
+apk add openssh-server curl ansible
+
+# Enable ssh server
+rc-update add sshd
+rc-service sshd start

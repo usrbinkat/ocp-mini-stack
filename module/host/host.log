@@ -1,0 +1,21 @@
+# 
+
+# snapd
+https://forum.snapcraft.io/t/building-a-snap-rpm-for-red-hat-enterprise-linux-rhel-8/13728
+https://www.cyberciti.biz/faq/how-to-set-up-and-use-lxd-on-centos-linux-7-x-server/
+https://forum.snapcraft.io/t/how-to-build-snapd-from-source-im-using-red-hat-enterprise-linux-8/12640/7
+
+# golang
+https://access.redhat.com/documentation/en-us/red_hat_developer_tools/2019.1/html-single/using_go_toolset/index
+
+# OVS
+https://www.linuxtechi.com/install-use-openvswitch-kvm-centos-7-rhel-7/
+https://github.com/openvswitch/ovs/blob/master/rhel/README.RHEL.rst
+https://blog.scottlowe.org/2013/02/07/exploring-rhel-ovs-integrations/
+
+# HOSTAPD
+https://www.shellvoide.com/wifi/setup-wireless-access-point-hostapd-dnsmasq-linux/
+https://www.osradar.com/building-your-own-wireless-access-point-on-top-of-centos7/
+
+## 
+https://docs.openshift.com/container-platform/4.2/installing/installing_bare_metal/installing-bare-metal.html#installation-user-infra-machines-pxe_installing-bare-metal

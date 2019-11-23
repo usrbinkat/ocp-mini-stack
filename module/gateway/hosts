@@ -1,0 +1,23 @@
+127.0.0.1    localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1          localhost localhost.localdomain localhost6 localhost6.localdomain6
+#######################
+10.1.1.2     ibane.ministack.dev           ibane
+#######################
+172.30.0.1   gateway.ocp4.ministack.dev    gateway
+172.30.0.3   cloudctl.ocp4.ministack.dev   cloudctl
+172.30.0.4   haproxy.ocp4.ministack.dev    haproxy 
+172.30.0.4   nfs.ocp4.ministack.dev        nfs 
+172.30.0.7   dnsmasq.ocp4.ministack.dev    dnsmasq
+172.30.0.8   tftp.ocp4.ministack.dev       tftp
+172.30.0.9   httpd.ocp4.ministack.dev      httpd 
+172.30.0.11  simpleca.ocp4.ministack.dev   simpleca 
+172.30.0.20  squid.ocp4.ministack.dev      squid
+172.30.0.21  ipa.ocp4.ministack.dev        ipa 
+#######################
+172.30.0.30  bootstrap.ocp4.ministack.dev  bootstrap
+172.30.0.31  master01.ocp4.ministack.dev   master01
+172.30.0.32  master02.ocp4.ministack.dev   master02
+172.30.0.33  master03.ocp4.ministack.dev   master03
+#######################
+172.30.1.41  worker01.ocp4.ministack.dev   worker01
+172.30.1.42  worker02.ocp4.ministack.dev   worker02

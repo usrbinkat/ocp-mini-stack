@@ -1,0 +1,10 @@
+
+config wifi-iface 'wlan0'
+	option device 'wlan0'
+	option mode 'ap'
+	option ssid 'ministack'
+	option key 'ministack'
+	option encryption 'psk2'
+	option disassoc_low_ack '0'
+	option network 'lan'
+

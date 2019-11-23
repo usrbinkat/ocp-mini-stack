@@ -1,0 +1,13 @@
+dnf update
+dnf install -y bridge-utils hostapd iw vim network-scripts
+ln -f ifcfg-eth0 /etc/sysconfig/network-scripts/ifcfg-eth0 
+ln -f ifcfg-hostapd /etc/sysconfig/network-scripts/ifcfg-hostapd
+ln -f /root/hostapd.conf /etc/hostapd/hostapd.conf 
+systemctl disable systemd-networkd
+systemctl stop systemd-networkd
+systemctl enable --now network.service
+systemctl enable --now hostapd
+reboot
+
+# Troubleshooting:
+# systemctl stop hostapd ; hostapd -dd /etc/hostapd/hostapd.conf; reboot
