@@ -1,0 +1,27 @@
+architecture: x86_64
+config:
+  image.architecture: amd64
+  image.description: Fedora 30 amd64 (20191115_20:33)
+  image.os: Fedora
+  image.release: "30"
+  image.serial: "20191115_20:33"
+  image.type: squashfs
+  volatile.base_image: 94843f0a655b444adf18609558d24488781129fd7dddaf5d9981133148773e47
+  volatile.eth0.host_name: vethc71b33ce
+  volatile.eth0.hwaddr: 00:16:3e:b9:a7:c3
+  volatile.eth0.name: eth0
+  volatile.idmap.base: "0"
+  volatile.idmap.current: '[]'
+  volatile.idmap.next: '[]'
+  volatile.last_state.idmap: '[]'
+  volatile.last_state.power: RUNNING
+  volatile.wlan0.host_name: wlan0
+  volatile.wlan0.last_state.created: "false"
+  volatile.wlan0.last_state.hwaddr: d4:6a:6a:d5:4e:f1
+  volatile.wlan0.last_state.mtu: "1500"
+devices: {}
+ephemeral: false
+profiles:
+- hostapd
+stateful: false
+description: ""

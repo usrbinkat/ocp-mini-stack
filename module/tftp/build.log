@@ -1,0 +1,131 @@
+    1  exit
+    2  ls
+    3  exit
+    4  ls
+    5  ln -f /root/eth1.network /etc/systemd/network/
+    6  ln -f /root/eth1.network /etc/systemd/network/eth1.network
+    7  diff tftp.service /usr/lib/systemd/system/tftp.service
+    8  dnf install tftp-server syslinux-tftpboot
+    9  diff tftp.service /usr/lib/systemd/system/tftp.service
+   10  ln -f /root/tftp.service /usr/lib/systemd/system/tftp.service
+   11  mkdir /tftpboot/pxelinux.cfg
+   12  ls
+   13  mkdir pxelinux.cfg
+   14  mv default AC1E00 
+   15  ls /tftpboot/pxelinux.cfg/
+   16  ls
+   17  ls pxelinux.cfg/
+   18  rm AC1E00 
+   19  ls
+   20  tree .
+   21  clear
+   22  dnf install tree
+   23  clear
+   24  tree .
+   25  systemctl restart systemd-networkd
+   26  systemctl daemon-reload
+   27  systemctl enable --now tftp
+   28  history > build-tftp
+   29  vim build-tftp 
+   30  clear; ls
+   31  tree .
+   32  ls | tee -a README.md
+   33  tree . | tee -a README.md
+   34  cat README.md 
+   35  vim README.md 
+   36  clear
+   37  ls
+   38  clear
+   39  exit
+   40  vim /tftpboot/pxelinux.cfg/
+   41  exit
+   42  vim /tftpboot/pxelinux.cfg/default 
+   43  sed -i 's/braincraft.io/ministack.dev/g' /tftpboot/pxelinux.cfg/*
+   44  vim /tftpboot/pxelinux.cfg/default 
+   45  exit
+   46  vim /tftpboot/pxelinux.cfg/default 
+   47  vim /tftpboot/pxelinux.cfg/AC1E00 
+   48  clear
+   49  exit
+   50  cd /tftpboot/pxelinux.cfg/
+   51  ls
+   52  clear
+   53  ls
+   54  cat default 
+   55  cat AC1E00 
+   56  cat AC1E00 default
+   57  cat AC1E00 default | fpaste
+   58  dnf install fpaste -y && cat AC1E00 default | fpaste
+   59  ls 
+   60  exit
+   61  cd /tftpboot/pxelinux.cfg/
+   62  ls
+   63  rm pxelinux.0/
+   64  rm -rf pxelinux.0/
+   65  ls
+   66  cd ..
+   67  rm pxelinux.cfg/*
+   68  ls
+   69  ls pxelinux.cfg/
+   70  exit
+   71  cd /tftpboot/pxelinux.cfg/
+   72  ls
+   73  vim AC1E00 
+   74  exit
+   75  cd /tftpboot/pxelinux.cfg/
+   76  ls
+   77  vim default 
+   78  vim AC1E01 
+   79  vim AC1E00
+   80  exit
+   81  ls
+   82  ls /tftpboot/pxelinux.cfg/AC1E00
+   83  vi /tftpboot/pxelinux.cfg/AC1E00
+   84  vi /tftpboot/pxelinux.cfg/AC1E01
+   85  vi /tftpboot/pxelinux.cfg/AC1E00
+   86  clear
+   87  ls
+   88  rm pxelinux.cfg
+   89  unlink pxelinux.cfg
+   90  rm -rf pxelinux.cfg
+   91  ls
+   92  ln -s /tftpboot/pxelinux.cfg/
+   93  ls
+   94  cd pxelinux.cfg/
+   95  ls
+   96  vim AC1E00
+   97  exit
+   98  cat /etc/resolv.conf 
+   99  vim /etc/resolv.conf 
+  100  ping etcd-1.ocp4.ministack.dev
+  101  vim /etc/resolv.conf 
+  102  ping etcd-1.ocp4.ministack.dev
+  103  ping etcd-0.ocp4.ministack.dev
+  104  ping etcd-2.ocp4.ministack.dev
+  105  exit
+  106  vim pxelinux.cfg/AC1E01 
+  107  xit
+  108  exit
+  109  curl ping api-int.ocp4.ministack.dev
+  110  ping ping api-int.ocp4.ministack.dev
+  111  exit
+  112  cd /tftpboot/pxelinux.cfg/
+  113  ls
+  114  vim default 
+  115  vim AC1E01 
+  116  vim AC1E00
+  117  exit
+  118  vim /tftpboot/pxelinux.cfg/AC1E00 
+  119  vim /tftpboot/pxelinux.cfg/AC1E01
+  120  clear
+  121  exit
+  122  ls
+  123  ln /tftpboot/pxelinux.cfg/
+  124  ls /tftpboot/pxelinux.cfg/
+  125  ln /tftpboot/pxelinux.cfg/* .
+  126  clear
+  127  ls
+  128  unlink pxelinux.cfg/
+  129  unlink pxelinux.cfg
+  130  ls
+  131  history >>build.log

@@ -1,0 +1,8 @@
+#!/bin/bash -x
+ssh-keygen -t rsa -N "" -f ~/.ssh/id_rsa
+curl -L https://github.com/usrbinkat.keys | tee -a ~/.ssh/authorized_keys
+[[ -f /tmp/cloudctl.pub ]] && cat /tmp/cloudctl.pub >>~/.ssh/authorized_keys || echo "no cloudctl pub key detected"
+chmod 600 /root/.ssh/authorized_keys
+dnf update -y && dnf install vim openssh-server ansible python -y
+systemctl unmask systemd-logind
+systemctl enable --now sshd

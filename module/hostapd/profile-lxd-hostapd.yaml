@@ -1,0 +1,21 @@
+config:
+  linux.kernel_modules: ath10k_pci,cfg80211,ath10k_core,mac80211,ath
+  security.privileged: "true"
+description: Default LXD profile
+devices:
+  eth0:
+    nictype: bridged
+    parent: internal
+    type: nic
+  root:
+    path: /
+    pool: default
+    type: disk
+  wlan0:
+    name: wlan0
+    nictype: physical
+    parent: wlan0
+    type: nic
+name: hostapd
+used_by:
+- /1.0/containers/hostapd

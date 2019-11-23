@@ -1,0 +1,2 @@
+cloudctl setup
+stest

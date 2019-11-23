@@ -1,0 +1,19 @@
+config: {}
+description: Default LXD profile
+devices:
+  eth0:
+    nictype: bridged
+    parent: internal
+    type: nic
+  eth1:
+    nictype: bridged
+    parent: openshift
+    type: nic
+  root:
+    path: /
+    pool: default
+    type: disk
+name: ministack
+used_by:
+- /1.0/containers/dnsmasq
+- /1.0/containers/cloudctl

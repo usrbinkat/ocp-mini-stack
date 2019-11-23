@@ -1,0 +1,10 @@
+[Match]
+Name=eth1
+
+[Network]
+Address=172.30.0.7/16
+Gateway=172.30.0.1
+#DNS=172.30.0.7
+DNS=172.30.0.1
+DNS=1.1.1.1
+Domains=ocp4.ministack.dev

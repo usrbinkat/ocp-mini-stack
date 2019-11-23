@@ -1,0 +1,13 @@
+#!/bin/bash
+
+dnf install -y tree tftp-server syslinux-tftpboot
+
+mkdir /tftpboot/pxelinux.cfg
+mkdir pxelinux.cfg
+
+ln -f /root/eth1.network /etc/systemd/network/eth1.network
+ln -f /root/tftp.service /usr/lib/systemd/system/tftp.service
+
+systemctl daemon-reload
+systemctl restart systemd-networkd
+systemctl enable --now tftp

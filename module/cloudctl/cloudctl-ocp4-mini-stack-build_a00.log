@@ -1,0 +1,810 @@
+    4  ip a
+    5  nmcli show 
+    6  nmcli list
+    7  nmcli
+    8  ls /etc/NetworkManager/system-connections/
+    9  ls /etc/sysconfig/
+   10  ls /etc/sysconfig/network-scripts/ifcfg-ens3 
+   11  vim /etc/sysconfig/network-scripts/ifcfg-ens3 
+   12  vi /etc/sysconfig/network-scripts/ifcfg-ens3 
+   13  systemctl start network
+   14  clear
+   15  systemctl list-unit-files | grep net
+   16  systemctl status systemd-networkd
+   17  systemctl restart systemd-networkd
+   18  ip a
+   19  ip a
+   20  ip a
+   21  ip a
+   22  systemctl status systemd-networkd
+   23  clear
+   24  vi /etc/sysconfig/network-scripts/ifcfg-ens3 
+   25  ip a
+   26  vi /etc/sysconfig/network-scripts/ifcfg-ens3 
+   27  systemctl restart systemd-networkd
+   28  systemctl status systemd-networkd
+   29  ip a
+   30  mv /etc/sysconfig/network-scripts/ifcfg-ens3 /etc/sysconfig/network-scripts/ifcfg-eth0
+   31  ip a
+   32  ip a
+   33  ip a
+   34  ls
+   35  vim /etc/sysconfig/network-scripts/ifcfg-eth0 
+   36  vi /etc/sysconfig/network-scripts/ifcfg-eth0 
+   37  systemctl stop NetworkManager
+   38  systemctl restart systemd-networkd
+   39  ip a
+   40  ln /etc/sysconfig/network-scripts/ifcfg-eth0 
+   41  ls
+   42  dnf install xrdp
+   43  systemctl enable --now xrdp
+   44  clear
+   45  journalctl -fxe
+   46  systemctl list-unit-files | grep tpm
+   47  systemctl stop tpm2-abrmd
+   48  systemctl disable tpm2-abrmd
+   49  journalctl -fxe
+   50  ip r
+   51  ip a
+   52  systemctl restart systemd-networkd
+   53  ip a
+   54  ip a
+   55  ip a
+   56  clear
+   57  reboot
+   58  ip a
+   59  systemctl status network
+   60  systemctl status networkd
+   61  systemctl status systemd-networkd
+   62  ls
+   63  vim ifcfg-eth0 
+   64  vi ifcfg-eth0 
+   65  systemctl restart systemd-networkd
+   66  ip a
+   67  ifup eth0
+   68  ip a
+   69  vi ifcfg-eth0 
+   70  systemctl restart systemd-networkd
+   71  ip a
+   72  ip a
+   73  ip a
+   74  ifup eth0
+   75  nmtui
+   76  ip addr add 10.0.0.142 dev eth0
+   77  ip addr add 10.0.0.142/ dev eth0
+   78  ip addr add 10.0.0.142/24 dev eth0
+   79  ip r add default via 10.0.0.1
+   80  ip r
+   81  ip r add 10.0.0.0/24 dev eth0
+   82  ip r
+   83  ip link set eth0 up
+   84  ip r add default via 10.0.0.1
+   85  ip r add 10.0.0.0/24 dev eth0
+   86  ip a
+   87  ip link set eth0 up
+   88  ip a
+   89  clear
+   90  exit
+   91  dnf grouplist | grep -i desk
+   92  dnf group-install "Basic Desktop"
+   93  dnf groupinstall "Basic Desktop"
+   94  dnf groupinstall "Fedora Workstation"
+   95  dnf groupinstall "Fedora Workstation"
+   96  systemctl online
+   97  systemctl start graphical.target
+   98  systemctl status xrdp
+   99  ip a
+  100  ip link set eth0 up
+  101  ip a
+  102  ifup eth0
+  103  virsh network list
+  104  clear
+  105  ip a
+  106  vim /etc/sysconfig/network-scripts/ifcfg-eth0 
+  107  vi /etc/sysconfig/network-scripts/ifcfg-eth0 
+  108  systemctl restart systemd-networkd; journalctl -fxe
+  109  ip a
+  110  ifup eth0
+  111  find / -name eth0
+  112  find / -name ens3
+  113  exit
+  114  clear
+  115  systemctl status xrdp
+  116  systemctl restart xrdp
+  117  systemctl status xrdp
+  118  systemctl status xrdp
+  119  systemctl status xrdp
+  120  systemctl status xrdp
+  121  systemctl status xrdp
+  122  systemctl status xrdp
+  123  systemctl status xrdp
+  124  ip a
+  125  systemctl status xrdp
+  126  dnf groupinstall "Fedora Workstation"
+  127  dnf groupinstall "Fedora Workstation"
+  128  dnf groupinstall "GNOME"
+  129  dnf groupinstall "GNOME"
+  130  dnf groupinstall "base-x"
+  131  clear
+  132  journalctl -fxe
+  133  systemctl disable tpm2-abrmd
+  134  systemctl stop tpm2-abrmd
+  135  journalctl -fxe
+  136  clear
+  137  ip a
+  138  netstat -Lp
+  139  netstat -Ln
+  140  netstat -nl
+  141  netstat -nl -i eth0
+  142  netstat -nl -i
+  143  netstat -nl -I eth0
+  144  netstat -nl --interfaces=eth0
+  145  netstat -nl | more
+  146  systemctl restart xrdp
+  147  systemctl status xrdp
+  148  journalctl -fxe
+  149  systemctl list-unit-files --state=masked
+  150  systemctl unmask systemd-logind
+  151  reboot
+  152  systemctl status xrdp
+  153  ip a
+  154  systemctl status systemd-logind
+  155  usermod -a G wheel kmorgan
+  156  usermod -a -G wheel kmorgan
+  157  usermod -a -G admins kmorgan
+  158  visudo
+  159  reboot
+  160  cd
+  161  clear
+  162  dnf update
+  163  dnf install gnome-tweak-tools
+  164  dnf install epel-release
+  165  dnf install gnome-tweaks
+  166  ssh root@10.0.0.185
+  167  exit
+  168  clear
+  169  su kmorgan
+  170  ip a
+  171  ping cloudctl
+  172  exit
+  173  cd /etc/netpl
+  174  cd /etc/netplan
+  175  clear
+  176  ls
+  177  clear
+  178  cd /etc/sysconfig/network-scripts/
+  179  ls
+  180  cp ifcfg-eth0 ifcfg-eth1
+  181  vim ifcfg-eth1
+  182  dnf install vim -y
+  183  vim ifcfg-eth1
+  184  vim ifcfg-eth0
+  185  systemctl restart network
+  186  systemctl restart systemd-networkd
+  187  ip a
+  188  dnf update
+  189  clear
+  190  ip a
+  191  ip link set eth0 down
+  192  dnf update
+  193  ping google.com
+  194  ping 10.10.91.3
+  195  ls
+  196  ip a
+  197  exit
+  198  virsh net-list
+  199  ip a
+  200  lxc network list
+  201  virsh net-list
+  202  virsh net-destroy default
+  203  virsh net-undefine default
+  204  ip a
+  205  clear
+  206  lxc list
+  207  exit
+  208  cd /etc/sysconfig/network-scripts/
+  209  mv ifcfg-eth1 ifcfg-eth0 -f
+  210  ls
+  211  sed -i 's/eth1/eth0/g
+  212  sed -i 's/eth1/eth0/g' ifcfg-eth0 
+  213  reboot
+  214  ip a
+  215  ip a
+  216  exit
+  217  ip a
+  218  reboot
+  219  clear
+  220  ip a
+  221  vim /etc/sysconfig/network-scripts/ifcfg-eth0 
+  222  vim /etc/sysconfig/network-scripts/ifcfg-eth0 
+  223  nmtui
+  224  nmcli 
+  225  nmcli con show
+  226  nmcli con del b8dc9c21-f5dc-4c79-97e9-adef3084b926
+  227  clear
+  228  ip a
+  229  reboot
+  230  ip a
+  231  nmcli con del b8dc9c21-f5dc-4c79-97e9-adef3084b926
+  232  nmcli con show
+  233  ip a
+  234  reboot
+  235  nmcli
+  236  nmcli con show
+  237  nmcli con del eth0
+  238  ip a
+  239  clear
+  240  nmtui
+  241  ip a
+  242  rebooty
+  243  reboot
+  244  ip a
+  245  cd /etc/sysconfig/network-scripts/
+  246  ls
+  247  mv ifcfg-eth0 ~
+  248  ls
+  249  reboot
+  250  ip a
+  251  cd /etc/systemd/network/
+  252  ls
+  253  mv eth0.network ~
+  254  reboot
+  255  ip a
+  256  clear
+  257  ipa
+  258  ip a
+  259  systemctl list-unit-files | grep net
+  260  systemctl disable systemd-networkd
+  261  systemctl enable NetworkManager
+  262  rebooty
+  263  reboot
+  264  cd
+  265  ls
+  266  cat eth0.network 
+  267  speedtest
+  268  speedtest-cli
+  269  dnf install speedtest-cli
+  270  speedtest-cli 
+  271  speedtest-cli 
+  272  cear
+  273  clear
+  274  ip a
+  275  ifcfg
+  276  ifcfg del eth0
+  277  ifcfg eth0 del
+  278  ifcfg eth0 stop
+  279  ip a
+  280  clear
+  281  ip a
+  282  systemctl list-unit-files | grep netw
+  283  systemctl list-unit-files | grep netw -i
+  284  ip a
+  285  ifcfg --help
+  286  ifcfg
+  287  nmtui
+  288  ip a
+  289  clear
+  290  nmtui
+  291  ip a
+  292  systemctl list-unit-files | grep ifcf
+  293  systemctl list-unit-files | grep if
+  294  dnf install ifcfg-rh
+  295  dnf install nm-settings-ifcfg-rh
+  296  dnf search ifcfg
+  297  dnf remove python3-ifcfg
+  298  dnf remove python3-ifcfg
+  299  clear
+  300  systemctl status networ
+  301  systemctl status network
+  302  systemctl status systemd-network
+  303  systemctl status systemd-networkd
+  304  systemctl list-unit-files | grep dhc
+  305  systemctl status NetworkManager
+  306  cd /etc/NetworkManager/system-connections/
+  307  ls
+  308  clear
+  309  cd
+  310  nmcli
+  311  ip a
+  312  nmcli --help
+  313  nmcli 
+  314  nmcli g
+  315  nmcli d
+  316  nmcli edit eth0
+  317  nmcli device --help
+  318  nmcli device set eth0 managed yes
+  319  nmtui
+  320  ip a
+  321  reboot
+  322  ip a
+  323  exit
+  324  cd
+  325  sudo snap install lxd
+  326  reboot
+  327  dnf install httpd
+  328  cd /var/www/html/
+  329  ls
+  330  vim index.html
+  331  systemctl status httpd
+  332  systemctl enable --now httpd
+  333  firewall-cmd --enable-service=http
+  334  firewall-cmd --add-service=http
+  335  firewall-cmd --add-service=https
+  336  mv index.html host.txt
+  337  ls
+  338  mkdir files
+  339  mv host.txt files/
+  340  cd
+  341  lxc list
+  342  clear
+  343  dnf install lxc-client
+  344  dnf install lxc-clients
+  345  dnf install lxd-client
+  346  dnf install lxd-clients
+  347  snap list
+  348  snap install lxd
+  349  ls /home/
+  350  usermod -aG lxd kmorgan
+  351  exit
+  352  clear
+  353  lxc remote add hrev01 10.10.20.2
+  354  lxc remote add hrev01 10.10.20.2
+  355  lxc remote set-default rhev01
+  356  lxc remote list
+  357  lxc remote set-default hrev01
+  358  lxc list
+  359  exit
+  360  cd
+  361  lxc list
+  362  grep -iE "lxc|lxd" /etc/passwd
+  363  usermod -aG lxd kmorgan
+  364  groups kmorgan
+  365  groups
+  366  usermod -aG admin kmorgan
+  367  usermod -aG admins kmorgan
+  368  exit
+  369  cd
+  370  systemctl status httpd
+  371  ls /var/www/html/
+  372  ls /var/www/html/files/
+  373  firewall-cmd status
+  374  firewall-cmd show
+  375  firewall-cmd help
+  376  firewall-cmd --help
+  377  firewall-cmd --help | grep -iE "stat|show"
+  378  firewall-cmd --state
+  379  firewall-cmd --help | grep -iE "stat|show|port"
+  380  firewall-cmd --list-ports
+  381  firewall-cmd --service=http/tcp --service=https/tcp --permanent
+  382  firewall-cmd --add-service=http/tcp --add-service=https/tcp --permanent
+  383  firewall-cmd --add-service=http --add-service=https --permanent
+  384  firewall-cmd reload
+  385  firewall-cmd --reload
+  386  exit
+  387  ping rhev01
+  388  clear
+  389  exit
+  390  cd /var/www/html/files/
+  391  dd if=/dev/zero of=testfile bs=1024 count=1024000
+  392  mv testfile 1gb.iso
+  393  file 1gb.iso 
+  394  exit
+  395  ping 10.10.91.3
+  396  exit
+  397  cd
+  398  ls
+  399  cd html/
+  400  ls
+  401  cd upi/
+  402  clear
+  403  ls
+  404  vim install-config.yaml 
+  405  cd ..
+  406  ls
+  407  mv upi/ ocp-upi
+  408  mv ocp-upi/ ocp4-upi
+  409  cd ocp4-upi/
+  410  clear
+  411  ls
+  412  lxc exec haproxy ash
+  413  clear
+  414  dnf search libvirt
+  415  dnf search libvirt | grep client
+  416  dnf install libvirt-client
+  417  exit
+  418  cd
+  419  ln /var/www/html/
+  420  ln /var/www/html/ -s
+  421  ls
+  422  cd html/
+  423  ls
+  424  mv files/ aux
+  425  clear
+  426  ls
+  427  ls
+  428  clear
+  429  ls
+  430  mkdir download
+  431  mv download/ downloads
+  432  cd downloads/
+  433  clear
+  434  wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/openshift-install-linux-4.2.0.tar.gz
+  435  tar xvf openshift-install-linux-4.2.0.tar.gz 
+  436  ls
+  437  cp openshift-install /usr/bin/openshift-install
+  438  cp openshift-install /usr/bin/oci
+  439  cd ..
+  440  ls
+  441  mkdir secrets
+  442  clear
+  443  vim secrets/pull-secret
+  444  vim secrets/pull-secret
+  445  source secrets/pull-secret 
+  446  echo $PullSecret 
+  447  clear
+  448  ls
+  449  mkdir upi
+  450  cd upi/
+  451  openshift-install
+  452  openshift-install create manifests --dir=$(pwd)
+  453  openshift-install create manifests --dir=$(pwd) --help
+  454  clear
+  455  openshift-install create manifests --dir=$(pwd) upi
+  456  openshift-install create manifests --dir $(pwd) 
+  457  ls
+  458  clear
+  459  ls
+  460  vim install-config.yaml
+  461  mkdir ../bak
+  462  cp install-config.yaml ../bak/
+  463  cp install-config.yaml ../bak/
+  464  vim install-config.yaml
+  465  cp install-config.yaml ../bak/ -f
+  466  cat ../bak/install-config.yaml 
+  467  clear
+  468  ls
+  469  vim install-config.yaml 
+  470  clear
+  471  ls
+  472  exit
+  473  vim /etc/resolv.conf 
+  474  ping bootstrap
+  475  clear
+  476  exit
+  477  cd /var/www/html/
+  478  ls
+  479  tree .
+  480  cd boot/
+  481  ls
+  482  clear
+  483  ls
+  484  wget https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.2/latest/rhcos-4.2.0-x86_64-metal-bios.raw.gz
+  485  mkdir iso
+  486  cd iso/
+  487  wget https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.2/latest/rhcos-4.2.0-x86_64-installer.iso
+  488  ls
+  489  $ xorriso -osirrox on -indev image.iso -extract / extracted_iso_image
+  490  mkdir extracted; xorriso -osirrox on -indev rhcos-4.2.0-x86_64-installer.iso -extract / extracted
+  491  cd extracted/
+  492  ls
+  493  find ./ -name "*ign"
+  494  find ./ -name "*boot*"
+  495  cd ../..
+  496  ls
+  497  clear; ls
+  498  clear; ll
+  499  ls ..
+  500  ls ../ignition/
+  501  clear
+  502  ls
+  503  history | tee cloudctl-ocp4-mini-stack-build_a00.log
+ls .ssh
+ssh-keygen
+sudo su
+sudo timedatectl
+sudo timedatectl set-timezone America/Denver
+ssh root@10.0.0.185
+cd
+clear
+ssh root@10.0.0.185
+ip a
+clear
+journalctl -xe | grep eth0
+dmesg
+dmesg | grep eth0
+clear
+ip a
+ls
+sudo su
+exit
+ip a
+exit
+ip a
+exit
+ssh 10.10.20.2
+exit
+clear
+exit
+clear
+lxc remote list
+lxc list
+apt-get install lxd client
+dnf install -y lxd-client
+sudo dnf install -y lxd-client
+dnf search lxd
+sudo dnf install snapd
+sudo dnf search squashf
+sudo dnf install squashfuse
+sudo ln -s /var/lib/snapd/snap /snap
+sudo snap install lxd
+sudo su
+clear
+exit
+clear
+exit
+cd .ssh
+ls
+cat authorized_keys 
+vim authorized_keys 
+exit
+clear
+dnf search bash | grep -iE "colo|pret|enh"
+vim .bashrc 
+exit
+clear
+htop
+sudo dnf install htop -y
+htop
+clear
+exit
+ssh 10.10.20.3
+ssh 10.10.20.2
+ssh root@10.10.20.2
+ssh root@rhev01
+ssh root@rhev01.ministack.dev
+vim .ssh/config
+clear
+lxc list
+exit
+clear
+exit
+clear
+lxc list
+sudo usermod -aG lxd kmorgan
+exit
+whereis lxc
+lxc list
+reboot
+sudo reboot
+ssh root@10.10.20.2
+sudo chown kmorgan .ssh/config 
+ssh root@10.10.20.2
+sudo chmod 600 .ssh/config 
+ssh root@10.10.20.2
+ip a
+ssh root@10.10.20.2
+clear
+lxc list
+lxc exec gateway ash
+clear
+lls
+exit
+sudo su
+exit
+lxc ls
+lxc exec tftp ash
+clear
+exit
+ping master01.ocp4.ministack.dev
+ping bootstrap.ocp4.ministack.dev
+exit
+clear
+lxc list
+virsh list
+virsh list --all
+exit
+ls
+cd html/
+ls
+tree .
+vim ocp4-upi/install-config.yaml 
+clear
+cd
+clear
+ls .ssh
+chmod 600 .ssh/id_rsa_tghadmin
+ssh bootstrap
+vim .ssh/id_rsa_usrbinkat.pub
+vim .ssh/id_rsa_usrbinkat
+chmod 600 .ssh/id_rsa_usrbinkat
+vim .ssh/config 
+ssh bootstrap
+clear
+lxc list
+sudo su
+clear
+lxc remote list
+lxc remote add rhev01 10.10.20.2
+lxc remote set-default rhev01
+clear;
+lxc list
+sudo su
+ssh 10.10.20.2
+cat .ssh/config 
+vim .ssh/config
+sudo su
+clear
+lxc list
+udo su
+sudo su
+clear; lxc list
+lxc exec gateway ash
+clear
+ls
+rm Videos/ Templates/ Public/ Pictures/ Music/ Desktop/
+rm Videos/ Templates/ Public/ Pictures/ Music/ Desktop/ -rf
+clear; ls
+clear
+lxc launch ubuntu: t01
+lxc list
+lxc exec t01 bash
+clear
+ls
+clear
+lxc exec gateway ash
+ls
+lxc file push haproxy.cfg haproxy/root/
+clear
+ls
+clear
+sudo su
+virsh connect qemu+ssh://root@10.10.20.2/system
+virsh list
+virsh list --all
+virsh net-list
+ls
+clear
+sudo ln -s /var/www/html/ 
+ls
+cd html/
+ls
+cd ocp4-upi/
+ls
+ll install-config.yaml 
+sudo chmod 770 ../../html/ -R
+ls
+sudo chmod 777 ../../html/ -R
+vim install-config.yaml 
+cp -f install-config.yaml ../bak/
+clear
+ls
+openshift-install create ignition-configs
+vim install-config.yaml 
+openshift-install create ignition-configs
+vim install-config.yaml 
+openshift-install create ignition-configs
+vim install-config.yaml 
+openshift-install create ignition-configs
+vim install-config.yaml 
+openshift-install create ignition-configs
+vim install-config.yaml 
+openshift-install create ignition-configs
+vim install-config.yaml 
+openshift-install create ignition-configs
+clear
+vim install-config.yaml 
+openshift-install create ignition-configs
+vim install-config.yaml 
+openshift-install create ignition-configs
+vim install-config.yaml 
+openshift-install create ignition-configs
+vim install-config.yaml 
+openshift-install create ignition-configs
+openshift-install create ignition-configs --help
+openshift-install create ignition-configs --dir=$(pwd)
+openshift-install create ignition-configs --dir=$(pwd) --log-level debug
+clear
+ls
+vim install-config.yaml 
+mv install-config.yaml ../bak/
+vim apiVersion: v1
+ls
+clear
+vim install-config.yaml
+cp ../bak/install-config.yaml .
+vim install-config.yaml 
+openshift-install create ignition-configs --dir=$(pwd) --log-level debug
+vim install-config.yaml 
+cp -f install-config.yaml ../bak/
+clear
+openshift-install create ignition-configs --dir=$(pwd) --log-level debug
+ls
+clear
+ls
+vim bootstrap.ign 
+vim worker.ign 
+clear
+ls
+ls auth/
+ip a
+pwpd
+pwd
+tree .
+mkdir ../ignition
+mv * ../ignition/
+cd ..
+ls
+ls ignition/
+cp bak/install-config.yaml ocp4-upi/
+ls
+mkdir boot
+cd boot/
+wget https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.2/4.2.0/rhcos-4.2.0-x86_64-installer-initramfs.img
+wget https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.2/4.2.0/rhcos-4.2.0-x86_64-installer-kernel
+ls
+clear
+ls
+clear
+ls
+clear
+virsh console master01.ocp4.ministack.dev
+virsh stop master01.ocp4.ministack.dev
+virsh destroy master01.ocp4.ministack.dev
+virsh start master01.ocp4.ministack.dev
+virsh console master01.ocp4.ministack.dev
+clear
+ls
+clear
+virsh console master01.ocp4.ministack.dev
+virsh destroy master01.ocp4.ministack.dev; virsh start master01.ocp4.ministack.dev; virsh console master01.ocp4.ministack.dev
+ssh rhev01
+clear
+ssh bootstrap
+clear
+sudo su
+clear
+ssh bootstrap
+ls .ssh/
+vim .ssh/id_rsa_tghadmin.pub
+vim .ssh/id_rsa_tghadmin
+vim .ssh/config 
+ssh bootstrap
+ls
+cd html/
+ls
+ls secrets/
+tree .
+lxc network attach openshift haproxy eth0 eth0
+lxc restart haproxy
+clear; lxc list
+lxc exec haproxy ash
+lxc restart haproxy
+clear
+lxc exec haproxy ash
+clear
+virsh list
+virsh list --all
+history | grep virsh
+clear
+virsh connect qemu+ssh://root@10.10.20.2/system
+virsh list --all
+virsh connect qemu+ssh://root@10.10.20.2/system list
+virsh -c qemu+ssh://root@10.10.20.2/system list
+virsh -c qemu+ssh://root@10.10.20.2/system console 34
+echo 'alias virsh="virsh -c qemu+ssh://root@10.10.20.2/system"' >>.bashrc 
+bash
+clear
+virsh list --all
+ls
+lxc list
+ssh rhev01
+vim .ssh/authorized_keys 
+clear
+ssh rhev01
+clear
+exit
+  656  dnf install wget -y && wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.1.6/openshift-client-linux-4.1.6.tar.gz
+  657  wget https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.1.6/openshift-install-linux-4.1.6.tar.gz
+  658  history -n 4
+  659  history 4
+  660  history 5 | tee -a ocp-mini-stack/cloudctl/cloudctl-ocp4-mini-stack-build_a00.log 
