@@ -1,5 +1,5 @@
 ln eth1.network /etc/systemd/network/
-dnf install httpd wget
+dnf install -y httpd wget
 rm /var/www/html/*
 ln -s /var/www/html/ ~
 systemctl start httpd

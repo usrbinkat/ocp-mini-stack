@@ -1,0 +1,306 @@
+    1  exit
+    2  ls .ssh
+    3  ls -lah .ssh
+    4  clear
+    5  exit
+    6  ls
+    7  exit
+    8  ls
+    9  clear
+   10  ls
+   11  exit
+   12  ipa
+   13  clear
+   14  ls
+   15  vim dnsmasq
+   16  vim dnsmasq.conf 
+   17  vim
+   18  dnf install vim
+   19  clear
+   20  vim dnsmasq.conf 
+   21  ls
+   22  vim dnsmasq.conf 
+   23  cat dnsmasq-resolv.conf 
+   24  rm dnsmasq-resolv.conf 
+   25  ls
+   26  clear
+   27  ls
+   28  cat eth1.network 
+   29  cat hosts 
+   30  cat REFRENCE 
+   31  cat resolv.conf 
+   32  clear
+   33  ls
+   34  sed -i 's/braincraft.io/ministack.dev/g' *
+   35  cat resolv.conf 
+   36  vim resolv.conf 
+   37  ls
+   38  dnf search dnsmasq
+   39  dnf install dnsmasq
+   40  ls /etc/dnsmasq.conf 
+   41  ls
+   42  mkdir bak
+   43  mv /etc/dnsmasq.conf ~/bak/
+   44  ln -f dnsmasq.conf /etc/ 
+   45  ls
+   46  ln -f hosts /etc/hosts 
+   47  ln -f eth1.network /etc/systemd/network/eth1.network 
+   48  cat /etc/resolv.conf 
+   49  ln -f resolv.conf /etc/resolv.conf 
+   50  vim resolv.conf 
+   51  ls
+   52  systemctl restart systemd-networkd
+   53  systemctl enable --now dnsmasq
+   54  clear
+   55  systemctl status dnsmasq
+   56  reboot
+   57  exit
+   58  ls
+   59  exit
+   60  ls -lah .ssh/
+   61  cat .ssh/authorized_keys
+   62  exit
+   63  clear
+   64  exit
+   65  ls
+   66  ln -f ethers /etc/ethers 
+   67  systemctl restart dnsmasq
+   68  exit
+   69  ls
+   70  grep brainc *
+   71  vim hosts 
+   72  systemctl status dnsmasq
+   73  vim ethers 
+   74  vim hosts 
+   75  clear
+   76  reboot
+   77  clear
+   78  systemctl status dnsmasq
+   79  clear
+   80  exit
+   81  ls
+   82  vim ethers 
+   83  sed -i 's/bootstrap02/bootstrap/g' *
+   84  systemctl restart dnsmasq
+   85  exit
+   86  systemctl restart dnsmasq
+   87  clear
+   88  vim hosts 
+   89  clear
+   90  vim hosts 
+   91  exit
+   92  journalctl -fxe
+   93  ls
+   94  vim /etc/hosts
+   95  systemctl restart dnsmasq
+   96  clear
+   97  ping master01
+   98  for i in $(virsh list | grep running | awk '{print $2}'); do virsh destroy $i; done
+   99  exit
+  100  systemctl restart dnsmasq
+  101  vim /etc/hosts
+  102  systemctl restart dnsmasq
+  103  exit
+  104  journalctl -fxe
+  105  vim /etc/hosts
+  106  systemctl restart dnsmasq
+  107  exit
+  108  vim hosts
+  109  systemctl restart dnsmasq
+  110  exit
+  111  vim /etc/ether
+  112  vim /etc/ethers
+  113  clear
+  114  vim /etc/hosts
+  115  ping master0
+  116  vim /etc/hosts
+  117  vim /etc/hosts
+  118  vim /etc/hosts
+  119  journalctl -fxe
+  120  systemctl status dnsmasq
+  121  journalctl -fxe
+  122  ln -f /etc/ethers .
+  123  vim ethers 
+  124  journalctl -fxe
+  125  systemctl restart dnsmasq
+  126  journalctl -fxe
+  127  clear
+  128  systemctl restart dnsmasq
+  129  clear
+  130  journalctl -fxe
+  131  ln -f /etc/hosts .
+  132  ln -f /etc/ethers .
+  133  vim ethers
+  134  clear
+  135  reboot
+  136  clear
+  137  grep lease dnsmasq.conf 
+  138  vim dnsmasq.conf 
+  139  systemctl restart dnsmasq
+  140  ls
+  141  touch dnsmasq.leases
+  142  ls
+  143  clear
+  144  grep root dnsmasq.conf 
+  145  grep root /etc/dnsmasq.conf 
+  146  clear
+  147  systemctl status dnsmasq
+  148  systemctl restart dnsmasq; systemctl status dnsmasq
+  149  clear; systemctl restart dnsmasq; systemctl status dnsmasq
+  150  find / -name "*lease*"
+  151  cat /var/lib/dnsmasq/dnsmasq.leases 
+  152  echo "" > /var/lib/dnsmasq/dnsmasq.leases 
+  153  clear; systemctl restart dnsmasq; systemctl status dnsmasq
+  154  clear
+  155  exit
+  156  vim hosts 
+  157  exit
+  158  systemctl restart dnsmasq
+  159  systemctl status dnsmasq
+  160  exit
+  161  vim hosts
+  162  systemctl restart dnsmasq
+  163  exit
+  164  clear
+  165  ls
+  166  rm dnsmasq.leases 
+  167  find / -name "*lease*"
+  168  ln -f /var/lib/dnsmasq/dnsmasq.leases .
+  169  ls
+  170  cat dnsmasq.leases 
+  171  clear
+  172  ls
+  173  cat dnsmasq.leases 
+  174  echo "" >dnsmasq.leases 
+  175  ls
+  176  ln -f /etc/ethers .
+  177  vim /etc/hosts
+  178  systenctl restart dnsmasq
+  179  systemctl restart dnsmasq
+  180  vim /etc/hosts
+  181  ln -f  /etc/hosts .
+  182  clear
+  183  ls
+  184  rm REFRENCE 
+  185  ls
+  186  ls bak/
+  187  rm bak/ -rf
+  188  ls
+  189  clear
+  190  ls
+  191  ln -f /etc/resolv.conf .
+  192  cat resolv.conf 
+  193  clear
+  194  ssh core@bootstrap ~/.ssh/id_rsa
+  195  ssh core@bootstrap02 ~/.ssh/id_rsa
+  196  exit
+  197  ping master0
+  198  vim hosts 
+  199  vim ethers 
+  200  systemctl restart dnsmasq
+  201  ping master0
+  202  ping 172.30.1.31
+  203  vim eth
+  204  vim ethers 
+  205  exit
+  206  clear
+  207  ln -f /etc/ethers .
+  208  vim ethers 
+  209  cat dnsmasq.leases 
+  210  echo "" > dnsmasq.leases 
+  211  systemctl restart dnsmasq
+  212  journalctl -fxe
+  213  vim dnsmasq.conf 
+  214  vim ethers 
+  215  clear
+  216  vim ethers 
+  217  clear
+  218  exit
+  219  clear
+  220  watch -c dnsmasq.leases 
+  221  watch -c cat dnsmasq.leases 
+  222  exit
+  223  ls
+  224  clear
+  225  ls
+  226  echo "" >dnsmasq.leases 
+  227  vim hosts 
+  228  ln -f /etc/ethers .
+  229  vim ethers
+  230  vim hosts 
+  231  vim hosts 
+  232  vim /etc/ethers 
+  233  cat dnsmasq.leases 
+  234  systemctl restart dnsmasq
+  235  systemctl status dnsmasq
+  236  journalctl -fxe
+  237  exit
+  238  vim dnsmasq.conf 
+  239  systemctl restart dnsmasq
+  240  vim dnsmasq.conf 
+  241  systemctl restart dnsmasq
+  242  exit
+  243  arp -f
+  244  whatprovides arp
+  245  dnf whatprovides arp
+  246  dnf install net-tools
+  247  arp -f
+  248  clear
+  249  systemctl restart dnsmasq
+  250  exit
+  251  vim dnsmasq.conf 
+  252  systemctl restart dnsmasq
+  253  vim dnsmasq.conf 
+  254  systemctl status dnsmasq
+  255  vim dnsmasq.conf 
+  256  systemctl restart dnsmasq
+  257  systemctl status dnsmasq
+  258  vim dnsmasq.conf 
+  259  systemctl start dnsmasq
+  260  systemctl status dnsmasq
+  261  vim dnsmasq.conf 
+  262  systemctl status dnsmasq
+  263  systemctl start dnsmasq
+  264  systemctl status dnsmasq
+  265  exit
+  266  ls
+  267  grep app * 
+  268  grep app dnsmasq.conf 
+  269  grep app hosts
+  270  vim hosts
+  271  vim dnsmasq.conf 
+  272  systemctl restart dnsmasq
+  273  systemctl status dnsmasq
+  274  vim dnsmasq.conf 
+  275  exit
+  276  clear
+  277  vim dnsmasq.conf 
+  278  clear
+  279  exit
+  280  vim dnsmasq.conf 
+  281  ls
+  282  cat dnsmasq.leases 
+  283  virsh stop worker03.ocp4.ministack.dev
+  284  virsh destroy worker03.ocp4.ministack.dev
+  285  exit
+  286  systemctl restart dnsmasq
+  287  systemctl status dnsmasq
+  288  exit
+  289  vim dnsmasq.conf 
+  290  clear
+  291  systemctl restart dnsmasq
+  292  vim dnsmasq.conf 
+  293  clear
+  294  exit
+  295  grep '127' *
+  296  vim dnsmasq.conf 
+  297  clear
+  298  systemctl restart dnsmasq
+  299  exit
+  300  vim dnsmasq.conf 
+  301  grep '127' *
+  302  clear
+  303  grep '127' *
+  304  exit
+  305  ls
+  306  history > build.log

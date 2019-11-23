@@ -38,7 +38,7 @@ fi
 export PATH
 
 # Custom alias(es)
-alias ibane='ssh ibane'
+alias carrier='ssh carrier.ministack.dev'
 alias gateway='ssh gateway'
 alias cloudctl='ssh cloudctl'
 alias haproxy='ssh haproxy'
@@ -50,9 +50,9 @@ alias simpleca='ssh simpleca'
 alias squid='ssh squid'
 alias ipa='ssh ipa'
 alias bootstrap='ssh bootstrap'
-alias master01='ssh master0'
-alias master02='ssh master1'
-alias master03='ssh master2'
+alias master1='ssh master1'
+alias master2='ssh master2'
+alias master3='ssh master3'
 alias worker01='ssh worker00'
 alias worker02='ssh worker01'
 alias worker03='ssh worker02'

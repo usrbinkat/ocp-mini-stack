@@ -1,5 +1,4 @@
 build-tftp eth1.network pxelinux.cfg tftp.service
-```
 .
 ├── build-tftp
 ├── eth1.network
@@ -9,4 +8,3 @@ build-tftp eth1.network pxelinux.cfg tftp.service
 └── tftp.service
 
 1 directory, 6 files
-```
