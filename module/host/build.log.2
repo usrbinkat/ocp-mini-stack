@@ -998,3 +998,5 @@
  1000  exit
  1001  ls
  1002  history >>build.log
+for i in cloudctl dnsmasq haproxy httpd nfs tftp ; do lxc init images:fedora/30/amd64 tftp -p ministack; done
+for i in dnsmasq haproxy httpd nfs tftp ; do lxc network attach internal tftp eth0 eth0 ; done
