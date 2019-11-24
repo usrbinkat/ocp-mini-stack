@@ -1,0 +1,17 @@
+config: {}
+description: Default ministack profile
+devices:
+  eth0:
+    nictype: bridged
+    parent: internal
+    type: nic
+  eth1:
+    nictype: bridged
+    parent: openshift
+    type: nic
+  root:
+    path: /
+    pool: default
+    type: disk
+name: ministack
+used_by: {}
