@@ -1,0 +1,8 @@
+<network>
+  <name>openshift</name>
+  <uuid>754b8997-f368-4637-b459-3706465df3a2</uuid>
+  <forward mode='bridge'/>
+  <bridge name='openshift'/>
+  <virtualport type='openvswitch'/>
+</network>
+

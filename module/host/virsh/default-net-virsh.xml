@@ -1,0 +1,8 @@
+<network>
+  <name>default</name>
+  <uuid>111ad2a8-74f3-45a9-af3d-0bf80c20bc98</uuid>
+  <forward mode='bridge'/>
+  <bridge name='internal'/>
+  <virtualport type='openvswitch'/>
+</network>
+
