@@ -1,32 +1,31 @@
 127.0.0.1    localhost localhost.localdomain localhost4 localhost4.localdomain4
 ::1          localhost localhost.localdomain localhost6 localhost6.localdomain6
 #######################
-10.10.20.2   carrier.ministack.dev         carrier
 10.10.20.2   carrier.ocp4.ministack.dev
 #######################
-172.30.0.1   gateway.ocp4.ministack.dev    gateway
-172.30.0.3   cloudctl.ocp4.ministack.dev   cloudctl
-172.30.0.4   haproxy.ocp4.ministack.dev    haproxy 
-172.30.0.5   nfs.ocp4.ministack.dev        nfs 
-172.30.0.7   dnsmasq.ocp4.ministack.dev    dnsmasq
-172.30.0.8   tftp.ocp4.ministack.dev       tftp
-172.30.0.9   httpd.ocp4.ministack.dev      httpd 
-172.30.0.11  simpleca.ocp4.ministack.dev   simpleca 
-172.30.0.20  squid.ocp4.ministack.dev      squid
-172.30.0.21  ipa.ocp4.ministack.dev        ipa 
+172.10.0.1   gateway.ocp4.ministack.dev    gateway
+172.10.0.3   cloudctl.ocp4.ministack.dev   cloudctl
+172.10.0.4   haproxy.ocp4.ministack.dev    haproxy 
+172.10.0.5   nfs.ocp4.ministack.dev        nfs 
+172.10.0.7   dnsmasq.ocp4.ministack.dev    dnsmasq
+172.10.0.8   tftp.ocp4.ministack.dev       tftp
+172.10.0.9   httpd.ocp4.ministack.dev      httpd 
+172.10.0.11  simpleca.ocp4.ministack.dev   simpleca 
+172.10.0.20  squid.ocp4.ministack.dev      squid
+172.10.0.21  ipa.ocp4.ministack.dev        ipa 
 #######################
-172.30.0.30 bootstrap.ocp4.ministack.dev  bootstrap
-172.30.1.31   master1.ocp4.ministack.dev   master1
-172.30.1.31    etcd-0.ocp4.ministack.dev   etcd-0
-172.30.1.32   master2.ocp4.ministack.dev   master2
-172.30.1.32    etcd-1.ocp4.ministack.dev   etcd-1
-172.30.1.33   master3.ocp4.ministack.dev   master3
-172.30.1.33    etcd-2.ocp4.ministack.dev   etcd-2
+172.10.0.30 bootstrap.ocp4.ministack.dev  bootstrap
+172.10.1.31   master1.ocp4.ministack.dev   master1
+172.10.1.31    etcd-0.ocp4.ministack.dev   etcd-0
+172.10.1.32   master2.ocp4.ministack.dev   master2
+172.10.1.32    etcd-1.ocp4.ministack.dev   etcd-1
+172.10.1.33   master3.ocp4.ministack.dev   master3
+172.10.1.33    etcd-2.ocp4.ministack.dev   etcd-2
 #######################
-172.30.2.41  worker01.ocp4.ministack.dev   worker01
-172.30.2.42  worker02.ocp4.ministack.dev   worker02
+172.10.2.41  worker01.ocp4.ministack.dev   worker01
+172.10.2.42  worker02.ocp4.ministack.dev   worker02
 #######################
-172.30.0.4 api.ocp4.ministack.dev
-172.30.0.4 api-int.ocp4.ministack.dev
-172.30.0.4 apps.ocp4.ministack.dev
+172.10.0.4    apps.ocp4.ministack.dev
+172.10.0.4     api.ocp4.ministack.dev
+172.10.0.4 api-int.ocp4.ministack.dev
 

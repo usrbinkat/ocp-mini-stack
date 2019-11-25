@@ -1,0 +1,35 @@
+#!/bin/bash
+#################################################################################
+# Logging Function
+echo_log () {
+  if [[ $1 == "0" ]]; then
+	  echo "STAT>> $2 ..."
+  elif [[ $1 == "2" ]]; then
+	  echo "WARN>> $2 ..."
+  elif [[ $1 == "1" ]]; then
+	  echo "ERROR>> $2"
+	  echo "ERROR>> Critical Exiting!"
+          exit 1
+  fi
+}
+
+#################################################################################
+run_boot_all () {
+
+  
+  #virsh -c qemu+ssh://root@10.10.20.2/system start bootstrap.ocp4.ministack.dev
+  echo_log 0 "Waiting for bootstrap node to start ... "
+  #sleep 150
+  for guest_TARGET in $(virsh -c qemu+ssh://root@10.10.20.2/system list --all | grep ${name_BASE} | grep master | grep off | awk '{print $2}'); do
+	  virsh -c qemu+ssh://root@10.10.20.2/system start ${guest_TARGET}
+	  sleep 10
+  done
+  echo_log 0 "Waiting for masters to install ... "
+  sleep 360
+  for guest_TARGET in $(virsh -c qemu+ssh://root@10.10.20.2/system list --all | grep ${name_BASE} | grep worker | grep off | awk '{print $2}'); do
+	  virsh -c qemu+ssh://root@10.10.20.2/system start ${guest_TARGET}
+	  sleep 8
+  done
+}
+
+run_boot_all 

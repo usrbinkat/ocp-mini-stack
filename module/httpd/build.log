@@ -1,0 +1,36 @@
+  104  ls
+  105  clear
+  106  ls
+  107  mkdir aux
+  108  mkdir aux/lib
+  109  mkdir aux/bin
+  110  cp ../tftp/aux/bin/fedora-bootstrap-ansible aux/bin/
+  111  clear
+  112  ls
+  113  clear
+  114  lxc file push aux/bin/fedora-bootstrap-ansible httpd/usr/bin/
+  115  lxc start httpd
+  116  lxc exec httpd -- fedora-bootstrap-ansible
+  117  clear
+  118  ls
+  119  mv bootstrap.ign aux/lib/
+  120  ls html/
+  121  ls html/boot/
+  122  mv html/ aux/lib/
+  123  ls
+  124  mv README.md aux/lib/
+  125  ls
+  126  mkdir ../cloudctl/ocp4
+  127  mkdir ../cloudctl/aux/bin -p; mv stage-install-config-yaml.sh stage-pull-secrets.sh ../cloudctl/aux/bin/
+  128  ls
+  129  clear
+  130  ls
+  131  vim httpd-build_a00.log 
+  132  mv httpd-build_a00.log build-httpd
+  133  chmod +x build-httpd 
+  134  ls
+  135  scp build-httpd  eth1.network httpd:~
+  136  httpd
+  137  clear
+  138  history | build.log
+  139  history | tee build.log

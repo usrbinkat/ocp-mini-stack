@@ -1,0 +1,24 @@
+#!/bin/bash
+
+dnf install vim dnsmasq net-tools
+
+mkdir ~/.bak
+mv /etc/dnsmasq.conf ~/bak/
+
+echo "" > /var/lib/dnsmasq/dnsmasq.leases 
+
+ln -f /root/dnsmasq.conf /etc/dnsmasq.conf
+ln -f /root/hosts /etc/hosts 
+ln -f /root/eth1.network /etc/systemd/network/eth1.network 
+ln -f resolv.conf /etc/resolv.conf 
+ln -f ethers /etc/ethers 
+ln -f /var/lib/dnsmasq/dnsmasq.leases .
+
+systemctl restart systemd-networkd
+systemctl enable --now dnsmasq
+systemctl status dnsmasq
+
+# REFRENCE
+# watch -c cat dnsmasq.leases 
+# journalctl -fxe
+# arp -f

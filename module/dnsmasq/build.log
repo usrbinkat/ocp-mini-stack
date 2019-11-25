@@ -1,306 +1,1000 @@
-    1  exit
-    2  ls .ssh
-    3  ls -lah .ssh
-    4  clear
-    5  exit
-    6  ls
-    7  exit
-    8  ls
-    9  clear
-   10  ls
-   11  exit
-   12  ipa
-   13  clear
-   14  ls
-   15  vim dnsmasq
-   16  vim dnsmasq.conf 
-   17  vim
-   18  dnf install vim
-   19  clear
-   20  vim dnsmasq.conf 
-   21  ls
-   22  vim dnsmasq.conf 
-   23  cat dnsmasq-resolv.conf 
-   24  rm dnsmasq-resolv.conf 
-   25  ls
-   26  clear
-   27  ls
-   28  cat eth1.network 
-   29  cat hosts 
-   30  cat REFRENCE 
-   31  cat resolv.conf 
-   32  clear
-   33  ls
-   34  sed -i 's/braincraft.io/ministack.dev/g' *
-   35  cat resolv.conf 
-   36  vim resolv.conf 
-   37  ls
-   38  dnf search dnsmasq
-   39  dnf install dnsmasq
-   40  ls /etc/dnsmasq.conf 
-   41  ls
-   42  mkdir bak
-   43  mv /etc/dnsmasq.conf ~/bak/
-   44  ln -f dnsmasq.conf /etc/ 
-   45  ls
-   46  ln -f hosts /etc/hosts 
-   47  ln -f eth1.network /etc/systemd/network/eth1.network 
-   48  cat /etc/resolv.conf 
-   49  ln -f resolv.conf /etc/resolv.conf 
-   50  vim resolv.conf 
-   51  ls
-   52  systemctl restart systemd-networkd
-   53  systemctl enable --now dnsmasq
-   54  clear
-   55  systemctl status dnsmasq
-   56  reboot
-   57  exit
-   58  ls
-   59  exit
-   60  ls -lah .ssh/
-   61  cat .ssh/authorized_keys
-   62  exit
-   63  clear
-   64  exit
+   52  ln ocp4/ ~
+   53  ln ocp4/ ~ -s
+   54  cd
+   55  cd ocp-mini-stack/
+   56  ls
+   57  cd .
+   58  cd
+   59  cd ocp4
+   60  ls
+   61  rm ignition ocp4 
+   62  ls
+   63  ln -s /home/kmorgan/ocp-mini-stack/zdoc/cloudctl/ocp4/ /home/kmorgan/ocp4
+   64  cd ocp4/
    65  ls
-   66  ln -f ethers /etc/ethers 
-   67  systemctl restart dnsmasq
-   68  exit
-   69  ls
-   70  grep brainc *
-   71  vim hosts 
-   72  systemctl status dnsmasq
-   73  vim ethers 
-   74  vim hosts 
-   75  clear
-   76  reboot
-   77  clear
-   78  systemctl status dnsmasq
-   79  clear
-   80  exit
-   81  ls
-   82  vim ethers 
-   83  sed -i 's/bootstrap02/bootstrap/g' *
-   84  systemctl restart dnsmasq
-   85  exit
-   86  systemctl restart dnsmasq
+   66  cat ~/.ssh/id_rsa.pub 
+   67  vim install-config.yaml 
+   68  cp install-config.yaml ..
+   69  history | grep opensh
+   70  openshift-install create manifests
+   71  ls
+   72   ls ..
+   73  cp ../install-config.yaml .
+   74  ls
+   75  openshift-install create ignition-configs
+   76  ls
+   77  history | grep ign | grep scp
+   78  scp bootstrap.ign master.ign worker.ign httpd:/var/www/html/ignition/
+   79  cp ../install-config.yaml .
+   80  ls
+   81  openshift-install create manifests
+   82  ls
+   83  export KUBECONFIG=$(pwd)/auth/kubeconfig
+   84  echo $KUBECONFIG 
+   85  watch -c oc get csr
+   86  cd
    87  clear
-   88  vim hosts 
+   88  carrier
    89  clear
-   90  vim hosts 
+   90  carrier
    91  exit
-   92  journalctl -fxe
-   93  ls
-   94  vim /etc/hosts
-   95  systemctl restart dnsmasq
-   96  clear
-   97  ping master01
-   98  for i in $(virsh list | grep running | awk '{print $2}'); do virsh destroy $i; done
-   99  exit
-  100  systemctl restart dnsmasq
-  101  vim /etc/hosts
-  102  systemctl restart dnsmasq
-  103  exit
-  104  journalctl -fxe
-  105  vim /etc/hosts
-  106  systemctl restart dnsmasq
-  107  exit
-  108  vim hosts
-  109  systemctl restart dnsmasq
-  110  exit
-  111  vim /etc/ether
-  112  vim /etc/ethers
-  113  clear
-  114  vim /etc/hosts
-  115  ping master0
-  116  vim /etc/hosts
-  117  vim /etc/hosts
-  118  vim /etc/hosts
-  119  journalctl -fxe
-  120  systemctl status dnsmasq
-  121  journalctl -fxe
-  122  ln -f /etc/ethers .
-  123  vim ethers 
-  124  journalctl -fxe
-  125  systemctl restart dnsmasq
-  126  journalctl -fxe
-  127  clear
-  128  systemctl restart dnsmasq
-  129  clear
-  130  journalctl -fxe
-  131  ln -f /etc/hosts .
-  132  ln -f /etc/ethers .
-  133  vim ethers
-  134  clear
-  135  reboot
-  136  clear
-  137  grep lease dnsmasq.conf 
-  138  vim dnsmasq.conf 
-  139  systemctl restart dnsmasq
-  140  ls
-  141  touch dnsmasq.leases
-  142  ls
-  143  clear
-  144  grep root dnsmasq.conf 
-  145  grep root /etc/dnsmasq.conf 
-  146  clear
-  147  systemctl status dnsmasq
-  148  systemctl restart dnsmasq; systemctl status dnsmasq
-  149  clear; systemctl restart dnsmasq; systemctl status dnsmasq
-  150  find / -name "*lease*"
-  151  cat /var/lib/dnsmasq/dnsmasq.leases 
-  152  echo "" > /var/lib/dnsmasq/dnsmasq.leases 
-  153  clear; systemctl restart dnsmasq; systemctl status dnsmasq
-  154  clear
-  155  exit
-  156  vim hosts 
-  157  exit
-  158  systemctl restart dnsmasq
-  159  systemctl status dnsmasq
-  160  exit
-  161  vim hosts
-  162  systemctl restart dnsmasq
-  163  exit
+   92  master01
+   93  master1
+   94  bootstrap
+   95  clear
+   96  carrier
+   97  master1
+   98  clear
+   99  curl --insecure -k  https://api.ocp4.ministack.dev:22623/config/master -I
+  100  curl --insecure -k  http://api.ocp4.ministack.dev:22623/config/master -I
+  101  curl --insecure -k  https://api.ocp4.ministack.dev:22623/config/master -I
+  102  watch -c curl --insecure -k  https://api.ocp4.ministack.dev:22623/config/master -I
+  103  curl --insecure -k  https://api.ocp4.ministack.dev:22623/config/master -I
+  104  curl --insecure -k  https://api.ocp4.ministack.dev:22623/config/master 
+  105  curl --insecure -k  https://api.ocp4.ministack.dev:22623/config/master --output master
+  106  file master 
+  107  vim master 
+  108  cat master | jq
+  109  dnf install jq -y
+  110  sudo dnf install jq -y
+  111  cat master | jq
+  112  cat master | jq | more
+  113  cat master | jq | pager
+  114  cat master | jq | less -R
+  115  jq -C master 
+  116  jq -C . master | less -R
+  117  curl --insecure -k  https://bootstrap.ocp4.ministack.dev:22623/config/master --output master
+  118  rm master 
+  119  curl --insecure -k  https://bootstrap.ocp4.ministack.dev:22623/config/master --output master
+  120  jq -C . master | less -R
+  121  curl --insecure -k  https://master1.ocp4.ministack.dev:22623/config/master --output master
+  122  curl --insecure -k  https://bootstrap.ocp4.ministack.dev:22623/config/master --output master
+  123  jq -C . master | less -R
+  124  watch -c curl --insecure -k  https://api.ocp4.ministack.dev:22623/config/master -I
+  125  curl --insecure -k  https://bootstrap.ocp4.ministack.dev:22623/config/master --output master
+  126  watch -c curl --insecure -k  https://api.ocp4.ministack.dev:22623/config/master -I
+  127  watch -c curl --insecure -k https://api-int.ocp4.ministack.dev:22623/config/master: -I
+  128  curl --insecure -k https://api-int.ocp4.ministack.dev:22623/config/master: -I
+  129  curl --insecure -k https://api-int.ocp4.ministack.dev:22623/config/master -I
+  130  cd ignition/
+  131  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  132  oc get nodes
+  133  clear
+  134  oc api-resources
+  135  oc get nodes
+  136  oc whoami
+  137  oc get nodes
+  138  watch -c oc get nodes
+  139  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  140  cd
+  141  cd ocp4/
+  142  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  143  watch -c oc get nodes
+  144  carrier 
+  145  exit
+  146  curl https://api.ocp4.ministack.dev:6443
+  147  curl --insecure https://api.ocp4.ministack.dev:6443
+  148  curl --insecure https://api.ocp4.ministack.dev:6443/healthz
+  149  curl --insecure https://bootstrap.ocp4.ministack.dev:6443/healthz
+  150  curl --insecure https://master1.ocp4.ministack.dev:6443/healthz
+  151  curl --insecure https://master1.ocp4.ministack.dev:644
+  152  curl --insecure https://master1.ocp4.ministack.dev:6443/version
+  153  curl --insecure https://bootstrap.ocp4.ministack.dev:6443/version
+  154  curl --insecure https://api.ocp4.ministack.dev:6443/version
+  155  bash
+  156  exit
+  157  lxc list
+  158  haproxy
+  159  dnsmasq
+  160  vim .ssh/config 
+  161  dnsmasq
+  162  lxc file edit dnsmasq/root/.ssh/authorized_keys < ./.ssh/id_rsa.pub 
+  163  dnsmasq
   164  clear
-  165  ls
-  166  rm dnsmasq.leases 
-  167  find / -name "*lease*"
-  168  ln -f /var/lib/dnsmasq/dnsmasq.leases .
-  169  ls
-  170  cat dnsmasq.leases 
-  171  clear
-  172  ls
-  173  cat dnsmasq.leases 
-  174  echo "" >dnsmasq.leases 
-  175  ls
-  176  ln -f /etc/ethers .
-  177  vim /etc/hosts
-  178  systenctl restart dnsmasq
-  179  systemctl restart dnsmasq
-  180  vim /etc/hosts
-  181  ln -f  /etc/hosts .
-  182  clear
-  183  ls
-  184  rm REFRENCE 
-  185  ls
-  186  ls bak/
-  187  rm bak/ -rf
-  188  ls
-  189  clear
-  190  ls
-  191  ln -f /etc/resolv.conf .
-  192  cat resolv.conf 
-  193  clear
-  194  ssh core@bootstrap ~/.ssh/id_rsa
-  195  ssh core@bootstrap02 ~/.ssh/id_rsa
-  196  exit
-  197  ping master0
-  198  vim hosts 
-  199  vim ethers 
-  200  systemctl restart dnsmasq
-  201  ping master0
-  202  ping 172.30.1.31
-  203  vim eth
-  204  vim ethers 
-  205  exit
-  206  clear
-  207  ln -f /etc/ethers .
-  208  vim ethers 
-  209  cat dnsmasq.leases 
-  210  echo "" > dnsmasq.leases 
-  211  systemctl restart dnsmasq
-  212  journalctl -fxe
-  213  vim dnsmasq.conf 
-  214  vim ethers 
-  215  clear
-  216  vim ethers 
-  217  clear
+  165  echo "" > ~/.ssh/known_hosts
+  166  clear
+  167  virsh console bootstrap.ocp4.ministack.dev
+  168  bootstrap
+  169  master1
+  170  virsh console master01.ocp4.ministack.dev
+  171  virsh list 
+  172  virsh console master1.ocp4.ministack.dev
+  173  clear
+  174  curl -k  https://api.ocp4.ministack.dev:22623/config/master -I
+  175  curl --insecure -k  https://api.ocp4.ministack.dev:22623/config/master -I
+  176  bootstrap
+  177  clear
+  178  virsh console bootstrap
+  179  virsh console bootstrap.ocp4.braincraft.io
+  180  bootstrap
+  181  virsh console bootstrap.ocp4.ministack.dev
+  182  bootstrap
+  183  virsh console bootstrap.ocp4.ministack.dev
+  184  bootstrap
+  185  master1
+  186  virsh console bootstrap.ocp4.ministack.dev
+  187  bootstrap
+  188  master1
+  189  bootstrap
+  190  virsh console bootstrap.ocp4.ministack.dev
+  191  bootstrap
+  192  clear
+  193  exit
+  194  carrier
+  195  cat /etc/hosts
+  196  carrier
+  197  clear
+  198  cd ignition/
+  199  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  200  clear
+  201  oc api-resources
+  202  digdig -x 172.30.1.31
+  203  dig -x 172.30.1.31
+  204  ping api-int.ocp4.ministack.dev
+  205  ping api.ocp4.ministack.dev
+  206  carrier
+  207  exit
+  208  clear
+  209  dig master1.ocp4.ministack.dev
+  210  ping master1.ocp4.ministack.dev
+  211  ssh core@master1.ocp4.ministack.dev -i ~/.ssh/id_rsa
+  212  tmux
+  213  clear
+  214  exit
+  215  lxc stop hostapd
+  216  exit
+  217  lxc exec gateway ash
   218  exit
-  219  clear
-  220  watch -c dnsmasq.leases 
-  221  watch -c cat dnsmasq.leases 
-  222  exit
-  223  ls
-  224  clear
-  225  ls
-  226  echo "" >dnsmasq.leases 
-  227  vim hosts 
-  228  ln -f /etc/ethers .
-  229  vim ethers
-  230  vim hosts 
-  231  vim hosts 
-  232  vim /etc/ethers 
-  233  cat dnsmasq.leases 
-  234  systemctl restart dnsmasq
-  235  systemctl status dnsmasq
-  236  journalctl -fxe
-  237  exit
-  238  vim dnsmasq.conf 
-  239  systemctl restart dnsmasq
-  240  vim dnsmasq.conf 
-  241  systemctl restart dnsmasq
-  242  exit
-  243  arp -f
-  244  whatprovides arp
-  245  dnf whatprovides arp
-  246  dnf install net-tools
-  247  arp -f
-  248  clear
-  249  systemctl restart dnsmasq
-  250  exit
-  251  vim dnsmasq.conf 
-  252  systemctl restart dnsmasq
-  253  vim dnsmasq.conf 
-  254  systemctl status dnsmasq
-  255  vim dnsmasq.conf 
-  256  systemctl restart dnsmasq
-  257  systemctl status dnsmasq
-  258  vim dnsmasq.conf 
-  259  systemctl start dnsmasq
-  260  systemctl status dnsmasq
-  261  vim dnsmasq.conf 
-  262  systemctl status dnsmasq
-  263  systemctl start dnsmasq
-  264  systemctl status dnsmasq
-  265  exit
-  266  ls
-  267  grep app * 
-  268  grep app dnsmasq.conf 
-  269  grep app hosts
-  270  vim hosts
-  271  vim dnsmasq.conf 
-  272  systemctl restart dnsmasq
-  273  systemctl status dnsmasq
-  274  vim dnsmasq.conf 
-  275  exit
-  276  clear
-  277  vim dnsmasq.conf 
-  278  clear
-  279  exit
-  280  vim dnsmasq.conf 
-  281  ls
-  282  cat dnsmasq.leases 
-  283  virsh stop worker03.ocp4.ministack.dev
-  284  virsh destroy worker03.ocp4.ministack.dev
-  285  exit
-  286  systemctl restart dnsmasq
-  287  systemctl status dnsmasq
-  288  exit
-  289  vim dnsmasq.conf 
-  290  clear
-  291  systemctl restart dnsmasq
-  292  vim dnsmasq.conf 
-  293  clear
-  294  exit
-  295  grep '127' *
-  296  vim dnsmasq.conf 
-  297  clear
-  298  systemctl restart dnsmasq
-  299  exit
-  300  vim dnsmasq.conf 
-  301  grep '127' *
-  302  clear
-  303  grep '127' *
-  304  exit
-  305  ls
-  306  history > build.log
+  219  master1
+  220  virsh console master1.ocp4.ministack.dev
+  221  master1
+  222  virsh list --all
+  223  dnsmasq
+  224  virsh destroy worker03.ocp4.ministack.dev
+  225  clear
+  226  master1
+  227  clear
+  228  carrier
+  229  cd ocp4/
+  230  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  231  oc get logs
+  232  clear
+  233  virsh list --all
+  234  virsh destroy worker03.ocp4.ministack.dev
+  235  virsh list --all
+  236  cd
+  237  ls
+  238  cd ocp-mini-stack/
+  239  ls
+  240  cd module/cloudctl/
+  241  ls
+  242  cd ../host
+  243  ls
+  244  alias
+  245  watch -c virsh -c qemu+ssh://root@10.10.20.2/system
+  246  exit
+  247  ln -s /home/kmorgan/ocp-mini-stack/module/cloudctl/ocp4 /home/kmorgan/
+  248  cd ocp4/
+  249  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  250  oc get csr
+  251  clear
+  252  oc get endpoints -A | less
+  253  watch -c oc get endpoints -A 
+  254  oc whoami --show-console 
+  255  oc whoami --show-token
+  256  oc login -u kubeadmin
+  257  oc whoami --show-token
+  258  oc whoami --show-console 
+  259  carrier
+  260  htproxy
+  261  haproxy
+  262  clear
+  263  virsh edit master1.ocp4.ministack.dev
+  264  clear
+  265  tftp
+  266  exit
+  267  haproxy
+  268  lxc list
+  269  haproxy
+  270  exit
+  271  master1
+  272  exit
+  273  virsh console master0.ocp4.ministack.dev
+  274  clear
+  275  cat ~/.ssh/id_rsa.pub 
+  276  scp -rp carrier:/root/inventory/pxelinux.cfg tftp:/tftpboot/
+  277  scp carrier:/root/inventory/ethers dnsmasq:/etc/ethers
+  278  virsh console master0.ocp4.ministack.dev
+  279  dig master0
+  280  dnsmasq
+  281  scp carrier:/root/inventory/ethers dnsmasq:/etc/ethers
+  282  clear
+  283  virsh console master0.ocp4.ministack.dev
+  284  virsh console master1.ocp4.ministack.dev
+  285  clear
+  286  ssh core@bootstrap -i ~/.ssh/id_rsa
+  287  dig bootstrap
+  288  dig bootstrap.ocp4.ministack.dev
+  289  dig bootstrap
+  290  dig bootstrap.ocp4.ministack.dev
+  291  dig bootstrap
+  292  dig bootstrap.ocp4.ministack.dev
+  293  dig bootstrap
+  294  dig bootstrap.ocp4.ministack.dev
+  295  dig bootstrap
+  296  ssh core@bootstrap.ocp4.ministack.dev -i ~/.ssh/id_rsa
+  297  bash
+  298  exit
+  299  ls
+  300  clear
+  301  ls
+  302  lxcls
+  303  lxc list
+  304  ip r
+  305  ping 172.30.0.7
+  306  dnsmasq
+  307  lxc list
+  308  dig carrier.ministack.dev
+  309  dnsmasq
+  310  clear
+  311  ls
+  312  lxc list
+  313  clear
+  314  lxc list
+  315  scp -rp carrier.ministack.dev:/root/inventory/pxelinux.0 tftp:/tftpboot/
+  316  scp -rp carrier.ministack.dev:/root/inventory/pxelinux.0 tftp:/tftpboot
+  317  scp -rp carrier.ministack.dev:/root/inventory/pxelinux.0/ tftp:/tftpboot/pxelinux.0
+  318  scp carrier.ministack.dev:/root/inventory/pxelinux.0/* tftp:/tftpboot/pxelinux.0/
+  319  scp -rp carrier.ministack.dev:/root/inventory/pxelinux.0/ tftp:/tftpboot/pxelinux.cfg
+  320  scp -rp carrier.ministack.dev:/root/inventory/pxelinux.cfg tftp:/tftpboot/
+  321  scp -rp carrier.ministack.dev:/root/inventory/ethers dnsmasq:/etc/
+  322  ssh carrier
+  323  nslookup carrier
+  324  dig carrier
+  325  ssh carrier
+  326  sudo su
+  327  ssh carrier
+  328  clear
+  329  ls -lah .ssh
+  330  carrier
+  331  clear
+  332  virsh console bootstrap.ocp4.ministack.dev
+  333  clear
+  334  ssh core@worker01 -i ~/.ssh/id_rsa
+  335  ssh core@worker1 -i ~/.ssh/id_rsa
+  336  ssh core@master1 -i ~/.ssh/id_rsa
+  337  cd ocp-mini-stack/zdoc/cloudctl/ignition/
+  338  clear
+  339  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  340  oc status
+  341  oc get csr
+  342  oc status --suggest
+  343  oc get logs
+  344  oc get csr
+  345  oc get csr -A
+  346  oc get 
+  347  oc get -h
+  348  oc get nodes
+  349  oc api-resources
+  350  exit
+  351  carrier
+  352  httpd
+  353  tftp
+  354  clear
+  355  ssh core@master0 ~/.ssh/id_rsa
+  356  clear
+  357  carrier
+  358  tftp
+  359  dnsmasq
+  360  clear
+  361  virsh list --all
+  362  clear
+  363  bootstrap
+  364  ssh core@bootstrap -i ~/.ssh/id_rsa
+  365  exit
+  366  carrier
+  367  clear
+  368  haproxy
+  369  clear
+  370  ls
+  371  lxc list
+  372  clear
+  373  carrier
+  374  bash
+  375  exit
+  376  tmux
+  377  dnf install tmux -y
+  378  sudo dnf install tmux -y
+  379  clear
+  380  tmux
+  381  exit
+  382  cd
+  383  clear
+  384  openshift-install wait-for bootstrap-complete --log-level debug
+  385  cd ocp-mini-stack/zdoc/cloudctl/ignition/
+  386  ls
+  387  openshift-install wait-for bootstrap-complete --log-level debug
+  388  openshift-install wait-for bootstrap-complete --log-level debug
+  389  ls
+  390  grep braincraft *
+  391  clear
+  392  sed -i 's/braincraft.io/ministack.dev/g' *
+  393  sed -i 's/braincraft.io/ministack.dev/g' auth/*
+  394  openshift-install wait-for bootstrap-complete --log-level debug
+  395  openshift-install wait-for bootstrap-complete --log-level debug
+  396  openshift-install wait-for bootstrap-complete --log-level debug
+  397  cd
+  398  clear
+  399  ssh core@master0.ocp4.ministack.dev -i ~/.ssh/id_rsa
+  400  ssh core@bootstrap.ocp4.ministack.dev -i ~/.ssh/id_rsa
+  401  tmux
+  402  mux
+  403  tmux
+  404  dnf install speedtest-cli -y
+  405  sudo dnf install speedtest-cli -y
+  406  speedtest-cli 
+  407  sudo su
+  408  carrier
+  409  clear
+  410  ip r
+  411  exit
+  412  dnsmasq
+  413  exit
+  414  carrier
+  415  exit
+  416  ls
+  417  cd /tmp
+  418  curl https://api-int.ocp4.ministack.dev:22623/config/master
+  419  curl https://api-int.ocp4.ministack.dev:22623/config/master --insecure
+  420  exit
+  421  lxc list
+  422  exit
+  423  virsh console bootstrap.ocp4.ministack.dev
+  424  ssh core@bootstrap.ocp4.ministack.dev
+  425  clear
+  426  exit
+  427  yum --help | grep '-b'
+  428  man yum
+  429  exit
+  430  ssh haproxy
+  431  exit
+  432  cd ocp4
+  433  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  434  oc login -u kubeadmin -p $( cat ./auth/kubeadmin-password)
+  435  clear; oc login -u kubeadmin -p $( cat ./auth/kubeadmin-password)
+  436  oc get logs
+  437  oc logs
+  438  oc get pod authentication
+  439  oc get pods
+  440  oc get namespaces
+  441  oc project default
+  442  oc get pods
+  443  oc api-resources
+  444  oc get nodes
+  445  oc get pods
+  446  oc get pods -A
+  447  oc get pods -A | grep autn
+  448    oc get operators
+  449  clear
+  450  oc get nodes
+  451  clear; oc login -u kubeadmin -p $( cat ./auth/kubeadmin-password)
+  452  oc login -u kubeadmin -p $( cat ./auth/kubeadmin-password)
+  453  carrier
+  454  sudo chown kmorgan:kmorgan ./run-node-builds
+  455  s
+  456  sudo chown kmorgan:kmorgan ../run-node-builds
+  457  cd ..
+  458  ls -lah
+  459  sudo chown kmorgan:kmorgan run-node-builds 
+  460  sudo mv run-node-builds ocp-mini-stack/module/host/aux/tools/
+  461  cd ocp-mini-stack/
+  462  clear
+  463  history | grep wip
+  464  history | grep wip -i
+  465  history | grep git
+  466  git stage -A; git commit -m 'wip'; git push origin pre-alpha-00
+  467  virsh console bootstrap.ocp4.ministack.dev
+  468  clear
+  469  cd
+  470  cd ocp4
+  471  clear
+  472  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  473  oc get csr
+  474  watch oc get csr
+  475  watch oc get csr -A
+  476  exit
+  477  ls
+  478  cat /etc/hosts
+  479  exit
+  480  haproxy
+  481  clear
+  482  lxc list
+  483  lxc init ubuntu:t01
+  484  lxc image list images:
+  485  clear
+  486  lxc init ubuntu: t01
+  487  lxc network attach openshift t01 eth0 eth0
+  488  lxc start t01
+  489  lxc exec t01 bash
+  490  clear
+  491  lxc exec t01 bash
+  492  ssh t01
+  493  ssh root@t01
+  494  ssh t01 -i .ssh/id_rsa_kmorgan
+  495  clear
+  496  ls
+  497  cd ocp
+  498  cd ocp-mini-stack/module/cloudctl/
+  499  ls
+  500  ./secrets-stage 
+  501  ls
+  502  vim install-config.yaml 
+  503  cd ocp4/
+  504  ls
+  505  ls -lah\
+  506  ls -lah
+  507  rm -rf *
+  508  rm -rf ./.*
+  509  clear; ls
+  510  ls -lah
+  511  cp ../install-config.yaml .
+  512  vim install-config.yaml 
+  513  ls
+  514  openshift-install create manifests
+  515  ls
+  516  openshift-install create ignition-configs
+  517  ls
+  518  scp bootstrap.ign master.ign worker.ign httpd:/var/www/html/ignition/
+  519  sudo cp auth/kubeconfig ~/.kube/authconfig -f
+  520  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  521  ls
+  522  clear
+  523  virsh console worker3.ocp4.ministack.dev
+  524  virsh console master3.ocp4.ministack.dev
+  525  ssh core@master3.ocp4.ministack.dev
+  526  virsh console master3.ocp4.ministack.dev
+  527  ssh core@master3.ocp4.ministack.dev
+  528  ssh core@master1.ocp4.ministack.dev
+  529  carrier
+  530  clear
+  531  oc get pods -A
+  532  oc get pods -A | grep auth
+  533  oc logs authentication-operator-5457df9894-v65wb  -n openshift-authentication-operator
+  534  oc logs authentication-operator-5457df9894-v65wb  -n openshift-authentication-operator | tee -a openshift-authentication-operator.log
+  535  ls
+  536  lnav openshift-authentication-operator.log 
+  537  clear
+  538  dnf install fpaste
+  539  wget https://raw.githubusercontent.com/kevr/hastebin/master/hastebin
+  540  chmod +x hastebin 
+  541  ./hastebin $(cat ./auth
+  542  ls
+  543  ./hastebin $(cat openshift-authentication-operator.log)
+  544  cat openshift-authentication-operator.log | ./hastebin 
+  545  echo 'oc logs authentication-operator-5457df9894-v65wb  -n openshift-authentication-operator | tee -a openshift-authentication-operator.log' >>openshift-authentication-operator.log 
+  546  vim openshift-authentication-operator.log 
+  547  cat openshift-authentication-operator.log | ./hastebin 
+  548  cat openshift-console-operator.log | ./hastebin 
+  549  vim openshift-console-operator.log 
+  550  cat openshift-console-operator.log | ./hastebin 
+  551  clear
+  552  watch -c oc get endpoints -A 
+  553  oc status
+  554  watch oc status
+  555  exit
+  556  oc get pods
+  557  cd ocp4/
+  558  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  559  oc get pods
+  560  oc api-resources
+  561  oc get pods -A
+  562  oc get pods -A | less
+  563  clear
+  564  cat auth/kubeadmin-password 
+  565  cat auth/kubeadmin-password ; echo
+  566  oc login -u kubeadmin -p F4CPG-XCGb7-77kkx-gMqIF
+  567  oc get csr
+  568  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  569  oc get csr
+  570  oc patch configs.imageregistry.operator.openshift.io cluster --type merge --patch '{"spec":{"storage":{"emptyDir":{}}}}'
+  571  oc get csr
+  572  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  573  oc get csr
+  574  watch -c oc get csr
+  575  clear
+  576  oc api-resources -A 
+  577  oc api-resources | grep auth
+  578  oc api-resources | grep oper
+  579  oc get clusteroperators -A
+  580  watch -c oc get clusteroperators -A
+  581  ls
+  582  cd
+  583  cd ocp4/
+  584  ls
+  585  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  586  watch -c oc get clusteroperators -A
+  587  exit
+  588  cd ocp4
+  589  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  590  clear
+  591  watch oc get csr
+  592  openshift-install wait-for bootstrap-complete
+  593  virsh destroy bootstrap.ocp4.ministack.dev
+  594  openshift-install wait-for install-complete
+  595  clear; openshift-install wait-for install-complete
+  596  exit
+  597  cd ocp4
+  598  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  599  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  600  clear; oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  601  dig https://oauth-openshift.apps.ocp4.ministack.dev/oauth/token +short
+  602  ig oauth-openshift.apps.ocp4.ministack.dev
+  603  curl --insecure https://oauth-openshift.apps.ocp4.ministack.dev/oauth/token 
+  604  haproxy
+  605  exit
+  606  cd ocp4/
+  607  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  608  clear
+  609  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  610  oc patch configs.imageregistry.operator.openshift.io cluster --type merge --patch '{"spec":{"storage":{"emptyDir":{}}}}'
+  611  watch -n5 oc get clusteroperators
+  612  openshift-install wait-for install-complete
+  613  clear
+  614  ls
+  615  cd
+  616  clear
+  617  ls
+  618  mkdir trash
+  619  cd trash/
+  620  dnsmasq
+  621  clear
+  622  cd ../ocp4/
+  623  ls
+  624  cd ..
+  625  ls
+  626  cd ocp-mini-stack/module/cloudctl/
+  627  ls
+  628  rm -rf ocp4/
+  629  rm -rf ~/ocp4
+  630  clear
+  631  ls
+  632  vim install-config.yaml 
+  633  mkdir ocp4
+  634  ln -s $(pwd)
+  635  pwd
+  636  ls
+  637  ln -s $(pwd)/ocp4 ~
+  638  cd ocp4/
+  639  clear
+  640  openshift-install create manifests
+  641  clear
+  642  cp ../install-config.yaml .
+  643  openshift-install create manifests
+  644  openshift-install create ignition-configs 
+  645  ls
+  646  history | grep ign
+  647  ls
+  648  scp bootstrap.ign master.ign worker.ign httpd:/var/www/html/ignition/
+  649  cd
+  650  cd ocp4
+  651  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  652  clear
+  653  watch -c oc get nodes
+  654  exit
+  655  cd ocp4
+  656  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  657  oc get clusterversion
+  658  watch -c oc get clusterversion
+  659  cd
+  660  cd ocp4
+  661  watch -c oc get clusterversion
+  662  exit
+  663  carrier
+  664  exit
+  665  exit
+  666  cd ocp4
+  667  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  668  oc get pods --all-namespaces
+  669  oc get pods --all-namespaces | grep auth
+  670  oc logs oc get pods --all-namespaces
+  671  oc get pods --all-namespaces | grep auth
+  672  oc logs openshift-authentication -n oauth-openshift-56d468f864-56xzv
+  673  oc logs oauth-openshift-56d468f864-56xzv 
+  674  oc logs oauth-openshift-56d468f864-56xzv -n openshift-authentication
+  675  oc get pods --all-namespaces | grep console
+  676  oc logs console-operator-7fbfcbfb56-cnbtw -n openshift-console-operator
+  677  oc logs console-operator-7fbfcbfb56-cnbtw -n openshift-console-operator | tee -a openshift-console-operator.log
+  678  clear
+  679  haproxy
+  680  clear
+  681  carrier
+  682  clear
+  683  ssh ssh master1.ocp4.ministack.dev
+  684  ssh master1
+  685  clear
+  686  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  687  ls
+  688  cd
+  689  cd ocp4
+  690  clear
+  691  ls
+  692  oc whoami --show-consoe
+  693  oc whoami --show-console
+  694  oc whoami
+  695  cat auth/kubeadmin-password 
+  696  history | grep kubeadmin
+  697  oc login -u kubeadmin $(cat ./auth/kubeadmin-password)
+  698  oc login -u kubeadmin -p $(cat ./auth/kubeadmin-password)
+  699  clear
+  700  htpasswd -c -B -b </path/to/users.htpasswd> <user_name> <password>
+  701  htpasswd -c -B -b users.htpasswd kmorgan R3d_Ha714\!\!
+  702  whatprovides htpasswd
+  703  dnf whatprovides htpasswd
+  704  dnf install httpd-tools
+  705  sudo dnf install httpd-tools
+  706  clear
+  707  htpasswd -c -B -b users.htpasswd kmorgan R3d_Ha714\!\!
+  708  ls
+  709  cat users.htpasswd 
+  710  oc create secret generic htpass-secret --from-file=htpasswd=./users.htpasswd -n openshift-config
+  711  oc project openshift-config
+  712  oc get htpasswd
+  713  oc get secret htpass-secret
+  714  oc get secret htpass-secret -ojson
+  715  vim htpasswd.yaml
+  716  oc apply -f htpasswd.yaml 
+  717  oc whoami --show-console
+  718  cat auth/kubeadmin-password 
+  719  oc adm policy add-cluster-role-to-user cluster-admin kmorgan
+  720  clear
+  721  carrier
+  722  clear
+  723  ls
+  724  cp htpasswd.yaml users.htpasswd ../ocp-mini-stack/module/cloudctl/
+  725  cp users.htpasswd ../ocp-mini-stack/module/cloudctl/
+  726  cp htpasswd.yaml users.htpasswd $HOME/ocp-mini-stack/module/cloudctl/
+  727  oc whoami --show-console
+  728  clear
+  729  ls
+  730  cd ..
+  731  unlink ocp4/
+  732  unlink ocp4
+  733  ls
+  734  clear
+  735  ls
+  736  clear
+  737  ls
+  738  pwd
+  739  ls
+  740  cat master
+  741  clear
+  742  ls
+  743  rm master master.config 
+  744  ls
+  745  cat install-config.yaml 
+  746  rm install-config.yaml 
+  747  ls
+  748  clear
+  749  ls
+  750  cat bashrc 
+  751  clear
+  752  ln -f .bashrc bashrc
+  753  ls
+  754  cat ssh-config 
+  755  clear
+  756  ls
+  757  ln -f .ssh/config ssh-config 
+  758  cp bashrc ssh-config ocp-mini-stack/module/cloudctl/ -f
+  759  ls
+  760  rm -rf trash/
+  761  ls
+  762  rm bashrc ssh-config 
+  763  ls
+  764  cd ocp-mini-stack/
+  765  ls
+  766  clear
+  767  cd module/
+  768  ls
+  769  clear
+  770  ll
+  771  lxc list
+  772  cd tftp/
+  773  ls
+  774  tftp
+  775  for i in AC1E00  AC1E01  build.log  build-tftp  default  eth1.network  README.md  tftp.service; do scp tftp:/root/$i .; done
+  776  clear
+  777  cd ..
+  778  clear
+  779  lxc list
+  780  lxc delete --force t01
+  781  clear
+  782  lxc profile list
+  783  lxc list
+  784  lxc config show tftp | tee tftp.lxd.profile.yaml
+  785  clear
+  786  lxc list
+  787  lxc delete --force
+  788  lxc delete --force tftp
+  789  clear
+  790  httpd
+  791  cd httpd/
+  792  for i in bootstrap.ign  httpd-build_a00.log  stage-install-config-yaml.sh  stage-pull-secrets.sh; do scp httpd:/root/$i .; done
+  793  ls
+  794  lxc delete --force httpd
+  795  lxc list
+  796  lxc start hostapd
+  797  lxc exec hostapd bash
+  798  cd ../hostapd/
+  799  for i in build-hostapd.log  hostapd.conf  ifcfg-eth0  ifcfg-hostapd  iwlist; do scp hostapd:/root/$i .; done
+  800  ls
+  801  cear
+  802  clear
+  803  lxc list
+  804  lxc config show hostapd.conf | tee hostapd.conf.yaml
+  805  lxc config show hostapd | tee hostapd.conf.yaml
+  806  lxc profile list
+  807  lxc profile show hostapd | tee hostapd.profile.yaml
+  808  clear
+  809  lxc list
+  810  lxc delete --force hostapd
+  811  lxc list
+  812  cd ..
+  813  ls
+  814  cd haproxy/
+  815  ls
+  816  haproxy
+  817  for i in build.log  eth1.network  haproxy.cfg; do scp haproxy:/root/$i .; done
+  818  cd ..
+  819  ls
+  820  lxc list
+  821  clear
+  822  lxc list
+  823  lxc profile show haproxy
+  824  lxc profile list
+  825  lxc profile delete --force hostapd
+  826  lxc profile delete hostapd
+  827  clear; 
+  828  cd gateway/
+  829  ls
+  830  lxc profile show openwrt | tee >>profile-lxd-openwrt.2.yaml 
+  831  cat profile-lxd-openwrt.2.yaml 
+  832  clear
+  833  lxc list
+  834  ls
+  835  lxc file pull -r gateway/etc/config .
+  836  ls
+  837  lxc exec gateway ash
+  838  for i in ethers                  gw02.ministack.privkey  gw02.ministack.pubkey   hosts                   ocp4; do scp gateway:/root/$i .; done
+  839  for i in ethers                  gw02.ministack.privkey  gw02.ministack.pubkey   hosts                   ocp4; do lxc file pull gateway/root/$i .; done
+  840  ls
+  841  cd ..
+  842  ls
+  843  clear
+  844  ls
+  845  lxc list
+  846  dnsmasq
+  847  for i in build.log  dnsmasq.conf  dnsmasq.leases  eth1.network  ethers  hosts  resolv.conf; do scp dnsmasq:/root/$i .; done
+  848  clear
+  849  ls
+  850  lxc list
+  851  ls
+  852  ls ~
+  853  cat build.log 
+  854  mv build.log dnsmasq/
+  855  ls
+  856  mv dnsmasq* dnsmasq/
+  857  clear
+  858  ls
+  859  cat eth1.network 
+  860  mv eth1.network dnsmasq/
+  861  ls
+  862  cat h
+  863  mv hosts resolv.conf dnsmasq/
+  864  ls
+  865  mv tftp.lxd.profile.yaml tftp/
+  866  ls
+  867  mv ethers dnsmasq/
+  868  cd cloudctl/
+  869  ls
+  870  history >>build.log.2
+  871  ln /etc/systemd/network/eth1.network .
+  872  ln /etc/systemd/network/eth1.network . -f
+  873  sudo ln /etc/systemd/network/eth1.network . -f
+  874  ls
+  875  clear
+  876  ls
+  877  cd ..
+  878  ls
+  879  clear
+  880  cd ..
+  881  ls
+  882  clear
+  883  history | grep git | grep stage
+  884  git stage -A; git commit -m "first heartbeat, working ministack openshift cloud full stack"; git push origin pre-alpha-00
+  885  git pull
+  886  cd module/haproxy/
+  887  clear
+  888  history | grep haproxy
+  889  for i in build.log  eth1.network  haproxy.cfg; do scp haproxy:/root/$i .; done
+  890  cd ../..
+  891  ls
+  892  git stage -A; git commit -m "first heartbeat, working ministack openshift cloud full stack"; git push origin pre-alpha-00
+  893  git checkout master
+  894  git pull
+  895  clear
+  896  git fetch upstream
+  897  git remote add upstream git@github.com:containercraft/ocp-mini-stack.git
+  898  git fetch upstream
+  899  get checkout master
+  900  git checkout master
+  901  git merge upstream/master
+  902  ls
+  903  rm README 
+  904  git merge upstream/master
+  905  git pull upstream master
+  906  ls
+  907  git rm README
+  908  git merge upstream/master
+  909  git commit
+  910  git merge upstream/master
+  911  git pull
+  912  clear
+  913  git stage -A; git commit -m "milestone 1, poc"; git push origin master
+  914  clear
+  915  wget https://raw.githubusercontent.com/containercraft/ocp-mini-stack/master/README
+  916  git stage -A; git commit -m "milestone 1, poc"; git push origin master
+  917  clear
+  918  rm bqs.list 
+  919  git stage -A; git commit -m "milestone 1, poc"; git push origin master
+  920  cd
+  921  clear
+  922  ls
+  923  exit
+  924  dnsmasq
+  925  tftp
+  926  clear
+  927  curl http://tftp.ministack.dev
+  928  curl http://tftp.ministack.dev:8080/ipxe
+  929  curl http://tftp.ministack.dev:8080/ipxe?
+  930  clear
+  931  carrier
+  932  clear
+  933  ls
+  934  cd ocp4
+  935  ls
+  936  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  937  oc get nodes
+  938  watch -c oc get nodes
+  939  virsh start worker01.ocp4.ministack.dev
+  940  virsh start worker02.ocp4.ministack.dev
+  941  watch -c oc get nodes
+  942  openshift-install wait-for bootstrap-complete
+  943  virsh destroy bootstrap.ocp4.ministack.dev
+  944  oc whoami --getconsole
+  945  oc whoami --show-console
+  946  oc options
+  947  openshift-install wait-for install-complete
+  948  clear; openshift-install wait-for install-complete
+  949  carrier
+  950  exit
+  951  carrier
+  952  exit
+  953  virsh start worker01.ocp4.ministack.dev
+  954  virsh start worker02.ocp4.ministack.dev
+  955  clear
+  956  watch oc get csr
+  957  cd ocp4
+  958  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  959  watch oc get csr
+  960  oc patch configs.imageregistry.operator.openshift.io cluster --type merge --patch '{"spec":{"storage":{"emptyDir":{}}}}'
+  961  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  962  clear
+  963  dnsmasq
+  964  haproxy
+  965  clear
+  966  watch oc get csr
+  967  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  968  watch oc get csr
+  969  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  970  watch oc get csr
+  971  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  972  watch oc get csr
+  973  clear
+  974  cd
+  975  cd ocp-mini-stack/
+  976  tree .
+  977  clear
+  978  tree . -n 3
+  979  tree . -n 2
+  980  tree . -n 1
+  981  tree . -l 1
+  982  tree -n 1 .
+  983  tree -h
+  984  tree --help
+  985  tree -L 2
+  986  tree -L 3
+  987  tree -L 2
+  988  watch -c tree -L 2
+  989  watch -c tree -L 2 ./module/
+  990  clear
+  991  ls
+  992  cd module/haproxy/
+  993  ls
+  994  vim haproxy.cfg 
+  995  exit
+  996  tmux
+  997  clear
+  998  cat /etc/systemd/network/eth1.network 
+  999  exit
+ 1000  clear
+ 1001  lxc start dnsmasq
+ 1002  clea
+ 1003  clear
+ 1004  cd ocp-mini-stack/module/dnsmasq/
+ 1005  clear
+ 1006  l
+ 1007  clear
+ 1008  ls
+ 1009  vim build.log 
+ 1010  ls
+ 1011  mv build.log build-dnsmasq
+ 1012  chmod +x build-dnsmasq 
+ 1013  ls
+ 1014  cat dnsmasq.leases 
+ 1015  clear
+ 1016  ls
+ 1017  vim eth1.network 
+ 1018  rm inventory -rf
+ 1019  ls
+ 1020  clear
+ 1021  ls
+ 1022  cat RE
+ 1023  cat README.md 
+ 1024  mv -f REFRENCE README.md 
+ 1025  ls
+ 1026  cat README.md 
+ 1027  clear
+ 1028  ls
+ 1029  cat resolv.conf 
+ 1030  for i in dnsmasq.conf eth1.network ethers  hosts resolv.conf; do scp $i dnsmasq:~; done
+ 1031  history | grep ansible
+ 1032  ls
+ 1033  cp ../haproxy/aux/bin aux/bin
+ 1034  mkdir aux
+ 1035  cp ../haproxy/aux/bin aux/bin
+ 1036  cp ../haproxy/aux/bin aux/
+ 1037  cp ../haproxy/aux/bin aux/ -r
+ 1038  lxc file push ./aux/bin/fedora-bootstrap-ansible dnsmasq/usr/bin/
+ 1039  lxc exec dnsmasq fedora-bootstrap-ansible
+ 1040  clear
+ 1041  dnsmasq
+ 1042  for i in dnsmasq.conf eth1.network ethers  hosts resolv.conf; do scp $i dnsmasq:~; done
+ 1043  for i in dnsmasq.conf eth1.network ethers hosts resolv.conf; do scp $i dnsmasq:~; done
+ 1044  ls
+ 1045  for i in build-dnsmasq dnsmasq.conf eth1.network ethers hosts resolv.conf; do scp $i dnsmasq:~; done
+ 1046  clear
+ 1047  ls
+ 1048  dnsmasq
+ 1049  clear
+ 1050  ls
+ 1051  history | tee build.log

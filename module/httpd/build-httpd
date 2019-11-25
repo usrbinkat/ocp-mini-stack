@@ -1,11 +1,18 @@
-ln eth1.network /etc/systemd/network/
+#!/bin/bash
+
 dnf install -y httpd wget
+
 rm /var/www/html/*
+mkdir -p /var/www/html/{boot,ignition}
+
 ln -s /var/www/html/ ~
+ln -f /root/eth1.network /etc/systemd/network/eth1.network
+
+systemctl restart systemd-networkd
 systemctl start httpd
 systemctl enable httpd
 systemctl status httpd
-mkdir -p /var/www/html/{boot,ignition}
+
 wget -P /var/www/html/boot/ https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.2/latest/rhcos-4.2.0-x86_64-installer-initramfs.img
 wget -P /var/www/html/boot/ https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.2/latest/rhcos-4.2.0-x86_64-installer-kernel
 wget -P /var/www/html/boot/ https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.2/latest/rhcos-4.2.0-x86_64-metal-bios.raw.gz

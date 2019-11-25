@@ -1,0 +1,6 @@
+dnf install vim haproxy -y
+ln -f ~/haproxy.cfg /etc/haproxy/haproxy.cfg 
+ln -f ~/eth1.network /etc/systemd/network/
+systemctl enable --now haproxy
+systemctl status haproxy
+reboot
