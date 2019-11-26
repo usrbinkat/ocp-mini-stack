@@ -79,3 +79,9 @@
             Interface "mgmt1"
                 type: internal
     ovs_version: "2.10.1"
+
+##################################################################################
+https://blog.openshift.com/openshift-4-2-disconnected-install/
+https://github.com/openshift-tigerteam/guides/tree/master/ocp4
+https://www.me2digital.com/blog/2019/05/haproxy-sni-routing/
+https://github.com/openshift/installer/blob/master/docs/user/vsphere/install_upi.md

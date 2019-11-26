@@ -1,0 +1,1000 @@
+   80  ./hastebin $(cat openshift-authentication-operator.log)
+   81  cat openshift-authentication-operator.log | ./hastebin 
+   82  echo 'oc logs authentication-operator-5457df9894-v65wb  -n openshift-authentication-operator | tee -a openshift-authentication-operator.log' >>openshift-authentication-operator.log 
+   83  vim openshift-authentication-operator.log 
+   84  cat openshift-authentication-operator.log | ./hastebin 
+   85  cat openshift-console-operator.log | ./hastebin 
+   86  vim openshift-console-operator.log 
+   87  cat openshift-console-operator.log | ./hastebin 
+   88  clear
+   89  watch -c oc get endpoints -A 
+   90  oc status
+   91  watch oc status
+   92  exit
+   93  oc get pods
+   94  cd ocp4/
+   95  export KUBECONFIG=$(pwd)/auth/kubeconfig
+   96  oc get pods
+   97  oc api-resources
+   98  oc get pods -A
+   99  oc get pods -A | less
+  100  clear
+  101  cat auth/kubeadmin-password 
+  102  cat auth/kubeadmin-password ; echo
+  103  oc login -u kubeadmin -p F4CPG-XCGb7-77kkx-gMqIF
+  104  oc get csr
+  105  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  106  oc get csr
+  107  oc patch configs.imageregistry.operator.openshift.io cluster --type merge --patch '{"spec":{"storage":{"emptyDir":{}}}}'
+  108  oc get csr
+  109  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  110  oc get csr
+  111  watch -c oc get csr
+  112  clear
+  113  oc api-resources -A 
+  114  oc api-resources | grep auth
+  115  oc api-resources | grep oper
+  116  oc get clusteroperators -A
+  117  watch -c oc get clusteroperators -A
+  118  ls
+  119  cd
+  120  cd ocp4/
+  121  ls
+  122  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  123  watch -c oc get clusteroperators -A
+  124  exit
+  125  cd ocp4
+  126  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  127  clear
+  128  watch oc get csr
+  129  openshift-install wait-for bootstrap-complete
+  130  virsh destroy bootstrap.ocp4.ministack.dev
+  131  openshift-install wait-for install-complete
+  132  clear; openshift-install wait-for install-complete
+  133  exit
+  134  cd ocp4
+  135  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  136  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  137  clear; oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  138  dig https://oauth-openshift.apps.ocp4.ministack.dev/oauth/token +short
+  139  ig oauth-openshift.apps.ocp4.ministack.dev
+  140  curl --insecure https://oauth-openshift.apps.ocp4.ministack.dev/oauth/token 
+  141  haproxy
+  142  exit
+  143  cd ocp4/
+  144  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  145  clear
+  146  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  147  oc patch configs.imageregistry.operator.openshift.io cluster --type merge --patch '{"spec":{"storage":{"emptyDir":{}}}}'
+  148  watch -n5 oc get clusteroperators
+  149  openshift-install wait-for install-complete
+  150  clear
+  151  ls
+  152  cd
+  153  clear
+  154  ls
+  155  mkdir trash
+  156  cd trash/
+  157  dnsmasq
+  158  clear
+  159  cd ../ocp4/
+  160  ls
+  161  cd ..
+  162  ls
+  163  cd ocp-mini-stack/module/cloudctl/
+  164  ls
+  165  rm -rf ocp4/
+  166  rm -rf ~/ocp4
+  167  clear
+  168  ls
+  169  vim install-config.yaml 
+  170  mkdir ocp4
+  171  ln -s $(pwd)
+  172  pwd
+  173  ls
+  174  ln -s $(pwd)/ocp4 ~
+  175  cd ocp4/
+  176  clear
+  177  openshift-install create manifests
+  178  clear
+  179  cp ../install-config.yaml .
+  180  openshift-install create manifests
+  181  openshift-install create ignition-configs 
+  182  ls
+  183  history | grep ign
+  184  ls
+  185  scp bootstrap.ign master.ign worker.ign httpd:/var/www/html/ignition/
+  186  cd
+  187  cd ocp4
+  188  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  189  clear
+  190  watch -c oc get nodes
+  191  exit
+  192  cd ocp4
+  193  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  194  oc get clusterversion
+  195  watch -c oc get clusterversion
+  196  cd
+  197  cd ocp4
+  198  watch -c oc get clusterversion
+  199  exit
+  200  carrier
+  201  exit
+  202  exit
+  203  cd ocp4
+  204  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  205  oc get pods --all-namespaces
+  206  oc get pods --all-namespaces | grep auth
+  207  oc logs oc get pods --all-namespaces
+  208  oc get pods --all-namespaces | grep auth
+  209  oc logs openshift-authentication -n oauth-openshift-56d468f864-56xzv
+  210  oc logs oauth-openshift-56d468f864-56xzv 
+  211  oc logs oauth-openshift-56d468f864-56xzv -n openshift-authentication
+  212  oc get pods --all-namespaces | grep console
+  213  oc logs console-operator-7fbfcbfb56-cnbtw -n openshift-console-operator
+  214  oc logs console-operator-7fbfcbfb56-cnbtw -n openshift-console-operator | tee -a openshift-console-operator.log
+  215  clear
+  216  haproxy
+  217  clear
+  218  carrier
+  219  clear
+  220  ssh ssh master1.ocp4.ministack.dev
+  221  ssh master1
+  222  clear
+  223  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  224  ls
+  225  cd
+  226  cd ocp4
+  227  clear
+  228  ls
+  229  oc whoami --show-consoe
+  230  oc whoami --show-console
+  231  oc whoami
+  232  cat auth/kubeadmin-password 
+  233  history | grep kubeadmin
+  234  oc login -u kubeadmin $(cat ./auth/kubeadmin-password)
+  235  oc login -u kubeadmin -p $(cat ./auth/kubeadmin-password)
+  236  clear
+  237  htpasswd -c -B -b </path/to/users.htpasswd> <user_name> <password>
+  238  htpasswd -c -B -b users.htpasswd kmorgan R3d_Ha714\!\!
+  239  whatprovides htpasswd
+  240  dnf whatprovides htpasswd
+  241  dnf install httpd-tools
+  242  sudo dnf install httpd-tools
+  243  clear
+  244  htpasswd -c -B -b users.htpasswd kmorgan R3d_Ha714\!\!
+  245  ls
+  246  cat users.htpasswd 
+  247  oc create secret generic htpass-secret --from-file=htpasswd=./users.htpasswd -n openshift-config
+  248  oc project openshift-config
+  249  oc get htpasswd
+  250  oc get secret htpass-secret
+  251  oc get secret htpass-secret -ojson
+  252  vim htpasswd.yaml
+  253  oc apply -f htpasswd.yaml 
+  254  oc whoami --show-console
+  255  cat auth/kubeadmin-password 
+  256  oc adm policy add-cluster-role-to-user cluster-admin kmorgan
+  257  clear
+  258  carrier
+  259  clear
+  260  ls
+  261  cp htpasswd.yaml users.htpasswd ../ocp-mini-stack/module/cloudctl/
+  262  cp users.htpasswd ../ocp-mini-stack/module/cloudctl/
+  263  cp htpasswd.yaml users.htpasswd $HOME/ocp-mini-stack/module/cloudctl/
+  264  oc whoami --show-console
+  265  clear
+  266  ls
+  267  cd ..
+  268  unlink ocp4/
+  269  unlink ocp4
+  270  ls
+  271  clear
+  272  ls
+  273  clear
+  274  ls
+  275  pwd
+  276  ls
+  277  cat master
+  278  clear
+  279  ls
+  280  rm master master.config 
+  281  ls
+  282  cat install-config.yaml 
+  283  rm install-config.yaml 
+  284  ls
+  285  clear
+  286  ls
+  287  cat bashrc 
+  288  clear
+  289  ln -f .bashrc bashrc
+  290  ls
+  291  cat ssh-config 
+  292  clear
+  293  ls
+  294  ln -f .ssh/config ssh-config 
+  295  cp bashrc ssh-config ocp-mini-stack/module/cloudctl/ -f
+  296  ls
+  297  rm -rf trash/
+  298  ls
+  299  rm bashrc ssh-config 
+  300  ls
+  301  cd ocp-mini-stack/
+  302  ls
+  303  clear
+  304  cd module/
+  305  ls
+  306  clear
+  307  ll
+  308  lxc list
+  309  cd tftp/
+  310  ls
+  311  tftp
+  312  for i in AC1E00  AC1E01  build.log  build-tftp  default  eth1.network  README.md  tftp.service; do scp tftp:/root/$i .; done
+  313  clear
+  314  cd ..
+  315  clear
+  316  lxc list
+  317  lxc delete --force t01
+  318  clear
+  319  lxc profile list
+  320  lxc list
+  321  lxc config show tftp | tee tftp.lxd.profile.yaml
+  322  clear
+  323  lxc list
+  324  lxc delete --force
+  325  lxc delete --force tftp
+  326  clear
+  327  httpd
+  328  cd httpd/
+  329  for i in bootstrap.ign  httpd-build_a00.log  stage-install-config-yaml.sh  stage-pull-secrets.sh; do scp httpd:/root/$i .; done
+  330  ls
+  331  lxc delete --force httpd
+  332  lxc list
+  333  lxc start hostapd
+  334  lxc exec hostapd bash
+  335  cd ../hostapd/
+  336  for i in build-hostapd.log  hostapd.conf  ifcfg-eth0  ifcfg-hostapd  iwlist; do scp hostapd:/root/$i .; done
+  337  ls
+  338  cear
+  339  clear
+  340  lxc list
+  341  lxc config show hostapd.conf | tee hostapd.conf.yaml
+  342  lxc config show hostapd | tee hostapd.conf.yaml
+  343  lxc profile list
+  344  lxc profile show hostapd | tee hostapd.profile.yaml
+  345  clear
+  346  lxc list
+  347  lxc delete --force hostapd
+  348  lxc list
+  349  cd ..
+  350  ls
+  351  cd haproxy/
+  352  ls
+  353  haproxy
+  354  for i in build.log  eth1.network  haproxy.cfg; do scp haproxy:/root/$i .; done
+  355  cd ..
+  356  ls
+  357  lxc list
+  358  clear
+  359  lxc list
+  360  lxc profile show haproxy
+  361  lxc profile list
+  362  lxc profile delete --force hostapd
+  363  lxc profile delete hostapd
+  364  clear; 
+  365  cd gateway/
+  366  ls
+  367  lxc profile show openwrt | tee >>profile-lxd-openwrt.2.yaml 
+  368  cat profile-lxd-openwrt.2.yaml 
+  369  clear
+  370  lxc list
+  371  ls
+  372  lxc file pull -r gateway/etc/config .
+  373  ls
+  374  lxc exec gateway ash
+  375  for i in ethers                  gw02.ministack.privkey  gw02.ministack.pubkey   hosts                   ocp4; do scp gateway:/root/$i .; done
+  376  for i in ethers                  gw02.ministack.privkey  gw02.ministack.pubkey   hosts                   ocp4; do lxc file pull gateway/root/$i .; done
+  377  ls
+  378  cd ..
+  379  ls
+  380  clear
+  381  ls
+  382  lxc list
+  383  dnsmasq
+  384  for i in build.log  dnsmasq.conf  dnsmasq.leases  eth1.network  ethers  hosts  resolv.conf; do scp dnsmasq:/root/$i .; done
+  385  clear
+  386  ls
+  387  lxc list
+  388  ls
+  389  ls ~
+  390  cat build.log 
+  391  mv build.log dnsmasq/
+  392  ls
+  393  mv dnsmasq* dnsmasq/
+  394  clear
+  395  ls
+  396  cat eth1.network 
+  397  mv eth1.network dnsmasq/
+  398  ls
+  399  cat h
+  400  mv hosts resolv.conf dnsmasq/
+  401  ls
+  402  mv tftp.lxd.profile.yaml tftp/
+  403  ls
+  404  mv ethers dnsmasq/
+  405  cd cloudctl/
+  406  ls
+  407  history >>build.log.2
+  408  ln /etc/systemd/network/eth1.network .
+  409  ln /etc/systemd/network/eth1.network . -f
+  410  sudo ln /etc/systemd/network/eth1.network . -f
+  411  ls
+  412  clear
+  413  ls
+  414  cd ..
+  415  ls
+  416  clear
+  417  cd ..
+  418  ls
+  419  clear
+  420  history | grep git | grep stage
+  421  git stage -A; git commit -m "first heartbeat, working ministack openshift cloud full stack"; git push origin pre-alpha-00
+  422  git pull
+  423  cd module/haproxy/
+  424  clear
+  425  history | grep haproxy
+  426  for i in build.log  eth1.network  haproxy.cfg; do scp haproxy:/root/$i .; done
+  427  cd ../..
+  428  ls
+  429  git stage -A; git commit -m "first heartbeat, working ministack openshift cloud full stack"; git push origin pre-alpha-00
+  430  git checkout master
+  431  git pull
+  432  clear
+  433  git fetch upstream
+  434  git remote add upstream git@github.com:containercraft/ocp-mini-stack.git
+  435  git fetch upstream
+  436  get checkout master
+  437  git checkout master
+  438  git merge upstream/master
+  439  ls
+  440  rm README 
+  441  git merge upstream/master
+  442  git pull upstream master
+  443  ls
+  444  git rm README
+  445  git merge upstream/master
+  446  git commit
+  447  git merge upstream/master
+  448  git pull
+  449  clear
+  450  git stage -A; git commit -m "milestone 1, poc"; git push origin master
+  451  clear
+  452  wget https://raw.githubusercontent.com/containercraft/ocp-mini-stack/master/README
+  453  git stage -A; git commit -m "milestone 1, poc"; git push origin master
+  454  clear
+  455  rm bqs.list 
+  456  git stage -A; git commit -m "milestone 1, poc"; git push origin master
+  457  cd
+  458  clear
+  459  ls
+  460  exit
+  461  dnsmasq
+  462  tftp
+  463  clear
+  464  curl http://tftp.ministack.dev
+  465  curl http://tftp.ministack.dev:8080/ipxe
+  466  curl http://tftp.ministack.dev:8080/ipxe?
+  467  clear
+  468  carrier
+  469  clear
+  470  ls
+  471  cd ocp4
+  472  ls
+  473  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  474  oc get nodes
+  475  watch -c oc get nodes
+  476  virsh start worker01.ocp4.ministack.dev
+  477  virsh start worker02.ocp4.ministack.dev
+  478  watch -c oc get nodes
+  479  openshift-install wait-for bootstrap-complete
+  480  virsh destroy bootstrap.ocp4.ministack.dev
+  481  oc whoami --getconsole
+  482  oc whoami --show-console
+  483  oc options
+  484  openshift-install wait-for install-complete
+  485  clear; openshift-install wait-for install-complete
+  486  carrier
+  487  exit
+  488  carrier
+  489  exit
+  490  virsh start worker01.ocp4.ministack.dev
+  491  virsh start worker02.ocp4.ministack.dev
+  492  clear
+  493  watch oc get csr
+  494  cd ocp4
+  495  export KUBECONFIG=$(pwd)/auth/kubeconfig
+  496  watch oc get csr
+  497  oc patch configs.imageregistry.operator.openshift.io cluster --type merge --patch '{"spec":{"storage":{"emptyDir":{}}}}'
+  498  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  499  clear
+  500  dnsmasq
+  501  haproxy
+  502  clear
+  503  watch oc get csr
+  504  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  505  watch oc get csr
+  506  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  507  watch oc get csr
+  508  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  509  watch oc get csr
+  510  clear
+  511  cd
+  512  cd ocp-mini-stack/
+  513  tree .
+  514  clear
+  515  tree . -n 3
+  516  tree . -n 2
+  517  tree . -n 1
+  518  tree . -l 1
+  519  tree -n 1 .
+  520  tree -h
+  521  tree --help
+  522  tree -L 2
+  523  tree -L 3
+  524  tree -L 2
+  525  watch -c tree -L 2
+  526  watch -c tree -L 2 ./module/
+  527  clear
+  528  ls
+  529  cd module/haproxy/
+  530  ls
+  531  vim haproxy.cfg 
+  532  exit
+  533  tmux
+  534  clear
+  535  cat /etc/systemd/network/eth1.network 
+  536  exit
+  537  httpd
+  538  clear
+  539  ls
+  540  dnsmasq
+  541  haproxy
+  542  httpd
+  543  cd ocp-mini-stack/module/httpd/
+  544  vim build-httpd 
+  545  clear
+  546  haproxy
+  547  exit
+  548  echo "export KUBECONFIG=$(pwd)/auth/kubeconfig" >>~/.bashrc
+  549  clear
+  550  oc get nodes
+  551  exit
+  552  ls
+  553  grep -i machineconfig *
+  554  grep -i machineconfig * >machineconfig
+  555  vim machineconfig 
+  556  clear
+  557  ls
+  558  clear
+  559  cd
+  560  cd ocp-mini-stack/module/cloudctl/ocp4/
+  561  echo "export KUBECONFIG=$(pwd)/auth/kubeconfig" >>~/.bashrc
+  562  clear
+  563  ls
+  564  virsh console bootstrap.ocp4.ministack.dev
+  565  bootstrap
+  566  master1
+  567  virsh console master3.ocp4.ministack.dev
+  568  worker1
+  569  master1
+  570  worker01
+  571  ping worker01.ocp4.ministack.dev
+  572  vim ~/.bashrc
+  573  worker01
+  574  vim ~/.ssh/config 
+  575  nslookup worker01
+  576  ssh worker01
+  577  virsh console worker01.ocp4.ministack.dev
+  578  bootstrap
+  579  exit
+  580  master1
+  581  clear; master1
+  582  virsh console bootstrap.ocp4.ministack.dev
+  583  bootstrap
+  584  clear
+  585  ls
+  586  rm -rf *
+  587  carrier
+  588  clear
+  589  virsh console bootstrap.ocp4.ministack.dev
+  590  clear
+  591  cp ~/.ccio/ocp4-mini-stack/install-config.yaml .
+  592  vim install-config.yaml 
+  593  diff install-config.yaml ../aux/lib/install-config.yaml 
+  594  rm install-config.yaml 
+  595  vim ../aux/lib/install-config.yaml .
+  596  cp ../aux/lib/install-config.yaml .
+  597  ls
+  598  history | grep openshift
+  599  openshift-install create manifests
+  600  cp ../aux/lib/install-config.yaml .
+  601  openshift-install create ignition-configs
+  602  httpd
+  603  history | grep scp
+  604  ls
+  605  scp bootstrap.ign master.ign metadata.json worker.ign httpd:/var/www/html/ignition/
+  606  virsh console bootstrap.ocp4.ministack.dev
+  607  bootstrap
+  608  exit
+  609  ls
+  610  grep -r 172.30 *
+  611  grep -r 172.30 .
+  612  clear
+  613  grep -r 172.32 .
+  614  cd ..
+  615  ls
+  616  rm --rf ocp4/
+  617  rm -rf ocp4/
+  618  mkdir ocp4
+  619  cd ocp4/
+  620  clear
+  621  ls
+  622  cp ~/.ccio/ocp4-mini-stack/install-config.yaml .
+  623  openshift-install create manifests
+  624  grep -r 172 .
+  625  grep -r 172.30 .
+  626  clear
+  627  lxc list
+  628  dnsmasq
+  629  clear
+  630  ls
+  631  carrier
+  632  worker02
+  633  ssh core@worker02.ocp4.ministack.dev
+  634  ssh core@worker02.ocp4.ministack.dev -i ~/.ssh/id_rsa_kmorgan
+  635  ssh core@worker02.ocp4.ministack.dev -i ~/.ssh/id_rsa
+  636  clear
+  637  lxc list
+  638  ping 10.10.91.5
+  639  ping 10.10.91.3
+  640  exit
+  641  history | grep install
+  642  openshift-install wait-for bootstrap-complete && openshift-install wait-for install-complete
+  643  lxc list
+  644  history | grep kmorgan
+  645  oc create secret generic htpass-secret --from-file=htpasswd=../users.htpasswd -n openshift-config
+  646  oc adm policy add-cluster-role-to-user cluster-admin kmorgan
+  647  ls ..
+  648  cp ../htpasswd.yaml .
+  649  cp ../users.htpasswd .
+  650  ls
+  651  oc create secret generic htpass-secret --from-file=htpasswd=users.htpasswd -n openshift-config
+  652  oc apply -f htpasswd.yaml 
+  653  oc adm policy add-cluster-role-to-user cluster-admin kmorgan
+  654  htpasswd -b users.htpasswd zilliam wajac
+  655  oc create secret generic htpass-secret --from-file=htpasswd=users.htpasswd -n openshift-config
+  656  haproxy
+  657  lxc exec gateway ash
+  658  exit
+  659  lxc list
+  660  clear
+  661  lxc exec gateway ash
+  662  clear
+  663  cd ..
+  664  ls
+  665  vim eth1.network 
+  666  ln -f eth1.network /etc/systemd/network/eth1.network 
+  667  sudo ln -f eth1.network /etc/systemd/network/eth1.network 
+  668  ls
+  669  vim resolv.conf 
+  670  cat ssh-config 
+  671  ls
+  672  sudo ln -f resolv.conf /etc/
+  673  clear
+  674  ls
+  675  sed -i 's/172.30/172.10/g' *
+  676  vim secrets-stage 
+  677  vim start-nodes 
+  678  cd ..
+  679  grep -r 172.30 .
+  680  lxc exec gateway ash
+  681  clear
+  682  tftp
+  683  ip a
+  684  lxc exec tftp bash
+  685  lxc exec httpd bash
+  686  clear
+  687  lxc restart tftp
+  688  lxc exec tftp
+  689  lxc exec tftp bash
+  690  clear
+  691  lxc restart t01
+  692  lxc restart httpd
+  693  clear
+  694  lxc restart dnsmasq
+  695  lxc restart t01
+  696  lxc exec dnsmasq
+  697  lxc exec dnsmasq bash
+  698  clear
+  699  systemctl restart systemd-networkd
+  700  sudo systemctl restart systemd-networkd
+  701  clear
+  702  ip addr del 172.30.0.3/16 dev eth1
+  703  sudo ip addr del 172.30.0.3/16 dev eth1
+  704  lxc restart gateway
+  705  ls
+  706  clear
+  707  lxc restart haproxy
+  708  clear
+  709  scp carrier:~/inventory/ethers dnsmasq:~/ethers
+  710  scp carrier:~/inventory/ethers root@172.10.0.7:~/ethers
+  711  scp -rp carrier:~/inventory/pxellinux.cfg root@172.10.0.8:/tftpboot/
+  712  scp -rp carrier:~/inventory/pxelinux.cfg root@172.10.0.8:/tftpboot/
+  713  tftp
+  714  scp -rp carrier:~/inventory/pxelinux.cfg root@172.10.0.8:/tftpboot/
+  715  tftp
+  716  clear
+  717  cd cloudctl/
+  718  rm -rf ocp4/
+  719  ls
+  720  vim ~/.ccio/ocp4-mini-stack/install-config.yaml 
+  721  mkdir ocp4
+  722  cd ocp4
+  723  ls
+  724  cp ~/.ccio/ocp4-mini-stack/install-config.yaml .
+  725  ls
+  726  clear
+  727  history | grep openshift-i
+  728  openshift-install create manifests
+  729  ls
+  730  cp ~/.ccio/ocp4-mini-stack/install-config.yaml .
+  731  ls
+  732  history | grep false
+  733  history | grep false -i
+  734  history | grep -i master
+  735  clear
+  736  grep -ir master . | grep -i sch
+  737  vim manifests/cluster-scheduler-02-config.yml 
+  738  clear
+  739  history | grep openshift-i
+  740  openshift-install create ignition-configs
+  741  grep -ir 172.32 .
+  742  grep -ir 172.30 .
+  743  grep -ir 172.10 .
+  744  clear
+  745  ls
+  746  history | grep -i metadata
+  747  clear
+  748  ls
+  749  scp bootstrap.ign  master.ign  metadata.json  worker.ign 172.10.0.9:/var/www/httpd/ignition/
+  750  scp bootstrap.ign  master.ign  metadata.json  worker.ign 172.10.0.9:/var/www/html/ignition/
+  751  bootstrap
+  752  clear
+  753  bash
+  754  exit
+  755  clear
+  756  oc get csr
+  757  sudo su
+  758  oc get csr
+  759  history | grep csr
+  760  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  761  history | grep csr
+  762  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  763  oc get csr
+  764  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  765  oc get csr
+  766  watch oc get csr
+  767  exit
+  768  oc get nodes
+  769  ls
+  770  oc status
+  771  bash
+  772  exit
+  773  ls
+  774  pwd
+  775  cd
+  776  cd ocp-mini-stack/module/cloudctl/ocp4/
+  777  clear
+  778  bash
+  779  exit
+  780  bootstrap
+  781  master1
+  782  clear
+  783  dnsmasq
+  784  lxc exec t01 bash
+  785  clear
+  786  dnsmasq
+  787  clear
+  788  ls
+  789  haproxy
+  790  clear
+  791  lxc list
+  792  clear
+  793  ls
+  794  rm -rf *
+  795  ../
+  796  ls
+  797  cd ..
+  798  ls
+  799  cp ~/.ccio/ocp4-mini-stack/install-config.yaml ./ocp4/
+  800  cd ocp4/
+  801  ls
+  802  vim install-config.yaml 
+  803  vim ../secrets-stage 
+  804  vim ~/.ccio/ocp4-mini-stack/install-config.yaml 
+  805  clear
+  806  ls
+  807  history | grep openshift-i
+  808  openshift-install create manifests
+  809  ls
+  810  grep -ir machine*config .
+  811  grep -ir schedule .
+  812  vim manifests/cluster-scheduler-02-config.yml 
+  813  grep -ir schedule . | grep -i master
+  814  grep -ir MastersSchedulable .
+  815  vim manifests/cluster-scheduler-02-config.yml 
+  816  clear
+  817  carrier
+  818  ls
+  819  history | grep openshift-i
+  820  openshift-install create ignition-configs --dir=.
+  821  ls
+  822  grep 172.30 *
+  823  grep 172.32 *
+  824  clear
+  825  ls
+  826  grep -ir 172 *
+  827  grep -ir 10. *
+  828  grep -ir 10.1 *
+  829  grep -ir 10.1 * | more
+  830  grep -ir 10.1 * | less
+  831  clear
+  832  ls
+  833  scp bootstrap.ign metadata.json worker.ign httpd:/var/www/html/ignition/
+  834  carrier
+  835  haproxy
+  836  carrier
+  837  clear
+  838  bash
+  839  exit
+  840  dnsmasq
+  841  clear
+  842  cd ../../dnsmasq/
+  843  ls
+  844  scp dnsmasq:~/dnsmasq.conf .
+  845  scp dnsmasq:~/eth1.network .
+  846  scp dnsmasq:~/hosts .
+  847  scp dnsmasq:~/resolv.conf .
+  848  lxc file push hosts gateway/root/
+  849  clear
+  850  dnsmasq
+  851  exit
+  852  carrier
+  853  exi
+  854  exit
+  855  oc get pods
+  856  watch -c oc get pods
+  857  watch -c oc get pods -A
+  858  oc get pods -A | grep oau
+  859  lxc exec t01 bash
+  860  exit
+  861  lxc list
+  862  haproxy 
+  863  cd ../../haproxy/
+  864  ls
+  865  scp haproxy:~/eth1.network .
+  866  scp haproxy:~/haproxy.cfg .
+  867  ls
+  868  clear
+  869  lxc list
+  870  watch lxc list
+  871  clear
+  872  oc get csr -ojson | jq -r '.items[] | select(.status == {} ) | .metadata.name' | xargs oc adm certificate approve
+  873  clear
+  874  watch -c oc get pods
+  875  cd
+  876  cd ocp-mini-stack/module/cloudctl/ocp4/
+  877  bash
+  878  exit
+  879  clear
+  880  history | grep Dir
+  881  oc patch configs.imageregistry.operator.openshift.io cluster --type merge --patch '{"spec":{"storage":{"emptyDir":{}}}}'
+  882  clear
+  883  watch oc get api-resources
+  884  history | grep api
+  885  watch oc api-resources
+  886  watch oc api-resources -A
+  887  watch oc api-resources 
+  888  watch oc api-resources | grep oa
+  889   oc api-resources | grep oa
+  890  watch oc api-resources | grep oa
+  891  watch oc api-resources 
+  892  exit
+  893  histcd
+  894  cd
+  895  cd ocp-mini-stack/module/cloudctl/ocp4/
+  896  clear
+  897  bash
+  898  exit
+  899  lxc exec t01 bash
+  900  carrier
+  901  bootstrap
+  902  clear
+  903  dig master1.ocp4.ministack.dev
+  904  clear
+  905  ls
+  906  dnsmasq
+  907  clear
+  908  carrier
+  909  lxc exec t01 bash
+  910  carrier
+  911  clear
+  912  bash
+  913  exit
+  914  clear
+  915  watch -c oc get clusterversion
+  916  exit
+  917  lxc exec t01 bash
+  918  httpd
+  919  tftp
+  920  virsh console bootstrap.ocp4.ministack.dev
+  921  clear
+  922  master1
+  923  clear
+  924  cd
+  925  cd ocp-mini-stack/module/cloudctl/ocp4/
+  926  bash
+  927  exit
+  928  oc get nodes
+  929  watch oc get nodes
+  930  exit
+  931  oc get nodes
+  932  carrier
+  933  clear
+  934  oc get nodes
+  935  watch -c oc get nodes
+  936  cd
+  937  cd ocp-mini-stack/module/cloudctl/ocp4/
+  938  clear
+  939  bash
+  940  exit
+  941  tmux
+  942  cd ocp-mini-stack/module/cloudctl/ocp4/
+  943  tmux
+  944  exit
+  945  tmux list-sessions
+  946  1exit
+  947  exit
+  948  clear
+  949  oc get namespaces
+  950  oc get namespaces | grep console
+  951  clear
+  952  oc describe openshift-console -oyaml
+  953  oc describe openshift-console 
+  954  oc get namespaces | grep console
+  955  oc get namespace openshift-console
+  956  oc get namespace openshift-console -oyaml
+  957  oc get namespace openshift-console-operator -oyaml
+  958  oc get namespaces | grep auth
+  959  oc get namespace openshift-authentication-operator -oyaml
+  960  oc get namespace openshift-authentication -oyaml
+  961  oc get pods | grep auth
+  962  oc get pods -A | grep auth
+  963  oc get pod authentication-operator-5457df9894-f7flb -n openshift-authentication-operator -oyaml
+  964  oc project openshift-authentication-operator
+  965  oc get pods
+  966  oc edit pod authentication-operator-5457df9894-f7flb
+  967  oc get pods -A | grep auth
+  968  oc project openshift-authentication
+  969  oc get pods
+  970  oc edit pod oauth-openshift-8576c78df6-nfrq7
+  971  clear
+  972  oc get pods -A
+  973  exit
+  974  clear
+  975  ls
+  976  cd ocp-mini-stack/module/cloudctl/ocp4/
+  977  bash
+  978  exit
+  979  git stage -A; git commit -m 'build#2 success'; git push origin master
+  980  ls
+  981  cd module/
+  982  ls
+  983  cd cloudctl/
+  984  ls
+  985  vim README.md 
+  986  git stage -A; git commit -m 'build#2 success'; git push origin master
+  987  exit
+  988  cd ocp-mini-stack/
+  989  git pull
+  990  tmux
+  991  exit
+  992  cd ocp-mini-stack/
+  993  ls
+  994  ls module/
+  995  mv edge.haproxy.cfg module/haproxy/
+  996  cd module/haproxy/
+  997  vim edge.haproxy.cfg 
+  998  git stage -A; git commit -m 'build#2 success'; git push origin master
+  999  exit
+ 1000  clear
+ 1001  ls
+ 1002  cd ocp-mini-stack/module/haproxy/
+ 1003  vim edge.haproxy.cfg 
+ 1004  cd ..
+ 1005  ls
+ 1006  cd ,.
+ 1007  cd ..
+ 1008  ls
+ 1009  vim README 
+ 1010  clear
+ 1011  vim module/haproxy/edge.haproxy.cfg 
+ 1012  vim README 
+ 1013  clear
+ 1014  lxc list
+ 1015  lxc exec tftp
+ 1016  lxc exec tftp bash
+ 1017  cd module/tftp/
+ 1018  clear
+ 1019  ls
+ 1020  for i in build-tftp  eth1.network  tftp.service; do scp:~/$i .; done
+ 1021  for i in build-tftp  eth1.network  tftp.service; do scp tftp:~/$i .; done
+ 1022  ls
+ 1023  lxc list
+ 1024  cd ../nfs
+ 1025  ls
+ 1026  cat README.md 
+ 1027  cd ../httpd/
+ 1028  ls
+ 1029  lxc exec httpd bash
+ 1030  lxc exec httpd ls
+ 1031  clear
+ 1032  ls
+ 1033  for i in build-httpd  eth1.network; do scp httpd:~/$i .; done
+ 1034  lxc list
+ 1035  cd ../haproxy/
+ 1036  ls
+ 1037  lxc exec haproxy bash
+ 1038  for i in eth1.network  haproxy.cfg; do scp haproxy:~/$i .; done
+ 1039  ls
+ 1040  cd ../gateway/
+ 1041  ls
+ 1042  ls 1
+ 1043  ls 2
+ 1044  mkdir 3
+ 1045  mv config/ 3/
+ 1046  echo "*.privkey" >>.gitignore
+ 1047  ls inventory/
+ 1048  ls inventory/ocp/
+ 1049  mv config ethers hosts inventory ocp4 ./3/
+ 1050  ls
+ 1051  clear
+ 1052  ls
+ 1053  rm gw02.ministack.privkey 
+ 1054  ls
+ 1055  mkdir 4
+ 1056  cd 4/
+ 1057  lxc exec gateway ash
+ 1058  cp ../.gitignore .
+ 1059  lxc exec gateway ash
+ 1060  ls
+ 1061  lxc file pull -r gateway/etc/config .
+ 1062  ls
+ 1063  for i in dnsmasq.conf            ethers                  gw02.ministack.privkey  gw02.ministack.pubkey   hosts; do lxc file pull gateway/root/$i .; done
+ 1064  ls
+ 1065  cd ../..
+ 1066  lxc list
+ 1067  lxc delete --force nfs
+ 1068  lxc delete --force t01
+ 1069  lxc list
+ 1070  cd dnsmasq/
+ 1071  ls
+ 1072  lxc exec dnsmasq bash
+ 1073  lxc exec dnsmasq ls
+ 1074  for i in build-dnsmasq  build.log  dnsmasq.conf  dnsmasq.leases  eth1.network  ethers  hosts  resolv.conf; do scp dnsmasq:~/$i .; done
+ 1075  cd ../cloudctl/
+ 1076  ls
+ 1077  clear
+ 1078  ls
+ 1079  history > build.log

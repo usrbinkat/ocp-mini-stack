@@ -1,0 +1,3 @@
+server=/.ocp4.ministack.dev/172.10.0.7
+server=/ocp4.ministack.dev/172.10.0.7
+server=/httpd.ocp4.ministack.dev/172.10.0.7
